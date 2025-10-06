@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnsibleDB2 GitHub Preview</title>
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --dark: #1a202c;
+            --light: #f7fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(160deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.12));
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .card {
+            background: white;
+            max-width: 520px;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 55px rgba(102, 126, 234, 0.25);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 0.5rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--primary);
+        }
+
+        p {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta {
+            margin-top: 2rem;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            box-shadow: 0 12px 30px rgba(118, 75, 162, 0.35);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .card {
+                padding: 2.25rem 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" style="font-size: 1.1rem;">AnsibleDB2</a>
+        <div class="nav-links">
+            <a href="docs.html">Docs</a>
+            <a href="github.html">GitHub</a>
+            <a href="repos.html">Repositories</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="card" aria-labelledby="coming-soon-title">
+            <div class="badge">Public Repository Preview</div>
+            <h1 id="coming-soon-title">GitHub presence coming soon</h1>
+            <p>We are packaging the community edition, automation examples, and integration SDK for a public GitHub release.
+                Subscribe to updates and you will be the first to explore modules, dashboards, and deployment assets crafted
+                by the AnsibleDB2 engineering team.</p>
+            <p style="margin-top: 1.5rem;">In the meantime, visit the <a href="docs.html">documentation hub</a> or contact us at
+                <a href="mailto:founders@ansibledb2.com">founders@ansibledb2.com</a> for early access.</p>
+            <a class="cta" href="index.html">Return to homepage</a>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 AnsibleDB2. Follow product milestones from the <a href="docs.html">Docs hub</a>.
+    </footer>
+</body>
+</html>
