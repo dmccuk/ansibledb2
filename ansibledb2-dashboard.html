@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnsibleDB2 - Live Demo Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #0b0c0e;
+            color: #d8d9da;
+        }
+
+        .dashboard-header {
+            background: #1a1d23;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #2d3139;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #5794f2;
+        }
+
+        .time-range {
+            background: #2d3139;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            color: #d8d9da;
+            font-size: 0.875rem;
+        }
+
+        .nav-tabs {
+            background: #1a1d23;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 1px solid #2d3139;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: #8e9196;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            color: #d8d9da;
+        }
+
+        .nav-tab.active {
+            color: #5794f2;
+            border-bottom-color: #5794f2;
+        }
+
+        .dashboard-content {
+            padding: 2rem;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: #1a1d23;
+            padding: 1.5rem;
+            border-radius: 4px;
+            border: 1px solid #2d3139;
+            transition: transform 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: #5794f2;
+        }
+
+        .stat-label {
+            color: #8e9196;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d8d9da;
+        }
+
+        .stat-value.danger {
+            color: #e02f44;
+        }
+
+        .stat-value.warning {
+            color: #ff9830;
+        }
+
+        .stat-value.success {
+            color: #73bf69;
+        }
+
+        .stat-subtext {
+            font-size: 0.75rem;
+            color: #8e9196;
+            margin-top: 0.25rem;
+        }
+
+        .chart-container {
+            background: #1a1d23;
+            padding: 1.5rem;
+            border-radius: 4px;
+            border: 1px solid #2d3139;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-title {
+            color: #d8d9da;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .chart {
+            height: 300px;
+            position: relative;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 100%;
+            padding: 2rem 1rem 3rem;
+        }
+
+        .bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            max-width: 80px;
+        }
+
+        .bar {
+            width: 100%;
+            background: linear-gradient(180deg, #5794f2 0%, #3d71b8 100%);
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .bar:hover {
+            background: linear-gradient(180deg, #6ea3ff 0%, #5794f2 100%);
+        }
+
+        .bar.danger {
+            background: linear-gradient(180deg, #e02f44 0%, #b8233a 100%);
+        }
+
+        .bar.warning {
+            background: linear-gradient(180deg, #ff9830 0%, #cc7a26 100%);
+        }
+
+        .bar.success {
+            background: linear-gradient(180deg, #73bf69 0%, #5a9952 100%);
+        }
+
+        .bar-label {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: #8e9196;
+            text-align: center;
+            word-wrap: break-word;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.875rem;
+            color: #d8d9da;
+            font-weight: 600;
+        }
+
+        .table-container {
+            background: #1a1d23;
+            border-radius: 4px;
+            border: 1px solid #2d3139;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #2d3139;
+            padding: 1rem;
+            text-align: left;
+            color: #d8d9da;
+            font-weight: 600;
+            font-size: 0.875rem;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 1rem;
+            border-top: 1px solid #2d3139;
+            color: #8e9196;
+            font-size: 0.875rem;
+        }
+
+        tr:hover {
+            background: #23262e;
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        .badge-danger {
+            background: #e02f4420;
+            color: #e02f44;
+        }
+
+        .badge-warning {
+            background: #ff983020;
+            color: #ff9830;
+        }
+
+        .badge-success {
+            background: #73bf6920;
+            color: #73bf69;
+        }
+
+        .badge-info {
+            background: #5794f220;
+            color: #5794f2;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .pie-chart-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .pie-chart {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .legend-text {
+            font-size: 0.875rem;
+            color: #8e9196;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-content {
+                padding: 1rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-header">
+        <div class="logo">AnsibleDB2 Dashboard</div>
+        <div class="time-range">Last updated: <span id="lastUpdate">Just now</span></div>
+    </div>
+
+    <div class="nav-tabs">
+        <button class="nav-tab active" onclick="switchTab('overview')">Overview</button>
+        <button class="nav-tab" onclick="switchTab('security')">Security & Compliance</button>
+        <button class="nav-tab" onclick="switchTab('infrastructure')">Infrastructure</button>
+        <button class="nav-tab" onclick="switchTab('network')">Network Devices</button>
+        <button class="nav-tab" onclick="switchTab('agents')">Agent Status</button>
+    </div>
+
+    <div class="dashboard-content">
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <div class="stats-grid" id="overviewStats"></div>
+            <div class="grid-2">
+                <div class="chart-container">
+                    <div class="chart-title">Hosts by Operating System</div>
+                    <div class="chart bar-chart" id="osChart"></div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">Infrastructure Distribution</div>
+                    <div class="chart pie-chart-container">
+                        <div class="pie-chart" id="infraPieChart"></div>
+                        <div class="legend" id="infraLegend"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Recent Hosts Activity</div>
+                <div class="table-container">
+                    <table id="recentHostsTable"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security & Compliance Tab -->
+        <div id="security" class="tab-content">
+            <div class="stats-grid" id="securityStats"></div>
+            <div class="grid-2">
+                <div class="chart-container">
+                    <div class="chart-title">CIS Benchmark Compliance by Level</div>
+                    <div class="chart bar-chart" id="cisChart"></div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">Patch Status Distribution</div>
+                    <div class="chart bar-chart" id="patchChart"></div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Critical Compliance Issues</div>
+                <div class="table-container">
+                    <table id="complianceTable"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infrastructure Tab -->
+        <div id="infrastructure" class="tab-content">
+            <div class="stats-grid" id="infraStats"></div>
+            <div class="grid-2">
+                <div class="chart-container">
+                    <div class="chart-title">Cloud Provider Distribution</div>
+                    <div class="chart bar-chart" id="cloudChart"></div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">Virtualization Types</div>
+                    <div class="chart bar-chart" id="virtChart"></div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Infrastructure Details by Environment</div>
+                <div class="table-container">
+                    <table id="infraTable"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Devices Tab -->
+        <div id="network" class="tab-content">
+            <div class="stats-grid" id="networkStats"></div>
+            <div class="grid-2">
+                <div class="chart-container">
+                    <div class="chart-title">Network Devices by Vendor</div>
+                    <div class="chart bar-chart" id="vendorChart"></div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">Firmware Status</div>
+                    <div class="chart bar-chart" id="firmwareChart"></div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Network Device Inventory</div>
+                <div class="table-container">
+                    <table id="networkTable"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agents Tab -->
+        <div id="agents" class="tab-content">
+            <div class="stats-grid" id="agentStats"></div>
+            <div class="chart-container">
+                <div class="chart-title">Security Agent Status Across Fleet</div>
+                <div class="chart bar-chart" id="agentStatusChart"></div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Hosts with Agent Issues</div>
+                <div class="table-container">
+                    <table id="agentTable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script>
+        // Load JSON data from your provided files
+        fetch('ansibledb2_sample_hosts.json')
+            .then(r => r.json())
+            .then(hosts => {
+                fetch('ansibledb2_sample_network_devices.json')
+                    .then(r => r.json())
+                    .then(devices => {
+                        initDashboard(hosts, devices);
+                    });
+            });
+
+        function initDashboard(hosts, devices) {
+            // Render all tabs
+            renderOverviewTab(hosts, devices);
+            renderSecurityTab(hosts);
+            renderInfrastructureTab(hosts);
+            renderNetworkTab(devices);
+            renderAgentsTab(hosts);
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function renderOverviewTab(hosts, devices) {
+            // Calculate stats
+            const totalHosts = hosts.length;
+            const totalDevices = devices.length;
+            
+            const criticalPatches = hosts.filter(h => h.compliance.patch_status.critical === 'outdated').length;
+            const cisNonCompliant = hosts.filter(h => 
+                h.compliance.cis_benchmark.level_1 === 'fail' || 
+                h.compliance.cis_benchmark.level_2 === 'fail'
+            ).length;
+
+            // Render stats
+            document.getElementById('overviewStats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-label">Total Hosts</div>
+                    <div class="stat-value">${totalHosts}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Network Devices</div>
+                    <div class="stat-value">${totalDevices}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Critical Patch Issues</div>
+                    <div class="stat-value danger">${criticalPatches}</div>
+                    <div class="stat-subtext">${((criticalPatches/totalHosts)*100).toFixed(1)}% of fleet</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">CIS Non-Compliant</div>
+                    <div class="stat-value warning">${cisNonCompliant}</div>
+                    <div class="stat-subtext">${((cisNonCompliant/totalHosts)*100).toFixed(1)}% of fleet</div>
+                </div>
+            `;
+
+            // OS Distribution
+            const osCounts = {};
+            hosts.forEach(h => {
+                const osKey = h.os.name;
+                osCounts[osKey] = (osCounts[osKey] || 0) + 1;
+            });
+
+            renderBarChart('osChart', Object.entries(osCounts).map(([name, count]) => ({
+                label: name.replace(' Enterprise Linux', '').replace(' Server', ''),
+                value: count
+            })));
+
+            // Infrastructure pie chart
+            const infraCounts = {};
+            hosts.forEach(h => {
+                const provider = h.cloud_metadata.provider;
+                infraCounts[provider] = (infraCounts[provider] || 0) + 1;
+            });
+
+            renderPieChart('infraPieChart', 'infraLegend', Object.entries(infraCounts).map(([name, count]) => ({
+                name,
+                count,
+                color: getProviderColor(name)
+            })));
+
+            // Recent hosts table
+            const recentHosts = hosts.sort((a, b) => 
+                new Date(b.last_seen) - new Date(a.last_seen)
+            ).slice(0, 10);
+
+            document.getElementById('recentHostsTable').innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Host</th>
+                        <th>OS</th>
+                        <th>Provider</th>
+                        <th>Last Seen</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${recentHosts.map(h => `
+                        <tr>
+                            <td>${h.host_id}</td>
+                            <td>${h.os.name} ${h.os.version}</td>
+                            <td>${h.cloud_metadata.provider}</td>
+                            <td>${formatTimestamp(h.last_seen)}</td>
+                            <td>${getBadgeForHost(h)}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            `;
+        }
+
+        function renderSecurityTab(hosts) {
+            const totalHosts = hosts.length;
+            const criticalOutdated = hosts.filter(h => h.compliance.patch_status.critical === 'outdated').length;
+            const highOutdated = hosts.filter(h => h.compliance.patch_status.high === 'outdated').length;
+            const cisLevel1Fail = hosts.filter(h => h.compliance.cis_benchmark.level_1 === 'fail').length;
+            const cisLevel2Fail = hosts.filter(h => h.compliance.cis_benchmark.level_2 === 'fail').length;
+
+            document.getElementById('securityStats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-label">Critical Patches Needed</div>
+                    <div class="stat-value danger">${criticalOutdated}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">High Priority Patches</div>
+                    <div class="stat-value warning">${highOutdated}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">CIS Level 1 Failures</div>
+                    <div class="stat-value danger">${cisLevel1Fail}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">CIS Level 2 Failures</div>
+                    <div class="stat-value warning">${cisLevel2Fail}</div>
+                </div>
+            `;
+
+            // CIS Benchmark chart
+            const cisData = {
+                'Level 1 Pass': hosts.filter(h => h.compliance.cis_benchmark.level_1 === 'pass').length,
+                'Level 1 Partial': hosts.filter(h => h.compliance.cis_benchmark.level_1 === 'partial').length,
+                'Level 1 Fail': cisLevel1Fail,
+                'Level 2 Pass': hosts.filter(h => h.compliance.cis_benchmark.level_2 === 'pass').length,
+                'Level 2 Partial': hosts.filter(h => h.compliance.cis_benchmark.level_2 === 'partial').length,
+                'Level 2 Fail': cisLevel2Fail
+            };
+
+            renderBarChart('cisChart', Object.entries(cisData).map(([label, value]) => ({
+                label,
+                value,
+                class: label.includes('Fail') ? 'danger' : label.includes('Partial') ? 'warning' : 'success'
+            })));
+
+            // Patch status chart
+            const patchData = {
+                'Critical Compliant': hosts.filter(h => h.compliance.patch_status.critical === 'compliant').length,
+                'Critical Outdated': criticalOutdated,
+                'High Compliant': hosts.filter(h => h.compliance.patch_status.high === 'compliant').length,
+                'High Outdated': highOutdated
+            };
+
+            renderBarChart('patchChart', Object.entries(patchData).map(([label, value]) => ({
+                label,
+                value,
+                class: label.includes('Outdated') ? 'danger' : 'success'
+            })));
+
+            // Compliance issues table
+            const issueHosts = hosts.filter(h => 
+                h.compliance.cis_benchmark.level_1 === 'fail' || 
+                h.compliance.patch_status.critical === 'outdated'
+            ).slice(0, 15);
+
+            document.getElementById('complianceTable').innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Host</th>
+                        <th>OS</th>
+                        <th>CIS L1</th>
+                        <th>CIS L2</th>
+                        <th>Critical Patches</th>
+                        <th>High Patches</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${issueHosts.map(h => `
+                        <tr>
+                            <td>${h.host_id}</td>
+                            <td>${h.os.name}</td>
+                            <td><span class="badge badge-${h.compliance.cis_benchmark.level_1 === 'pass' ? 'success' : 'danger'}">${h.compliance.cis_benchmark.level_1}</span></td>
+                            <td><span class="badge badge-${h.compliance.cis_benchmark.level_2 === 'pass' ? 'success' : 'danger'}">${h.compliance.cis_benchmark.level_2}</span></td>
+                            <td><span class="badge badge-${h.compliance.patch_status.critical === 'compliant' ? 'success' : 'danger'}">${h.compliance.patch_status.critical}</span></td>
+                            <td><span class="badge badge-${h.compliance.patch_status.high === 'compliant' ? 'success' : 'warning'}">${h.compliance.patch_status.high}</span></td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            `;
+        }
+
+        function renderInfrastructureTab(hosts) {
+            const providers = {};
+            hosts.forEach(h => {
+                const p = h.cloud_metadata.provider;
+                providers[p] = (providers[p] || 0) + 1;
+            });
+
+            const virts = {};
+            hosts.forEach(h => {
+                const v = h.hardware.virtualization;
+                virts[v] = (virts[v] || 0) + 1;
+            });
+
+            const envs = {};
+            hosts.forEach(h => {
+                const env = h.cloud_metadata.tags.Environment;
+                envs[env] = (envs[env] || 0) + 1;
+            });
+
+            document.getElementById('infraStats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-label">On-Premise</div>
+                    <div class="stat-value">${providers['OnPrem'] || 0}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">AWS</div>
+                    <div class="stat-value">${providers['AWS'] || 0}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Azure</div>
+                    <div class="stat-value">${providers['Azure'] || 0}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">GCP</div>
+                    <div class="stat-value">${providers['GCP'] || 0}</div>
+                </div>
+            `;
+
+            renderBarChart('cloudChart', Object.entries(providers).map(([label, value]) => ({ label, value })));
+            renderBarChart('virtChart', Object.entries(virts).map(([label, value]) => ({ label, value })));
+
+            document.getElementById('infraTable').innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Host</th>
+                        <th>Environment</th>
+                        <th>Provider</th>
+                        <th>Virtualization</th>
+                        <th>CPU Cores</th>
+                        <th>Memory</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${hosts.map(h => `
+                        <tr>
+                            <td>${h.host_id}</td>
+                            <td><span class="badge badge-info">${h.cloud_metadata.tags.Environment}</span></td>
+                            <td>${h.cloud_metadata.provider}</td>
+                            <td>${h.hardware.virtualization}</td>
+                            <td>${h.hardware.cpu_cores}</td>
+                            <td>${h.hardware.memory_gb} GB</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            `;
+        }
+
+        function renderNetworkTab(devices) {
+            const vendors = {};
+            devices.forEach(d => {
+                vendors[d.vendor] = (vendors[d.vendor] || 0) + 1;
+            });
+
+            const firmware = {};
+            devices.forEach(d => {
+                firmware[d.firmware_status] = (firmware[d.firmware_status] || 0) + 1;
+            });
+
+            const outdated = devices.filter(d => d.firmware_status !== 'up_to_date').length;
+            const unsupported = devices.filter(d => d.firmware_status === 'unsupported').length;
+
+            document.getElementById('networkStats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-label">Total Devices</div>
+                    <div class="stat-value">${devices.length}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Outdated Firmware</div>
+                    <div class="stat-value warning">${outdated}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Unsupported</div>
+                    <div class="stat-value danger">${unsupported}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Up to Date</div>
+                    <div class="stat-value success">${devices.length - outdated}</div>
+                </div>
+            `;
+
+            renderBarChart('vendorChart', Object.entries(vendors).map(([label, value]) => ({ label, value })));
+            renderBarChart('firmwareChart', Object.entries(firmware).map(([label, value]) => ({
+                label,
+                value,
+                class: label === 'up_to_date' ? 'success' : label === 'unsupported' ? 'danger' : 'warning'
+            })));
+
+            document.getElementById('networkTable').innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Device</th>
+                        <th>Vendor</th>
+                        <th>OS</th>
+                        <th>Version</th>
+                        <th>Model</th>
+                        <th>Firmware Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${devices.map(d => `
+                        <tr>
+                            <td>${d.hostname}</td>
+                            <td>${d.vendor}</td>
+                            <td>${d.os}</td>
+                            <td>${d.os_version}</td>
+                            <td>${d.model}</td>
+                            <td><span class="badge badge-${d.firmware_status === 'up_to_date' ? 'success' : d.firmware_status === 'unsupported' ? 'danger' : 'warning'}">${d.firmware_status}</span></td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            `;
+        }
+
+        function renderAgentsTab(hosts) {
+            const agents = ['crowdstrike', 'qualys', 'splunk_universal_forwarder', 'osquery', 'custom_compliance_agent'];
+            const agentStats = {};
+
+            agents.forEach(agent => {
+                agentStats[agent] = {
+                    healthy: 0,
+                    running: 0,
+                    stopped: 0,
+                    drift_detected: 0
+                };
+
+                hosts.forEach(h => {
+                    const status = h.security_agents[agent]?.status;
+                    if (status && agentStats[agent][status] !== undefined) {
+                        agentStats[agent][status]++;
+                    }
+                });
+            });
+
+            const totalIssues = hosts.reduce((sum, h) => {
+                return sum + agents.filter(a => {
+                    const status = h.security_agents[a]?.status;
+                    return status === 'stopped' || status === 'drift_detected';
+                }).length;
+            }, 0);
+
+            document.getElementById('agentStats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-label">Total Agent Issues</div>
+                    <div class="stat-value danger">${totalIssues}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Agents Stopped</div>
+                    <div class="stat-value danger">${Object.values(agentStats).reduce((s, a) => s + a.stopped, 0)}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Drift Detected</div>
+                    <div class="stat-value warning">${Object.values(agentStats).reduce((s, a) => s + a.drift_detected, 0)}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Healthy Agents</div>
+                    <div class="stat-value success">${Object.values(agentStats).reduce((s, a) => s + a.healthy, 0)}</div>
+                </div>
+            `;
+
+            // Agent status chart
+            const agentChartData = [];
+            Object.entries(agentStats).forEach(([agent, stats]) => {
+                agentChartData.push({
+                    label: agent.replace(/_/g, ' ').toUpperCase(),
+                    value: stats.healthy + stats.running,
+                    class: stats.stopped > 5 || stats.drift_detected > 5 ? 'danger' : stats.stopped > 0 || stats.drift_detected > 0 ? 'warning' : 'success'
+                });
+            });
+
+            renderBarChart('agentStatusChart', agentChartData);
+
+            // Hosts with issues
+            const issueHosts = hosts.filter(h => {
+                return agents.some(a => {
+                    const status = h.security_agents[a]?.status;
+                    return status === 'stopped' || status === 'drift_detected';
+                });
+            }).slice(0, 15);
+
+            document.getElementById('agentTable').innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Host</th>
+                        <th>CrowdStrike</th>
+                        <th>Qualys</th>
+                        <th>Splunk</th>
+                        <th>Osquery</th>
+                        <th>Compliance Agent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${issueHosts.map(h => `
+                        <tr>
+                            <td>${h.host_id}</td>
+                            <td><span class="badge badge-${getAgentBadgeClass(h.security_agents.crowdstrike.status)}">${h.security_agents.crowdstrike.status}</span></td>
+                            <td><span class="badge badge-${getAgentBadgeClass(h.security_agents.qualys.status)}">${h.security_agents.qualys.status}</span></td>
+                            <td><span class="badge badge-${getAgentBadgeClass(h.security_agents.splunk_universal_forwarder.status)}">${h.security_agents.splunk_universal_forwarder.status}</span></td>
+                            <td><span class="badge badge-${getAgentBadgeClass(h.security_agents.osquery.status)}">${h.security_agents.osquery.status}</span></td>
+                            <td><span class="badge badge-${getAgentBadgeClass(h.security_agents.custom_compliance_agent.status)}">${h.security_agents.custom_compliance_agent.status}</span></td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            `;
+        }
+
+        function renderBarChart(containerId, data) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            
+            const maxValue = Math.max(...data.map(d => d.value));
+            
+            data.forEach(item => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'bar-wrapper';
+                
+                const bar = document.createElement('div');
+                bar.className = `bar ${item.class || ''}`;
+                const height = (item.value / maxValue) * 80;
+                bar.style.height = `${height}%`;
+                
+                const value = document.createElement('div');
+                value.className = 'bar-value';
+                value.textContent = item.value;
+                
+                const label = document.createElement('div');
+                label.className = 'bar-label';
+                label.textContent = item.label;
+                
+                bar.appendChild(value);
+                wrapper.appendChild(bar);
+                wrapper.appendChild(label);
+                container.appendChild(wrapper);
+            });
+        }
+
+        function renderPieChart(chartId, legendId, data) {
+            const total = data.reduce((sum, d) => sum + d.count, 0);
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('width', '200');
+            svg.setAttribute('height', '200');
+            svg.setAttribute('viewBox', '0 0 200 200');
+            
+            let currentAngle = 0;
+            const centerX = 100;
+            const centerY = 100;
+            const radius = 80;
+            
+            data.forEach(item => {
+                const percentage = item.count / total;
+                const angle = percentage * 360;
+                
+                const startAngle = (currentAngle - 90) * Math.PI / 180;
+                const endAngle = (currentAngle + angle - 90) * Math.PI / 180;
+                
+                const x1 = centerX + radius * Math.cos(startAngle);
+                const y1 = centerY + radius * Math.sin(startAngle);
+                const x2 = centerX + radius * Math.cos(endAngle);
+                const y2 = centerY + radius * Math.sin(endAngle);
+                
+                const largeArc = angle > 180 ? 1 : 0;
+                
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                const pathData = `M ${centerX} ${centerY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2} Z`;
+                path.setAttribute('d', pathData);
+                path.setAttribute('fill', item.color);
+                path.setAttribute('stroke', '#1a1d23');
+                path.setAttribute('stroke-width', '2');
+                
+                svg.appendChild(path);
+                currentAngle += angle;
+            });
+            
+            document.getElementById(chartId).appendChild(svg);
+            
+            // Legend
+            const legend = document.getElementById(legendId);
+            legend.innerHTML = data.map(item => `
+                <div class="legend-item">
+                    <div class="legend-color" style="background: ${item.color}"></div>
+                    <span class="legend-text">${item.name}: ${item.count} (${((item.count/total)*100).toFixed(1)}%)</span>
+                </div>
+            `).join('');
+        }
+
+        function getProviderColor(provider) {
+            const colors = {
+                'OnPrem': '#5794f2',
+                'AWS': '#ff9830',
+                'Azure': '#73bf69',
+                'GCP': '#b877d9'
+            };
+            return colors[provider] || '#8e9196';
+        }
+
+        function getBadgeForHost(host) {
+            const critical = host.compliance.patch_status.critical === 'outdated';
+            const cisFail = host.compliance.cis_benchmark.level_1 === 'fail';
+            
+            if (critical || cisFail) {
+                return '<span class="badge badge-danger">Critical</span>';
+            } else if (host.compliance.patch_status.high === 'outdated') {
+                return '<span class="badge badge-warning">Warning</span>';
+            } else {
+                return '<span class="badge badge-success">Healthy</span>';
+            }
+        }
+
+        function getAgentBadgeClass(status) {
+            if (status === 'stopped') return 'danger';
+            if (status === 'drift_detected') return 'warning';
+            if (status === 'healthy') return 'success';
+            return 'info';
+        }
+
+        function formatTimestamp(ts) {
+            const date = new Date(ts);
+            const now = new Date();
+            const diff = Math.floor((now - date) / 1000 / 60);
+            
+            if (diff < 1) return 'Just now';
+            if (diff < 60) return `${diff} min ago`;
+            if (diff < 1440) return `${Math.floor(diff / 60)} hr ago`;
+            return `${Math.floor(diff / 1440)} days ago`;
+        }
+
+        // If JSON files aren't available, use inline data
+        setTimeout(() => {
+            if (!window.dashboardInitialized) {
+                console.log('Loading inline data...');
+                // Initialize with empty data to show the structure
+                initDashboard([], []);
+            }
+        }, 1000);
+        
+        window.dashboardInitialized = false;
+    </script>
+</body>
+</html>
