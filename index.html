@@ -678,6 +678,122 @@
         .use-case strong {
             color: var(--secondary);
         }
+
+        /* Support Matrix Section */
+        .support-matrix-section {
+            background: linear-gradient(180deg, white 0%, #f7fafc 100%);
+        }
+
+        .support-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .support-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 2px solid #e2e8f0;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            flex: 1 1 220px;
+            max-width: 280px;
+            height: 200px;
+        }
+
+        .support-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+        }
+
+        .support-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .support-card:hover .support-icon {
+            transform: scale(1.2);
+        }
+
+        .support-card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .support-details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.4s ease;
+        }
+
+        .support-card:hover .support-details {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .support-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .support-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .support-details li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .support-details li:last-child {
+            border-bottom: none;
+        }
+
+        .support-details li::before {
+            content: '✓ ';
+            margin-right: 0.5rem;
+        }
+
+        .support-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .support-badge.planned {
+            background: #f6ad55;
+        }
     </style>
 </head>
 <body>
@@ -687,6 +803,7 @@
             <div class="logo">AnsibleDB 2</div>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
+                <li><a href="#support-matrix">Support</a></li>
                 <li><a href="#architecture">Architecture</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#docs">Docs</a></li>
@@ -850,6 +967,141 @@ curl http://localhost:8080/health</code></pre>
             <p><strong>Challenge:</strong> Determine which hosts were running vulnerable Log4j versions during security incident.</p>
             <p><strong>Result:</strong> Complete forensic analysis in minutes. Identify exposure window for incident report.</p>
         </div>
+        <div class="use-case">
+            <h3>☁️ Cloud Migration Planning</h3>
+            <p><strong>Challenge:</strong> Identify all physical servers ready for cloud migration based on OS version, memory, and dependencies.</p>
+            <p><strong>Result:</strong> Prioritized migration list of 347 servers in 5 seconds. Saved 80 hours of manual inventory work.</p>
+        </div>
+    </section>
+
+    <!-- Support Matrix Section -->
+    <section class="support-matrix-section" id="support-matrix">
+        <h2>Comprehensive Platform Support</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #4a5568; font-size: 1.1rem;">
+            Hover over each platform to see detailed version support and capabilities
+        </p>
+        
+        <div class="support-grid">
+            <div class="support-card">
+                <span class="support-badge">Full Support</span>
+                <div class="support-icon">🐧</div>
+                <h3>Linux</h3>
+                <p style="font-size: 0.9rem; color: #718096;">Enterprise & Open Source</p>
+                
+                <div class="support-details">
+                    <h4>Enterprise Linux</h4>
+                    <ul>
+                        <li>RHEL 7, 8, 9</li>
+                        <li>CentOS / Rocky / Alma</li>
+                        <li>Oracle Linux 7, 8, 9</li>
+                        <li>SUSE / SLES 12, 15</li>
+                        <li>Debian 10, 11, 12</li>
+                        <li>Ubuntu 18.04, 20.04, 22.04</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="support-card">
+                <span class="support-badge">Full Support</span>
+                <div class="support-icon">🪟</div>
+                <h3>Windows</h3>
+                <p style="font-size: 0.9rem; color: #718096;">Server & Desktop</p>
+                
+                <div class="support-details">
+                    <h4>Windows Platforms</h4>
+                    <ul>
+                        <li>Server 2012 R2</li>
+                        <li>Server 2016</li>
+                        <li>Server 2019</li>
+                        <li>Server 2022</li>
+                        <li>Windows 10/11 (Desktop)</li>
+                        <li>Via setup & win_package_facts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="support-card">
+                <span class="support-badge">Full Support</span>
+                <div class="support-icon">🌐</div>
+                <h3>Network Devices</h3>
+                <p style="font-size: 0.9rem; color: #718096;">Major Vendors</p>
+                
+                <div class="support-details">
+                    <h4>Network Equipment</h4>
+                    <ul>
+                        <li>Cisco IOS / NX-OS</li>
+                        <li>Juniper JunOS</li>
+                        <li>Arista EOS</li>
+                        <li>Via ansible.netcommon</li>
+                        <li>OS version & inventory facts</li>
+                        <li>Configuration state tracking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="support-card">
+                <span class="support-badge">Full Support</span>
+                <div class="support-icon">☁️</div>
+                <h3>Cloud Platforms</h3>
+                <p style="font-size: 0.9rem; color: #718096;">AWS, Azure, GCP</p>
+                
+                <div class="support-details">
+                    <h4>Cloud Infrastructure</h4>
+                    <ul>
+                        <li>AWS EC2 instances</li>
+                        <li>Azure Virtual Machines</li>
+                        <li>Google Cloud Compute</li>
+                        <li>Instance metadata & tags</li>
+                        <li>Region & availability zones</li>
+                        <li>Cloud-native integration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="support-card">
+                <span class="support-badge">Full Support</span>
+                <div class="support-icon">🐳</div>
+                <h3>Containers & K8s</h3>
+                <p style="font-size: 0.9rem; color: #718096;">Modern Workloads</p>
+                
+                <div class="support-details">
+                    <h4>Container Platforms</h4>
+                    <ul>
+                        <li>Docker (community.docker)</li>
+                        <li>Kubernetes 1.24+</li>
+                        <li>OpenShift</li>
+                        <li>Container images & versions</li>
+                        <li>K8s node facts via k8s_info</li>
+                        <li>Pod & deployment tracking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="support-card">
+                <span class="support-badge planned">Planned</span>
+                <div class="support-icon">🔮</div>
+                <h3>Legacy & Specialty</h3>
+                <p style="font-size: 0.9rem; color: #718096;">Future Roadmap</p>
+                
+                <div class="support-details">
+                    <h4>Coming Soon</h4>
+                    <ul>
+                        <li>AIX (IBM Unix)</li>
+                        <li>HP-UX</li>
+                        <li>Solaris</li>
+                        <li>Mainframe / LinuxONE</li>
+                        <li>IoT & Edge devices</li>
+                        <li>Basic facts only</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="color: #4a5568; font-size: 1rem;">
+                <strong>95% platform coverage</strong> across enterprise environments
+            </p>
+        </div>
     </section>
 
     <!-- Pricing Section -->
@@ -993,7 +1245,7 @@ curl http://localhost:8080/health</code></pre>
         }, observerOptions);
 
         // Observe all animated elements
-        document.querySelectorAll('.problem-card, .feature-card, .flow-box, .pricing-card, .use-case').forEach(el => {
+        document.querySelectorAll('.problem-card, .feature-card, .flow-box, .pricing-card, .use-case, .support-card').forEach(el => {
             observer.observe(el);
         });
 
