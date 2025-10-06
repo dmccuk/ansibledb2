@@ -1,0 +1,7598 @@
+[
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-001",
+      "collected_at": "2025-10-06T19:34:32.634811Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-01",
+      "play_uuid": "uuid-001"
+    },
+    "identity": {
+      "host_id": "node-001.corp.example.com",
+      "hostname": "node-001",
+      "fqdn": "node-001.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Rocky Linux",
+      "version": "8.9",
+      "kernel": "5.14.0-362.el9.x86_64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 16,
+      "memory_mb": 8192,
+      "disk_total_gb": 200
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.1.25",
+        "gateway": "10.0.1.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Dublin",
+      "country": "Ireland",
+      "latitude": 53.3498,
+      "longitude": -6.2603
+    },
+    "datacenter": {
+      "datacenter": "DUB1",
+      "city": "Dublin",
+      "country": "Ireland"
+    },
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "web",
+      "tier": "data",
+      "app": "Payments",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 1145,
+        "updates_available": 40,
+        "security_updates": 0
+      },
+      "critical": {
+        "openssl": "3.0.14-2",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.4.296",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "3.17.120",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "9.5.105",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "6.3.560",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "1.19.210",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "9.13.795",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 84,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 2,
+        "medium": 9,
+        "low": 7
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 73
+    },
+    "last_seen": "2025-10-06T19:34:32.634811Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-002",
+      "collected_at": "2025-10-06T19:29:32.634912Z",
+      "ansible_version": "2.17.3",
+      "controller": "controller-02",
+      "play_uuid": "uuid-002"
+    },
+    "identity": {
+      "host_id": "node-002.corp.example.com",
+      "hostname": "node-002",
+      "fqdn": "node-002.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "SUSE Linux Enterprise",
+      "version": "15 SP4",
+      "kernel": "5.14.0-362.el9.x86_64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "hyperv",
+      "cpu_cores": 8,
+      "memory_mb": 32768,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.2.150",
+        "gateway": "10.0.2.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "eu-west-1",
+      "availability_zone": "eu-west-1a"
+    },
+    "location": {
+      "city": "Dublin",
+      "country": "Ireland",
+      "latitude": 53.3498,
+      "longitude": -6.2603
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "web",
+      "tier": "frontend",
+      "app": "Messaging",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 1180,
+        "updates_available": 4,
+        "security_updates": 0
+      },
+      "critical": {
+        "openssl": "3.0.14-2",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "6.0.963",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "6.5.625",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "8.1.223",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "3.7.407",
+        "status": "drift_detected"
+      },
+      "falco": {
+        "version": "8.2.170",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "7.17.284",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 96,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 6,
+        "medium": 9,
+        "low": 9
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 29
+    },
+    "last_seen": "2025-10-06T19:29:32.634912Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-003",
+      "collected_at": "2025-10-06T19:57:32.634985Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-02",
+      "play_uuid": "uuid-003"
+    },
+    "identity": {
+      "host_id": "node-003.corp.example.com",
+      "hostname": "node-003",
+      "fqdn": "node-003.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Red Hat Enterprise Linux",
+      "version": "9.2",
+      "kernel": "5.14.21-150500.53-default",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "permissive"
+      }
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 2,
+      "memory_mb": 65536,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.3.103",
+        "gateway": "10.0.3.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "Azure",
+      "region": "eastus",
+      "availability_zone": "eastus-1"
+    },
+    "location": {
+      "city": "Virginia",
+      "country": "USA",
+      "latitude": 37.4316,
+      "longitude": -78.6569
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "cache",
+      "tier": "frontend",
+      "app": "Search",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 563,
+        "updates_available": 12,
+        "security_updates": 1
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.10.14"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "2.0.580",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "9.3.971",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "1.2.895",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "7.4.649",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "6.19.372",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "2.3.869",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 84,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 2,
+        "medium": 5,
+        "low": 28
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 43
+    },
+    "last_seen": "2025-10-06T19:57:32.634985Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-004",
+      "collected_at": "2025-10-06T18:54:32.635048Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-01",
+      "play_uuid": "uuid-004"
+    },
+    "identity": {
+      "host_id": "node-004.corp.example.com",
+      "hostname": "node-004",
+      "fqdn": "node-004.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Ubuntu",
+      "version": "18.04",
+      "kernel": "4.18.0-513.el8.x86_64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "hyperv",
+      "cpu_cores": 8,
+      "memory_mb": 16384,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.4.199",
+        "gateway": "10.0.4.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "latitude": 1.3521,
+      "longitude": 103.8198
+    },
+    "datacenter": {
+      "datacenter": "SGP1",
+      "city": "Singapore",
+      "country": "Singapore"
+    },
+    "inventory_vars": {
+      "environment": "dev",
+      "role": "queue",
+      "tier": "data",
+      "app": "Billing",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 1127,
+        "updates_available": 12,
+        "security_updates": 3
+      },
+      "critical": {
+        "openssl": "3.0.12-1",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "1.0.809",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "8.8.198",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "8.11.977",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "2.7.104",
+        "status": "running"
+      },
+      "falco": {
+        "version": "8.6.345",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "8.19.921",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 85,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 3,
+        "medium": 17,
+        "low": 10
+      }
+    },
+    "derived": {
+      "stale": true,
+      "internet_facing": true,
+      "risk_score": 52
+    },
+    "last_seen": "2025-10-06T18:54:32.635048Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-005",
+      "collected_at": "2025-10-06T20:34:32.635104Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-01",
+      "play_uuid": "uuid-005"
+    },
+    "identity": {
+      "host_id": "node-005.corp.example.com",
+      "hostname": "node-005",
+      "fqdn": "node-005.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "server"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Rocky Linux",
+      "version": "9.2",
+      "kernel": "5.15.0-88-generic",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 4,
+      "memory_mb": 65536,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.5.41",
+        "gateway": "10.0.5.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Dublin",
+      "country": "Ireland",
+      "latitude": 53.3498,
+      "longitude": -6.2603
+    },
+    "datacenter": {
+      "datacenter": "DUB1",
+      "city": "Dublin",
+      "country": "Ireland"
+    },
+    "inventory_vars": {
+      "environment": "dev",
+      "role": "web",
+      "tier": "frontend",
+      "app": "Payments",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 944,
+        "updates_available": 12,
+        "security_updates": 3
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.10.14"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "5.17.429",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "1.11.919",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "9.13.846",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "9.4.536",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "8.5.623",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "3.5.144",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 89,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 8,
+        "medium": 18,
+        "low": 22
+      }
+    },
+    "derived": {
+      "stale": true,
+      "internet_facing": false,
+      "risk_score": 81
+    },
+    "last_seen": "2025-10-06T20:34:32.635104Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-006",
+      "collected_at": "2025-10-06T20:42:32.635163Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-01",
+      "play_uuid": "uuid-006"
+    },
+    "identity": {
+      "host_id": "node-006.corp.example.com",
+      "hostname": "node-006",
+      "fqdn": "node-006.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2019",
+      "kernel": "10.0.17763",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 8,
+      "memory_mb": 16384,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.6.117",
+        "gateway": "10.0.6.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "ap-southeast-1",
+      "availability_zone": "ap-southeast-1b"
+    },
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "latitude": 1.3521,
+      "longitude": 103.8198
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "queue",
+      "tier": "frontend",
+      "app": "Messaging",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 164,
+        "updates_available": 4,
+        "security_updates": 3
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "4.13.74",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "5.3.918",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "6.4.259",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "8.7.764",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "7.15.166",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "3.13.527",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 80,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 1,
+        "medium": 13,
+        "low": 5
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 68
+    },
+    "last_seen": "2025-10-06T20:42:32.635163Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-007",
+      "collected_at": "2025-10-06T19:04:32.635305Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-01",
+      "play_uuid": "uuid-007"
+    },
+    "identity": {
+      "host_id": "node-007.corp.example.com",
+      "hostname": "node-007",
+      "fqdn": "node-007.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "server"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Rocky Linux",
+      "version": "9.2",
+      "kernel": "6.1.0-12-amd64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "hyperv",
+      "cpu_cores": 8,
+      "memory_mb": 8192,
+      "disk_total_gb": 200
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.7.71",
+        "gateway": "10.0.7.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "latitude": 1.3521,
+      "longitude": 103.8198
+    },
+    "datacenter": {
+      "datacenter": "SGP1",
+      "city": "Singapore",
+      "country": "Singapore"
+    },
+    "inventory_vars": {
+      "environment": "dev",
+      "role": "cache",
+      "tier": "data",
+      "app": "Messaging",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 652,
+        "updates_available": 34,
+        "security_updates": 8
+      },
+      "critical": {
+        "openssl": "3.0.14-2",
+        "python3": "3.10.14"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "3.13.916",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "5.0.649",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "5.2.622",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "2.8.883",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "8.0.347",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "5.19.132",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 86,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 0,
+        "medium": 7,
+        "low": 11
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 49
+    },
+    "last_seen": "2025-10-06T19:04:32.635305Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-008",
+      "collected_at": "2025-10-06T18:41:32.635369Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-02",
+      "play_uuid": "uuid-008"
+    },
+    "identity": {
+      "host_id": "node-008.corp.example.com",
+      "hostname": "node-008",
+      "fqdn": "node-008.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "SUSE Linux Enterprise",
+      "version": "15 SP5",
+      "kernel": "6.1.0-12-amd64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "kvm",
+      "cpu_cores": 4,
+      "memory_mb": 65536,
+      "disk_total_gb": 200
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.8.241",
+        "gateway": "10.0.8.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Madrid",
+      "country": "Spain",
+      "latitude": 40.4168,
+      "longitude": -3.7038
+    },
+    "datacenter": {
+      "datacenter": "MAD1",
+      "city": "Madrid",
+      "country": "Spain"
+    },
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "web",
+      "tier": "data",
+      "app": "Inventory",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 1059,
+        "updates_available": 25,
+        "security_updates": 8
+      },
+      "critical": {
+        "openssl": "3.0.12-1",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "3.12.355",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "3.0.72",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "7.5.56",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "7.16.686",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "4.9.46",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "3.5.275",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 70,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 5,
+        "medium": 9,
+        "low": 6
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 55
+    },
+    "last_seen": "2025-10-06T18:41:32.635369Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-009",
+      "collected_at": "2025-10-06T20:10:32.635435Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-01",
+      "play_uuid": "uuid-009"
+    },
+    "identity": {
+      "host_id": "node-009.corp.example.com",
+      "hostname": "node-009",
+      "fqdn": "node-009.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2022",
+      "kernel": "10.0.20348",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "kvm",
+      "cpu_cores": 2,
+      "memory_mb": 32768,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.9.38",
+        "gateway": "10.0.9.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "Azure",
+      "region": "japaneast",
+      "availability_zone": "japaneast-3"
+    },
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan",
+      "latitude": 35.6895,
+      "longitude": 139.6917
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "queue",
+      "tier": "frontend",
+      "app": "Inventory",
+      "patch_group": "pg-prod-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 126,
+        "updates_available": 9,
+        "security_updates": 5
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "stopped",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "8.4.290",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "1.16.642",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "9.4.931",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "4.2.31",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "3.20.369",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "7.14.571",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 90,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 0,
+        "medium": 16,
+        "low": 30
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 74
+    },
+    "last_seen": "2025-10-06T20:10:32.635435Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-010",
+      "collected_at": "2025-10-06T18:39:32.635492Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-02",
+      "play_uuid": "uuid-010"
+    },
+    "identity": {
+      "host_id": "node-010.corp.example.com",
+      "hostname": "node-010",
+      "fqdn": "node-010.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2012 R2",
+      "kernel": "6.3.9600",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 4,
+      "memory_mb": 16384,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.10.128",
+        "gateway": "10.0.10.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "San Francisco",
+      "country": "USA",
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    },
+    "datacenter": {
+      "datacenter": "SFO1",
+      "city": "San Francisco",
+      "country": "USA"
+    },
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "web",
+      "tier": "backend",
+      "app": "Messaging",
+      "patch_group": "pg-prod-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 100,
+        "updates_available": 2,
+        "security_updates": 4
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "1.15.62",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "5.3.708",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "8.9.725",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "8.14.477",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "9.6.319",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "8.0.296",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 72,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 3,
+        "medium": 4,
+        "low": 23
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 77
+    },
+    "last_seen": "2025-10-06T18:39:32.635492Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-011",
+      "collected_at": "2025-10-06T19:49:32.635542Z",
+      "ansible_version": "2.17.3",
+      "controller": "controller-02",
+      "play_uuid": "uuid-011"
+    },
+    "identity": {
+      "host_id": "node-011.corp.example.com",
+      "hostname": "node-011",
+      "fqdn": "node-011.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Ubuntu",
+      "version": "22.04",
+      "kernel": "5.14.0-362.el9.x86_64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "kvm",
+      "cpu_cores": 16,
+      "memory_mb": 65536,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.11.79",
+        "gateway": "10.0.11.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "latitude": 52.3676,
+      "longitude": 4.9041
+    },
+    "datacenter": {
+      "datacenter": "AMS1",
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "inventory_vars": {
+      "environment": "dev",
+      "role": "cache",
+      "tier": "backend",
+      "app": "Inventory",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 623,
+        "updates_available": 21,
+        "security_updates": 0
+      },
+      "critical": {
+        "openssl": "3.0.12-1",
+        "python3": "3.10.14"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "5.8.381",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "7.12.890",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "6.13.773",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "1.8.104",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "5.20.958",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "4.8.446",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 76,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 6,
+        "medium": 19,
+        "low": 22
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 20
+    },
+    "last_seen": "2025-10-06T19:49:32.635542Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-012",
+      "collected_at": "2025-10-06T20:44:32.635622Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-01",
+      "play_uuid": "uuid-012"
+    },
+    "identity": {
+      "host_id": "node-012.corp.example.com",
+      "hostname": "node-012",
+      "fqdn": "node-012.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Rocky Linux",
+      "version": "9.2",
+      "kernel": "6.1.0-12-amd64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "permissive"
+      }
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 8,
+      "memory_mb": 32768,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.12.67",
+        "gateway": "10.0.12.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Madrid",
+      "country": "Spain",
+      "latitude": 40.4168,
+      "longitude": -3.7038
+    },
+    "datacenter": {
+      "datacenter": "MAD1",
+      "city": "Madrid",
+      "country": "Spain"
+    },
+    "inventory_vars": {
+      "environment": "test",
+      "role": "cache",
+      "tier": "data",
+      "app": "Analytics",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 994,
+        "updates_available": 35,
+        "security_updates": 6
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.9.19"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.7.463",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "8.13.142",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "4.2.178",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "9.2.326",
+        "status": "running"
+      },
+      "falco": {
+        "version": "6.8.828",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "1.13.392",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 93,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 0,
+        "medium": 17,
+        "low": 13
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 74
+    },
+    "last_seen": "2025-10-06T20:44:32.635622Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-013",
+      "collected_at": "2025-10-06T18:41:32.635697Z",
+      "ansible_version": "2.17.3",
+      "controller": "controller-02",
+      "play_uuid": "uuid-013"
+    },
+    "identity": {
+      "host_id": "node-013.corp.example.com",
+      "hostname": "node-013",
+      "fqdn": "node-013.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Debian",
+      "version": "11",
+      "kernel": "6.2.0-39-generic",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 2,
+      "memory_mb": 65536,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.13.249",
+        "gateway": "10.0.13.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Dallas",
+      "country": "USA",
+      "latitude": 32.7767,
+      "longitude": -96.797
+    },
+    "datacenter": {
+      "datacenter": "DAL1",
+      "city": "Dallas",
+      "country": "USA"
+    },
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "web",
+      "tier": "frontend",
+      "app": "Inventory",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 959,
+        "updates_available": 15,
+        "security_updates": 1
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.9.19"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.1.1",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "4.18.941",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "5.4.641",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "9.20.447",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "2.2.307",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "7.8.228",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 70,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 3,
+        "medium": 17,
+        "low": 21
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 41
+    },
+    "last_seen": "2025-10-06T18:41:32.635697Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-014",
+      "collected_at": "2025-10-06T20:49:32.635749Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-01",
+      "play_uuid": "uuid-014"
+    },
+    "identity": {
+      "host_id": "node-014.corp.example.com",
+      "hostname": "node-014",
+      "fqdn": "node-014.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "SUSE Linux Enterprise",
+      "version": "15 SP4",
+      "kernel": "5.14.0-362.el9.x86_64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "permissive"
+      }
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 16,
+      "memory_mb": 8192,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.14.185",
+        "gateway": "10.0.14.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "GCP",
+      "region": "australia-southeast1",
+      "availability_zone": "australia-southeast1-a"
+    },
+    "location": {
+      "city": "Sydney",
+      "country": "Australia",
+      "latitude": -33.8688,
+      "longitude": 151.2093
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "db",
+      "tier": "data",
+      "app": "Inventory",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 506,
+        "updates_available": 18,
+        "security_updates": 8
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.9.19"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "4.14.226",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "5.3.974",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "3.7.496",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "1.19.149",
+        "status": "drift_detected"
+      },
+      "falco": {
+        "version": "1.6.24",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "7.1.726",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 75,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 1,
+        "medium": 4,
+        "low": 10
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 33
+    },
+    "last_seen": "2025-10-06T20:49:32.635749Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-015",
+      "collected_at": "2025-10-06T18:09:32.635814Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-02",
+      "play_uuid": "uuid-015"
+    },
+    "identity": {
+      "host_id": "node-015.corp.example.com",
+      "hostname": "node-015",
+      "fqdn": "node-015.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Amazon Linux",
+      "version": "2",
+      "kernel": "6.2.0-39-generic",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "kvm",
+      "cpu_cores": 2,
+      "memory_mb": 32768,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.15.91",
+        "gateway": "10.0.15.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Dallas",
+      "country": "USA",
+      "latitude": 32.7767,
+      "longitude": -96.797
+    },
+    "datacenter": {
+      "datacenter": "DAL1",
+      "city": "Dallas",
+      "country": "USA"
+    },
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "web",
+      "tier": "data",
+      "app": "Analytics",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 865,
+        "updates_available": 19,
+        "security_updates": 6
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.9.19"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "4.10.372",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "1.20.420",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "7.1.384",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "8.2.822",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "5.6.765",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "6.11.278",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 89,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 4,
+        "medium": 2,
+        "low": 28
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 39
+    },
+    "last_seen": "2025-10-06T18:09:32.635814Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-016",
+      "collected_at": "2025-10-06T20:29:32.635872Z",
+      "ansible_version": "2.17.3",
+      "controller": "controller-01",
+      "play_uuid": "uuid-016"
+    },
+    "identity": {
+      "host_id": "node-016.corp.example.com",
+      "hostname": "node-016",
+      "fqdn": "node-016.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Amazon Linux",
+      "version": "2023",
+      "kernel": "5.14.21-150500.53-default",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "permissive"
+      }
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 4,
+      "memory_mb": 32768,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.16.119",
+        "gateway": "10.0.16.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "Azure",
+      "region": "westus2",
+      "availability_zone": "westus2-1"
+    },
+    "location": {
+      "city": "Washington",
+      "country": "USA",
+      "latitude": 47.6062,
+      "longitude": -122.3321
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "test",
+      "role": "queue",
+      "tier": "frontend",
+      "app": "Analytics",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 663,
+        "updates_available": 15,
+        "security_updates": 6
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "7.3.73",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "2.6.98",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "8.14.177",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "3.13.471",
+        "status": "running"
+      },
+      "falco": {
+        "version": "9.3.798",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "5.8.580",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 81,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 3,
+        "medium": 7,
+        "low": 12
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 46
+    },
+    "last_seen": "2025-10-06T20:29:32.635872Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-017",
+      "collected_at": "2025-10-06T18:28:32.635923Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-01",
+      "play_uuid": "uuid-017"
+    },
+    "identity": {
+      "host_id": "node-017.corp.example.com",
+      "hostname": "node-017",
+      "fqdn": "node-017.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2012 R2",
+      "kernel": "6.3.9600",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 2,
+      "memory_mb": 8192,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.17.123",
+        "gateway": "10.0.17.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "ap-southeast-1",
+      "availability_zone": "ap-southeast-1c"
+    },
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "latitude": 1.3521,
+      "longitude": 103.8198
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "dev",
+      "role": "cache",
+      "tier": "backend",
+      "app": "Ecommerce",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 109,
+        "updates_available": 3,
+        "security_updates": 0
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "8.19.266",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "2.20.610",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "4.1.377",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "3.1.208",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "1.19.749",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "1.10.418",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 75,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 7,
+        "medium": 19,
+        "low": 20
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 22
+    },
+    "last_seen": "2025-10-06T18:28:32.635923Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-018",
+      "collected_at": "2025-10-06T19:15:32.635971Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-02",
+      "play_uuid": "uuid-018"
+    },
+    "identity": {
+      "host_id": "node-018.corp.example.com",
+      "hostname": "node-018",
+      "fqdn": "node-018.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Ubuntu",
+      "version": "18.04",
+      "kernel": "5.10.0-25-amd64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "hyperv",
+      "cpu_cores": 8,
+      "memory_mb": 65536,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.18.6",
+        "gateway": "10.0.18.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "GCP",
+      "region": "asia-northeast1",
+      "availability_zone": "asia-northeast1-b"
+    },
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan",
+      "latitude": 35.6895,
+      "longitude": 139.6917
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "test",
+      "role": "app",
+      "tier": "backend",
+      "app": "Inventory",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 506,
+        "updates_available": 27,
+        "security_updates": 2
+      },
+      "critical": {
+        "openssl": "3.0.12-1",
+        "python3": "3.9.19"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "3.4.15",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "9.4.656",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "2.18.637",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "9.5.149",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "5.5.533",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "2.3.392",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 94,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 7,
+        "medium": 12,
+        "low": 6
+      }
+    },
+    "derived": {
+      "stale": true,
+      "internet_facing": false,
+      "risk_score": 89
+    },
+    "last_seen": "2025-10-06T19:15:32.635971Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-019",
+      "collected_at": "2025-10-06T18:00:32.636021Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-01",
+      "play_uuid": "uuid-019"
+    },
+    "identity": {
+      "host_id": "node-019.corp.example.com",
+      "hostname": "node-019",
+      "fqdn": "node-019.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Ubuntu",
+      "version": "20.04",
+      "kernel": "6.1.0-12-amd64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 8,
+      "memory_mb": 8192,
+      "disk_total_gb": 200
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.19.65",
+        "gateway": "10.0.19.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "eu-central-1",
+      "availability_zone": "eu-central-1a"
+    },
+    "location": {
+      "city": "Frankfurt",
+      "country": "Germany",
+      "latitude": 50.1109,
+      "longitude": 8.6821
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "dev",
+      "role": "web",
+      "tier": "data",
+      "app": "Ecommerce",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 620,
+        "updates_available": 24,
+        "security_updates": 7
+      },
+      "critical": {
+        "openssl": "3.0.14-2",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "7.12.674",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "8.16.448",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "1.0.633",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "8.7.457",
+        "status": "drift_detected"
+      },
+      "falco": {
+        "version": "3.15.409",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "2.4.367",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 81,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 2,
+        "medium": 4,
+        "low": 28
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 75
+    },
+    "last_seen": "2025-10-06T18:00:32.636021Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-020",
+      "collected_at": "2025-10-06T20:36:32.636071Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-01",
+      "play_uuid": "uuid-020"
+    },
+    "identity": {
+      "host_id": "node-020.corp.example.com",
+      "hostname": "node-020",
+      "fqdn": "node-020.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "server"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2022",
+      "kernel": "10.0.20348",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 4,
+      "memory_mb": 65536,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.20.246",
+        "gateway": "10.0.20.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Frankfurt",
+      "country": "Germany",
+      "latitude": 50.1109,
+      "longitude": 8.6821
+    },
+    "datacenter": {
+      "datacenter": "FRA1",
+      "city": "Frankfurt",
+      "country": "Germany"
+    },
+    "inventory_vars": {
+      "environment": "dev",
+      "role": "app",
+      "tier": "frontend",
+      "app": "Billing",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 90,
+        "updates_available": 10,
+        "security_updates": 4
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "stopped",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "4.18.269",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "6.11.37",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "3.12.165",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "6.12.172",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "2.16.49",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "8.17.533",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 78,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 5,
+        "medium": 20,
+        "low": 9
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 20
+    },
+    "last_seen": "2025-10-06T20:36:32.636071Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-021",
+      "collected_at": "2025-10-06T19:03:32.636123Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-01",
+      "play_uuid": "uuid-021"
+    },
+    "identity": {
+      "host_id": "node-021.corp.example.com",
+      "hostname": "node-021",
+      "fqdn": "node-021.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2012 R2",
+      "kernel": "6.3.9600",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "kvm",
+      "cpu_cores": 4,
+      "memory_mb": 16384,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.21.159",
+        "gateway": "10.0.21.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "GCP",
+      "region": "asia-northeast1",
+      "availability_zone": "asia-northeast1-b"
+    },
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan",
+      "latitude": 35.6895,
+      "longitude": 139.6917
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "cache",
+      "tier": "data",
+      "app": "Billing",
+      "patch_group": "pg-prod-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 83,
+        "updates_available": 15,
+        "security_updates": 1
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "stopped",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "5.3.535",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "9.7.423",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "3.6.375",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "3.4.14",
+        "status": "running"
+      },
+      "falco": {
+        "version": "3.14.98",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "3.8.411",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 70,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 8,
+        "medium": 17,
+        "low": 12
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 15
+    },
+    "last_seen": "2025-10-06T19:03:32.636123Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-022",
+      "collected_at": "2025-10-06T20:41:32.636171Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-01",
+      "play_uuid": "uuid-022"
+    },
+    "identity": {
+      "host_id": "node-022.corp.example.com",
+      "hostname": "node-022",
+      "fqdn": "node-022.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Rocky Linux",
+      "version": "8.9",
+      "kernel": "4.18.0-513.el8.x86_64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 4,
+      "memory_mb": 32768,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.22.78",
+        "gateway": "10.0.22.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "us-east-1",
+      "availability_zone": "us-east-1c"
+    },
+    "location": {
+      "city": "N. Virginia",
+      "country": "USA",
+      "latitude": 39.0438,
+      "longitude": -77.4874
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "cache",
+      "tier": "data",
+      "app": "Ecommerce",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 947,
+        "updates_available": 29,
+        "security_updates": 1
+      },
+      "critical": {
+        "openssl": "3.0.14-2",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "5.7.659",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "2.10.912",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "1.8.651",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "9.8.302",
+        "status": "running"
+      },
+      "falco": {
+        "version": "2.16.15",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "5.7.861",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 75,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 3,
+        "medium": 14,
+        "low": 25
+      }
+    },
+    "derived": {
+      "stale": true,
+      "internet_facing": false,
+      "risk_score": 77
+    },
+    "last_seen": "2025-10-06T20:41:32.636171Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-023",
+      "collected_at": "2025-10-06T17:58:32.636221Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-01",
+      "play_uuid": "uuid-023"
+    },
+    "identity": {
+      "host_id": "node-023.corp.example.com",
+      "hostname": "node-023",
+      "fqdn": "node-023.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2012 R2",
+      "kernel": "6.3.9600",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 2,
+      "memory_mb": 16384,
+      "disk_total_gb": 200
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.23.10",
+        "gateway": "10.0.23.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "GCP",
+      "region": "us-central1",
+      "availability_zone": "us-central1-c"
+    },
+    "location": {
+      "city": "Iowa",
+      "country": "USA",
+      "latitude": 41.6611,
+      "longitude": -91.5302
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "web",
+      "tier": "frontend",
+      "app": "HR",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 86,
+        "updates_available": 0,
+        "security_updates": 0
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "2.18.780",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "4.17.912",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "7.3.252",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "4.3.34",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "2.20.647",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "8.3.135",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 95,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 6,
+        "medium": 10,
+        "low": 5
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 46
+    },
+    "last_seen": "2025-10-06T17:58:32.636221Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-024",
+      "collected_at": "2025-10-06T20:44:32.636268Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-01",
+      "play_uuid": "uuid-024"
+    },
+    "identity": {
+      "host_id": "node-024.corp.example.com",
+      "hostname": "node-024",
+      "fqdn": "node-024.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "AlmaLinux",
+      "version": "9.2",
+      "kernel": "5.14.21-150500.53-default",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 2,
+      "memory_mb": 32768,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.24.182",
+        "gateway": "10.0.24.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "latitude": 1.3521,
+      "longitude": 103.8198
+    },
+    "datacenter": {
+      "datacenter": "SGP1",
+      "city": "Singapore",
+      "country": "Singapore"
+    },
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "queue",
+      "tier": "data",
+      "app": "Analytics",
+      "patch_group": "pg-prod-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 1088,
+        "updates_available": 18,
+        "security_updates": 2
+      },
+      "critical": {
+        "openssl": "3.0.12-1",
+        "python3": "3.9.19"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "6.15.97",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "3.15.606",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "9.8.591",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "5.6.960",
+        "status": "running"
+      },
+      "falco": {
+        "version": "8.5.112",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "8.17.805",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 90,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 6,
+        "medium": 4,
+        "low": 18
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 36
+    },
+    "last_seen": "2025-10-06T20:44:32.636268Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-025",
+      "collected_at": "2025-10-06T19:39:32.636320Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-01",
+      "play_uuid": "uuid-025"
+    },
+    "identity": {
+      "host_id": "node-025.corp.example.com",
+      "hostname": "node-025",
+      "fqdn": "node-025.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2016",
+      "kernel": "10.0.14393",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "hyperv",
+      "cpu_cores": 8,
+      "memory_mb": 16384,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.25.171",
+        "gateway": "10.0.25.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "GCP",
+      "region": "us-central1",
+      "availability_zone": "us-central1-b"
+    },
+    "location": {
+      "city": "Iowa",
+      "country": "USA",
+      "latitude": 41.6611,
+      "longitude": -91.5302
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "test",
+      "role": "app",
+      "tier": "backend",
+      "app": "Search",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 198,
+        "updates_available": 7,
+        "security_updates": 1
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "stopped",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "5.19.158",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "4.10.617",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "3.7.335",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "5.3.168",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "4.12.154",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "5.9.445",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 76,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 6,
+        "medium": 16,
+        "low": 6
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 65
+    },
+    "last_seen": "2025-10-06T19:39:32.636320Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-026",
+      "collected_at": "2025-10-06T17:59:32.636367Z",
+      "ansible_version": "2.17.3",
+      "controller": "controller-01",
+      "play_uuid": "uuid-026"
+    },
+    "identity": {
+      "host_id": "node-026.corp.example.com",
+      "hostname": "node-026",
+      "fqdn": "node-026.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2019",
+      "kernel": "10.0.17763",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 16,
+      "memory_mb": 65536,
+      "disk_total_gb": 200
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.26.172",
+        "gateway": "10.0.26.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "eu-west-1",
+      "availability_zone": "eu-west-1c"
+    },
+    "location": {
+      "city": "Dublin",
+      "country": "Ireland",
+      "latitude": 53.3498,
+      "longitude": -6.2603
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "dev",
+      "role": "app",
+      "tier": "data",
+      "app": "Payments",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 160,
+        "updates_available": 10,
+        "security_updates": 2
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "5.13.494",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "1.19.879",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "9.5.915",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "1.12.851",
+        "status": "drift_detected"
+      },
+      "falco": {
+        "version": "2.1.257",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "3.6.531",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 73,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 0,
+        "medium": 13,
+        "low": 21
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 68
+    },
+    "last_seen": "2025-10-06T17:59:32.636367Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-027",
+      "collected_at": "2025-10-06T20:03:32.636415Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-02",
+      "play_uuid": "uuid-027"
+    },
+    "identity": {
+      "host_id": "node-027.corp.example.com",
+      "hostname": "node-027",
+      "fqdn": "node-027.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Ubuntu",
+      "version": "24.04",
+      "kernel": "6.1.0-12-amd64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "permissive"
+      }
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 2,
+      "memory_mb": 8192,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.27.109",
+        "gateway": "10.0.27.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Dublin",
+      "country": "Ireland",
+      "latitude": 53.3498,
+      "longitude": -6.2603
+    },
+    "datacenter": {
+      "datacenter": "DUB1",
+      "city": "Dublin",
+      "country": "Ireland"
+    },
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "db",
+      "tier": "data",
+      "app": "Messaging",
+      "patch_group": "pg-prod-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 729,
+        "updates_available": 19,
+        "security_updates": 6
+      },
+      "critical": {
+        "openssl": "3.0.14-2",
+        "python3": "3.9.19"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "3.2.829",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "8.20.575",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "3.11.682",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "8.9.778",
+        "status": "running"
+      },
+      "falco": {
+        "version": "8.11.802",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "5.12.703",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 83,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 4,
+        "medium": 13,
+        "low": 12
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 71
+    },
+    "last_seen": "2025-10-06T20:03:32.636415Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-028",
+      "collected_at": "2025-10-06T18:52:32.636508Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-02",
+      "play_uuid": "uuid-028"
+    },
+    "identity": {
+      "host_id": "node-028.corp.example.com",
+      "hostname": "node-028",
+      "fqdn": "node-028.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Oracle Linux",
+      "version": "9.0",
+      "kernel": "6.2.0-39-generic",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "permissive"
+      }
+    },
+    "hardware": {
+      "virtualization": "kvm",
+      "cpu_cores": 2,
+      "memory_mb": 16384,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.28.169",
+        "gateway": "10.0.28.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "Azure",
+      "region": "westus2",
+      "availability_zone": "westus2-1"
+    },
+    "location": {
+      "city": "Washington",
+      "country": "USA",
+      "latitude": 47.6062,
+      "longitude": -122.3321
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "test",
+      "role": "db",
+      "tier": "data",
+      "app": "Payments",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 739,
+        "updates_available": 11,
+        "security_updates": 7
+      },
+      "critical": {
+        "openssl": "3.0.12-1",
+        "python3": "3.9.19"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.20.858",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "4.15.709",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "9.2.759",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "2.17.121",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "7.7.846",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "8.15.570",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 85,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 7,
+        "medium": 7,
+        "low": 22
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 51
+    },
+    "last_seen": "2025-10-06T18:52:32.636508Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-029",
+      "collected_at": "2025-10-06T18:57:32.636559Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-01",
+      "play_uuid": "uuid-029"
+    },
+    "identity": {
+      "host_id": "node-029.corp.example.com",
+      "hostname": "node-029",
+      "fqdn": "node-029.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Amazon Linux",
+      "version": "2023",
+      "kernel": "5.14.21-150500.53-default",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "kvm",
+      "cpu_cores": 2,
+      "memory_mb": 32768,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.29.132",
+        "gateway": "10.0.29.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "Azure",
+      "region": "westus2",
+      "availability_zone": "westus2-3"
+    },
+    "location": {
+      "city": "Washington",
+      "country": "USA",
+      "latitude": 47.6062,
+      "longitude": -122.3321
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "cache",
+      "tier": "frontend",
+      "app": "Ecommerce",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 925,
+        "updates_available": 40,
+        "security_updates": 2
+      },
+      "critical": {
+        "openssl": "3.0.12-1",
+        "python3": "3.9.19"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "5.13.350",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "5.17.53",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "5.11.847",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "7.10.515",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "9.11.998",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "8.3.338",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 80,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 6,
+        "medium": 19,
+        "low": 17
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 48
+    },
+    "last_seen": "2025-10-06T18:57:32.636559Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-030",
+      "collected_at": "2025-10-06T20:29:32.636908Z",
+      "ansible_version": "2.17.3",
+      "controller": "controller-01",
+      "play_uuid": "uuid-030"
+    },
+    "identity": {
+      "host_id": "node-030.corp.example.com",
+      "hostname": "node-030",
+      "fqdn": "node-030.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "server"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2016",
+      "kernel": "10.0.14393",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "kvm",
+      "cpu_cores": 4,
+      "memory_mb": 8192,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.30.162",
+        "gateway": "10.0.30.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "San Francisco",
+      "country": "USA",
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    },
+    "datacenter": {
+      "datacenter": "SFO1",
+      "city": "San Francisco",
+      "country": "USA"
+    },
+    "inventory_vars": {
+      "environment": "dev",
+      "role": "web",
+      "tier": "data",
+      "app": "HR",
+      "patch_group": "pg-prod-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 157,
+        "updates_available": 3,
+        "security_updates": 5
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "stopped",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "5.5.431",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "6.0.441",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "8.18.534",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "2.13.589",
+        "status": "drift_detected"
+      },
+      "falco": {
+        "version": "8.2.14",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "3.15.788",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 87,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 2,
+        "medium": 2,
+        "low": 18
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 25
+    },
+    "last_seen": "2025-10-06T20:29:32.636908Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-031",
+      "collected_at": "2025-10-06T20:34:32.637024Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-02",
+      "play_uuid": "uuid-031"
+    },
+    "identity": {
+      "host_id": "node-031.corp.example.com",
+      "hostname": "node-031",
+      "fqdn": "node-031.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2012 R2",
+      "kernel": "6.3.9600",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 2,
+      "memory_mb": 32768,
+      "disk_total_gb": 200
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.31.188",
+        "gateway": "10.0.31.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "eu-west-1",
+      "availability_zone": "eu-west-1c"
+    },
+    "location": {
+      "city": "Dublin",
+      "country": "Ireland",
+      "latitude": 53.3498,
+      "longitude": -6.2603
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "db",
+      "tier": "data",
+      "app": "Search",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 115,
+        "updates_available": 1,
+        "security_updates": 5
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "7.9.319",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "8.19.61",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "6.18.745",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "8.5.148",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "6.20.167",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "8.12.796",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 78,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 5,
+        "medium": 2,
+        "low": 9
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 64
+    },
+    "last_seen": "2025-10-06T20:34:32.637024Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-032",
+      "collected_at": "2025-10-06T19:53:32.637103Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-02",
+      "play_uuid": "uuid-032"
+    },
+    "identity": {
+      "host_id": "node-032.corp.example.com",
+      "hostname": "node-032",
+      "fqdn": "node-032.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Rocky Linux",
+      "version": "8.9",
+      "kernel": "5.14.21-150500.53-default",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "kvm",
+      "cpu_cores": 8,
+      "memory_mb": 16384,
+      "disk_total_gb": 200
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.32.72",
+        "gateway": "10.0.32.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "GCP",
+      "region": "europe-west1",
+      "availability_zone": "europe-west1-c"
+    },
+    "location": {
+      "city": "Belgium",
+      "country": "Belgium",
+      "latitude": 50.8503,
+      "longitude": 4.3517
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "db",
+      "tier": "data",
+      "app": "Payments",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 890,
+        "updates_available": 12,
+        "security_updates": 3
+      },
+      "critical": {
+        "openssl": "3.0.12-1",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "5.18.769",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "7.14.553",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "9.11.790",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "4.12.593",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "9.10.488",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "4.6.196",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 75,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 8,
+        "medium": 6,
+        "low": 12
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 57
+    },
+    "last_seen": "2025-10-06T19:53:32.637103Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-033",
+      "collected_at": "2025-10-06T20:29:32.637198Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-01",
+      "play_uuid": "uuid-033"
+    },
+    "identity": {
+      "host_id": "node-033.corp.example.com",
+      "hostname": "node-033",
+      "fqdn": "node-033.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Amazon Linux",
+      "version": "2",
+      "kernel": "4.18.0-513.el8.x86_64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 4,
+      "memory_mb": 32768,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.33.111",
+        "gateway": "10.0.33.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "eu-west-1",
+      "availability_zone": "eu-west-1b"
+    },
+    "location": {
+      "city": "Dublin",
+      "country": "Ireland",
+      "latitude": 53.3498,
+      "longitude": -6.2603
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "cache",
+      "tier": "data",
+      "app": "HR",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 538,
+        "updates_available": 21,
+        "security_updates": 3
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.10.14"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.11.891",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "8.2.883",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "2.2.263",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "4.20.91",
+        "status": "drift_detected"
+      },
+      "falco": {
+        "version": "3.14.870",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "6.7.738",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 75,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 8,
+        "medium": 2,
+        "low": 6
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 71
+    },
+    "last_seen": "2025-10-06T20:29:32.637198Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-034",
+      "collected_at": "2025-10-06T20:42:32.637255Z",
+      "ansible_version": "2.17.3",
+      "controller": "controller-01",
+      "play_uuid": "uuid-034"
+    },
+    "identity": {
+      "host_id": "node-034.corp.example.com",
+      "hostname": "node-034",
+      "fqdn": "node-034.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2019",
+      "kernel": "10.0.17763",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 8,
+      "memory_mb": 32768,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.34.101",
+        "gateway": "10.0.34.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "latitude": 52.3676,
+      "longitude": 4.9041
+    },
+    "datacenter": {
+      "datacenter": "AMS1",
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "db",
+      "tier": "backend",
+      "app": "Inventory",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 162,
+        "updates_available": 7,
+        "security_updates": 1
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "4.2.956",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "3.14.980",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "7.0.643",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "8.10.330",
+        "status": "running"
+      },
+      "falco": {
+        "version": "8.3.643",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "3.10.226",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 75,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 4,
+        "medium": 15,
+        "low": 18
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 13
+    },
+    "last_seen": "2025-10-06T20:42:32.637255Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-035",
+      "collected_at": "2025-10-06T19:47:32.637329Z",
+      "ansible_version": "2.17.3",
+      "controller": "controller-02",
+      "play_uuid": "uuid-035"
+    },
+    "identity": {
+      "host_id": "node-035.corp.example.com",
+      "hostname": "node-035",
+      "fqdn": "node-035.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "SUSE Linux Enterprise",
+      "version": "15 SP5",
+      "kernel": "5.14.21-150500.53-default",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "kvm",
+      "cpu_cores": 4,
+      "memory_mb": 65536,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.35.32",
+        "gateway": "10.0.35.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "Azure",
+      "region": "westeurope",
+      "availability_zone": "westeurope-2"
+    },
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "latitude": 52.3676,
+      "longitude": 4.9041
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "test",
+      "role": "app",
+      "tier": "backend",
+      "app": "Inventory",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 744,
+        "updates_available": 15,
+        "security_updates": 1
+      },
+      "critical": {
+        "openssl": "3.0.12-1",
+        "python3": "3.10.14"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "3.20.16",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "9.10.523",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "8.0.808",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "3.11.445",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "7.6.283",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "3.5.534",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 92,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 7,
+        "medium": 10,
+        "low": 10
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 88
+    },
+    "last_seen": "2025-10-06T19:47:32.637329Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-036",
+      "collected_at": "2025-10-06T18:05:32.637407Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-02",
+      "play_uuid": "uuid-036"
+    },
+    "identity": {
+      "host_id": "node-036.corp.example.com",
+      "hostname": "node-036",
+      "fqdn": "node-036.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Debian",
+      "version": "12",
+      "kernel": "4.18.0-513.el8.x86_64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "permissive"
+      }
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 2,
+      "memory_mb": 8192,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.36.235",
+        "gateway": "10.0.36.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "GCP",
+      "region": "us-east4",
+      "availability_zone": "us-east4-b"
+    },
+    "location": {
+      "city": "N. Virginia",
+      "country": "USA",
+      "latitude": 39.0438,
+      "longitude": -77.4874
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "app",
+      "tier": "data",
+      "app": "Messaging",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 690,
+        "updates_available": 36,
+        "security_updates": 5
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.9.19"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.2.123",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "4.10.797",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "1.9.893",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "8.14.525",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "9.17.137",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "4.2.229",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 75,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 0,
+        "medium": 2,
+        "low": 8
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 12
+    },
+    "last_seen": "2025-10-06T18:05:32.637407Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-037",
+      "collected_at": "2025-10-06T18:23:32.637464Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-01",
+      "play_uuid": "uuid-037"
+    },
+    "identity": {
+      "host_id": "node-037.corp.example.com",
+      "hostname": "node-037",
+      "fqdn": "node-037.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Amazon Linux",
+      "version": "2",
+      "kernel": "5.10.0-25-amd64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 16,
+      "memory_mb": 32768,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.37.33",
+        "gateway": "10.0.37.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "Azure",
+      "region": "westeurope",
+      "availability_zone": "westeurope-3"
+    },
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "latitude": 52.3676,
+      "longitude": 4.9041
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "cache",
+      "tier": "frontend",
+      "app": "Analytics",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 650,
+        "updates_available": 36,
+        "security_updates": 7
+      },
+      "critical": {
+        "openssl": "3.0.14-2",
+        "python3": "3.10.14"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.1.405",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "6.10.410",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "6.13.863",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "7.17.54",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "9.4.980",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "4.13.679",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 81,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 6,
+        "medium": 8,
+        "low": 21
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 27
+    },
+    "last_seen": "2025-10-06T18:23:32.637464Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-038",
+      "collected_at": "2025-10-06T19:09:32.637519Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-02",
+      "play_uuid": "uuid-038"
+    },
+    "identity": {
+      "host_id": "node-038.corp.example.com",
+      "hostname": "node-038",
+      "fqdn": "node-038.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "server"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Amazon Linux",
+      "version": "2",
+      "kernel": "5.14.21-150500.53-default",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "hyperv",
+      "cpu_cores": 2,
+      "memory_mb": 8192,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.38.62",
+        "gateway": "10.0.38.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "London",
+      "country": "UK",
+      "latitude": 51.5074,
+      "longitude": -0.1278
+    },
+    "datacenter": {
+      "datacenter": "LON1",
+      "city": "London",
+      "country": "UK"
+    },
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "db",
+      "tier": "frontend",
+      "app": "Messaging",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 1163,
+        "updates_available": 10,
+        "security_updates": 1
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "8.3.523",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "5.13.591",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "5.7.753",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "9.9.859",
+        "status": "drift_detected"
+      },
+      "falco": {
+        "version": "4.20.395",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "9.11.471",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 89,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 3,
+        "medium": 12,
+        "low": 12
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 79
+    },
+    "last_seen": "2025-10-06T19:09:32.637519Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-039",
+      "collected_at": "2025-10-06T19:18:32.637591Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-02",
+      "play_uuid": "uuid-039"
+    },
+    "identity": {
+      "host_id": "node-039.corp.example.com",
+      "hostname": "node-039",
+      "fqdn": "node-039.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Rocky Linux",
+      "version": "8.9",
+      "kernel": "6.2.0-39-generic",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "permissive"
+      }
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 8,
+      "memory_mb": 8192,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.39.42",
+        "gateway": "10.0.39.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "eu-west-1",
+      "availability_zone": "eu-west-1c"
+    },
+    "location": {
+      "city": "Dublin",
+      "country": "Ireland",
+      "latitude": 53.3498,
+      "longitude": -6.2603
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "queue",
+      "tier": "backend",
+      "app": "Search",
+      "patch_group": "pg-prod-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 1029,
+        "updates_available": 24,
+        "security_updates": 7
+      },
+      "critical": {
+        "openssl": "3.0.12-1",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "6.11.143",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "5.16.97",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "5.20.725",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "7.3.4",
+        "status": "drift_detected"
+      },
+      "falco": {
+        "version": "9.18.120",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "7.18.153",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 97,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 7,
+        "medium": 11,
+        "low": 28
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 55
+    },
+    "last_seen": "2025-10-06T19:18:32.637591Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-040",
+      "collected_at": "2025-10-06T19:16:32.637660Z",
+      "ansible_version": "2.17.3",
+      "controller": "controller-02",
+      "play_uuid": "uuid-040"
+    },
+    "identity": {
+      "host_id": "node-040.corp.example.com",
+      "hostname": "node-040",
+      "fqdn": "node-040.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Fedora",
+      "version": "39",
+      "kernel": "5.10.0-25-amd64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "permissive"
+      }
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 16,
+      "memory_mb": 65536,
+      "disk_total_gb": 200
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.40.24",
+        "gateway": "10.0.40.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "GCP",
+      "region": "australia-southeast1",
+      "availability_zone": "australia-southeast1-b"
+    },
+    "location": {
+      "city": "Sydney",
+      "country": "Australia",
+      "latitude": -33.8688,
+      "longitude": 151.2093
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "test",
+      "role": "db",
+      "tier": "data",
+      "app": "Analytics",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 709,
+        "updates_available": 27,
+        "security_updates": 0
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.9.19"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.19.447",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "7.14.366",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "6.14.970",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "2.16.234",
+        "status": "healthy"
+      },
+      "falco": {
+        "version": "7.11.512",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "9.18.157",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 83,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 5,
+        "medium": 18,
+        "low": 28
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 56
+    },
+    "last_seen": "2025-10-06T19:16:32.637660Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-041",
+      "collected_at": "2025-10-06T19:35:32.637727Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-02",
+      "play_uuid": "uuid-041"
+    },
+    "identity": {
+      "host_id": "node-041.corp.example.com",
+      "hostname": "node-041",
+      "fqdn": "node-041.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Oracle Linux",
+      "version": "8.9",
+      "kernel": "6.1.0-12-amd64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "permissive"
+      }
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 4,
+      "memory_mb": 65536,
+      "disk_total_gb": 200
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.41.17",
+        "gateway": "10.0.41.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "GCP",
+      "region": "asia-northeast1",
+      "availability_zone": "asia-northeast1-c"
+    },
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan",
+      "latitude": 35.6895,
+      "longitude": 139.6917
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "db",
+      "tier": "data",
+      "app": "Ecommerce",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 510,
+        "updates_available": 0,
+        "security_updates": 4
+      },
+      "critical": {
+        "openssl": "3.0.14-2",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "1.0.201",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "8.17.580",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "9.16.147",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "7.19.124",
+        "status": "running"
+      },
+      "falco": {
+        "version": "3.16.777",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "1.3.77",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 86,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 0,
+        "medium": 20,
+        "low": 15
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 40
+    },
+    "last_seen": "2025-10-06T19:35:32.637727Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-042",
+      "collected_at": "2025-10-06T19:26:32.637805Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-01",
+      "play_uuid": "uuid-042"
+    },
+    "identity": {
+      "host_id": "node-042.corp.example.com",
+      "hostname": "node-042",
+      "fqdn": "node-042.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2012 R2",
+      "kernel": "6.3.9600",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 16,
+      "memory_mb": 8192,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.42.58",
+        "gateway": "10.0.42.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "ap-southeast-1",
+      "availability_zone": "ap-southeast-1a"
+    },
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "latitude": 1.3521,
+      "longitude": 103.8198
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "queue",
+      "tier": "frontend",
+      "app": "Search",
+      "patch_group": "pg-prod-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 111,
+        "updates_available": 7,
+        "security_updates": 1
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "8.9.428",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "8.2.248",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "4.13.316",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "8.0.811",
+        "status": "running"
+      },
+      "falco": {
+        "version": "2.5.174",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "7.5.7",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 82,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 6,
+        "medium": 12,
+        "low": 17
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 64
+    },
+    "last_seen": "2025-10-06T19:26:32.637805Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-043",
+      "collected_at": "2025-10-06T19:27:32.637885Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-01",
+      "play_uuid": "uuid-043"
+    },
+    "identity": {
+      "host_id": "node-043.corp.example.com",
+      "hostname": "node-043",
+      "fqdn": "node-043.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Rocky Linux",
+      "version": "8.9",
+      "kernel": "5.15.0-88-generic",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 4,
+      "memory_mb": 8192,
+      "disk_total_gb": 200
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.43.71",
+        "gateway": "10.0.43.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "eu-central-1",
+      "availability_zone": "eu-central-1a"
+    },
+    "location": {
+      "city": "Frankfurt",
+      "country": "Germany",
+      "latitude": 50.1109,
+      "longitude": 8.6821
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "dev",
+      "role": "queue",
+      "tier": "backend",
+      "app": "Search",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 663,
+        "updates_available": 23,
+        "security_updates": 5
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "8.16.209",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "8.4.964",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "8.18.376",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "7.19.522",
+        "status": "running"
+      },
+      "falco": {
+        "version": "3.3.694",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "9.8.753",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 70,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 1,
+        "medium": 7,
+        "low": 29
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 34
+    },
+    "last_seen": "2025-10-06T19:27:32.637885Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-044",
+      "collected_at": "2025-10-06T18:07:32.637965Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-02",
+      "play_uuid": "uuid-044"
+    },
+    "identity": {
+      "host_id": "node-044.corp.example.com",
+      "hostname": "node-044",
+      "fqdn": "node-044.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "server"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Oracle Linux",
+      "version": "9.0",
+      "kernel": "6.2.0-39-generic",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "enabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "hyperv",
+      "cpu_cores": 4,
+      "memory_mb": 65536,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.44.93",
+        "gateway": "10.0.44.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Madrid",
+      "country": "Spain",
+      "latitude": 40.4168,
+      "longitude": -3.7038
+    },
+    "datacenter": {
+      "datacenter": "MAD1",
+      "city": "Madrid",
+      "country": "Spain"
+    },
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "cache",
+      "tier": "data",
+      "app": "HR",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 680,
+        "updates_available": 1,
+        "security_updates": 5
+      },
+      "critical": {
+        "openssl": "3.0.14-2",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "4.12.360",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "3.9.117",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "4.1.414",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "3.13.202",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "3.12.756",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "9.9.644",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 88,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 5,
+        "medium": 2,
+        "low": 8
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 84
+    },
+    "last_seen": "2025-10-06T18:07:32.637965Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-045",
+      "collected_at": "2025-10-06T18:21:32.638020Z",
+      "ansible_version": "2.14.12",
+      "controller": "controller-02",
+      "play_uuid": "uuid-045"
+    },
+    "identity": {
+      "host_id": "node-045.corp.example.com",
+      "hostname": "node-045",
+      "fqdn": "node-045.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Debian",
+      "version": "11",
+      "kernel": "5.14.0-362.el9.x86_64",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "enforcing"
+      }
+    },
+    "hardware": {
+      "virtualization": "hyperv",
+      "cpu_cores": 2,
+      "memory_mb": 32768,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.45.115",
+        "gateway": "10.0.45.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "latitude": 52.3676,
+      "longitude": 4.9041
+    },
+    "datacenter": {
+      "datacenter": "AMS1",
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "inventory_vars": {
+      "environment": "test",
+      "role": "queue",
+      "tier": "data",
+      "app": "Search",
+      "patch_group": "pg-prod-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 1192,
+        "updates_available": 13,
+        "security_updates": 6
+      },
+      "critical": {
+        "openssl": "3.0.14-2",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.8.178",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "4.17.266",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "1.5.366",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "7.2.206",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "3.4.702",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "8.7.722",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 70,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 4,
+        "medium": 6,
+        "low": 27
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 82
+    },
+    "last_seen": "2025-10-06T18:21:32.638020Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-046",
+      "collected_at": "2025-10-06T19:55:32.638097Z",
+      "ansible_version": "2.17.3",
+      "controller": "controller-02",
+      "play_uuid": "uuid-046"
+    },
+    "identity": {
+      "host_id": "node-046.corp.example.com",
+      "hostname": "node-046",
+      "fqdn": "node-046.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2012 R2",
+      "kernel": "6.3.9600",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "vmware",
+      "cpu_cores": 2,
+      "memory_mb": 32768,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.46.94",
+        "gateway": "10.0.46.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "AWS",
+      "region": "us-west-2",
+      "availability_zone": "us-west-2c"
+    },
+    "location": {
+      "city": "Oregon",
+      "country": "USA",
+      "latitude": 45.5234,
+      "longitude": -122.6762
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "qa",
+      "role": "app",
+      "tier": "frontend",
+      "app": "Ecommerce",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 127,
+        "updates_available": 6,
+        "security_updates": 0
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "stopped",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "8.14.582",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "5.5.570",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "1.0.479",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "2.10.756",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "2.20.500",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "8.6.802",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 70,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 4,
+        "medium": 9,
+        "low": 7
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": true,
+      "risk_score": 13
+    },
+    "last_seen": "2025-10-06T19:55:32.638097Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-047",
+      "collected_at": "2025-10-06T20:50:32.638182Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-01",
+      "play_uuid": "uuid-047"
+    },
+    "identity": {
+      "host_id": "node-047.corp.example.com",
+      "hostname": "node-047",
+      "fqdn": "node-047.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Linux",
+      "name": "Ubuntu",
+      "version": "22.04",
+      "kernel": "6.2.0-39-generic",
+      "arch": "x86_64",
+      "selinux": {
+        "status": "disabled",
+        "mode": "permissive"
+      }
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 4,
+      "memory_mb": 32768,
+      "disk_total_gb": 500
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.47.60",
+        "gateway": "10.0.47.1",
+        "interface": "eth0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "GCP",
+      "region": "us-east4",
+      "availability_zone": "us-east4-c"
+    },
+    "location": {
+      "city": "N. Virginia",
+      "country": "USA",
+      "latitude": 39.0438,
+      "longitude": -77.4874
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "test",
+      "role": "app",
+      "tier": "data",
+      "app": "Billing",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 745,
+        "updates_available": 3,
+        "security_updates": 0
+      },
+      "critical": {
+        "openssl": "1.1.1w-5",
+        "python3": "3.11.9"
+      }
+    },
+    "services": [
+      {
+        "name": "sshd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "nginx",
+        "state": "stopped",
+        "enabled": true
+      },
+      {
+        "name": "httpd",
+        "state": "running",
+        "enabled": false
+      },
+      {
+        "name": "chronyd",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "firewalld",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "7.15.748",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "5.19.595",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "3.7.167",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "8.20.993",
+        "status": "drift_detected"
+      },
+      "falco": {
+        "version": "2.1.871",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "8.6.223",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Level 1",
+      "cis_score": 70,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 1,
+        "high": 1,
+        "medium": 3,
+        "low": 21
+      }
+    },
+    "derived": {
+      "stale": true,
+      "internet_facing": false,
+      "risk_score": 18
+    },
+    "last_seen": "2025-10-06T20:50:32.638182Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-048",
+      "collected_at": "2025-10-06T19:04:32.638270Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-01",
+      "play_uuid": "uuid-048"
+    },
+    "identity": {
+      "host_id": "node-048.corp.example.com",
+      "hostname": "node-048",
+      "fqdn": "node-048.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2016",
+      "kernel": "10.0.14393",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 8,
+      "memory_mb": 16384,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.48.23",
+        "gateway": "10.0.48.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Frankfurt",
+      "country": "Germany",
+      "latitude": 50.1109,
+      "longitude": 8.6821
+    },
+    "datacenter": {
+      "datacenter": "FRA1",
+      "city": "Frankfurt",
+      "country": "Germany"
+    },
+    "inventory_vars": {
+      "environment": "test",
+      "role": "queue",
+      "tier": "backend",
+      "app": "Inventory",
+      "patch_group": "pg-prod-2"
+    },
+    "packages": {
+      "summary": {
+        "total": 152,
+        "updates_available": 19,
+        "security_updates": 4
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "stopped",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "6.15.672",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "5.10.543",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "4.7.694",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "2.4.676",
+        "status": "stopped"
+      },
+      "falco": {
+        "version": "9.18.965",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "6.16.246",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 82,
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 3,
+        "medium": 19,
+        "low": 28
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 42
+    },
+    "last_seen": "2025-10-06T19:04:32.638270Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-049",
+      "collected_at": "2025-10-06T18:10:32.638398Z",
+      "ansible_version": "2.15.10",
+      "controller": "controller-01",
+      "play_uuid": "uuid-049"
+    },
+    "identity": {
+      "host_id": "node-049.corp.example.com",
+      "hostname": "node-049",
+      "fqdn": "node-049.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "vm"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2019",
+      "kernel": "10.0.17763",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "kvm",
+      "cpu_cores": 16,
+      "memory_mb": 8192,
+      "disk_total_gb": 1000
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.49.36",
+        "gateway": "10.0.49.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": null,
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "latitude": 52.3676,
+      "longitude": 4.9041
+    },
+    "datacenter": {
+      "datacenter": "AMS1",
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "queue",
+      "tier": "frontend",
+      "app": "Search",
+      "patch_group": "pg-test-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 189,
+        "updates_available": 5,
+        "security_updates": 1
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "running",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "7.7.48",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "1.0.718",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "8.9.123",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "7.2.636",
+        "status": "running"
+      },
+      "falco": {
+        "version": "2.11.172",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "6.0.845",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 73,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 2,
+        "high": 7,
+        "medium": 3,
+        "low": 24
+      }
+    },
+    "derived": {
+      "stale": false,
+      "internet_facing": false,
+      "risk_score": 55
+    },
+    "last_seen": "2025-10-06T18:10:32.638398Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "run_metadata": {
+      "run_id": "2025-10-06-050",
+      "collected_at": "2025-10-06T18:36:32.638449Z",
+      "ansible_version": "2.16.6",
+      "controller": "controller-01",
+      "play_uuid": "uuid-050"
+    },
+    "identity": {
+      "host_id": "node-050.corp.example.com",
+      "hostname": "node-050",
+      "fqdn": "node-050.corp.example.com",
+      "domain": "corp.example.com",
+      "platform": "cloud_instance"
+    },
+    "os": {
+      "family": "Windows",
+      "name": "Windows Server",
+      "version": "2012 R2",
+      "kernel": "6.3.9600",
+      "arch": "x86_64",
+      "selinux": null
+    },
+    "hardware": {
+      "virtualization": "baremetal",
+      "cpu_cores": 2,
+      "memory_mb": 65536,
+      "disk_total_gb": 100
+    },
+    "network": {
+      "default_ipv4": {
+        "address": "10.0.50.204",
+        "gateway": "10.0.50.1",
+        "interface": "Ethernet0"
+      },
+      "dns": {
+        "servers": [
+          "10.0.0.2",
+          "10.0.0.3"
+        ],
+        "search": [
+          "corp.example.com"
+        ]
+      }
+    },
+    "cloud": {
+      "provider": "GCP",
+      "region": "us-central1",
+      "availability_zone": "us-central1-b"
+    },
+    "location": {
+      "city": "Iowa",
+      "country": "USA",
+      "latitude": 41.6611,
+      "longitude": -91.5302
+    },
+    "datacenter": null,
+    "inventory_vars": {
+      "environment": "prod",
+      "role": "cache",
+      "tier": "frontend",
+      "app": "Payments",
+      "patch_group": "pg-dev-1"
+    },
+    "packages": {
+      "summary": {
+        "total": 97,
+        "updates_available": 4,
+        "security_updates": 4
+      }
+    },
+    "services": [
+      {
+        "name": "WinRM",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "W32Time",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "MpsSvc",
+        "state": "running",
+        "enabled": true
+      },
+      {
+        "name": "Spooler",
+        "state": "stopped",
+        "enabled": true
+      }
+    ],
+    "security_agents": {
+      "crowdstrike": {
+        "version": "8.0.25",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "3.15.513",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "1.1.76",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "7.15.990",
+        "status": "running"
+      },
+      "falco": {
+        "version": "8.12.234",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "6.10.540",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_profile": "CIS Windows Member Server",
+      "cis_score": 79,
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "vulnerabilities": {
+      "by_severity": {
+        "critical": 0,
+        "high": 5,
+        "medium": 16,
+        "low": 15
+      }
+    },
+    "derived": {
+      "stale": true,
+      "internet_facing": false,
+      "risk_score": 55
+    },
+    "last_seen": "2025-10-06T18:36:32.638449Z",
+    "schema_version": "1.0.0"
+  }
+]
