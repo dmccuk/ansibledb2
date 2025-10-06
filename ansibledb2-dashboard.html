@@ -393,6 +393,16 @@
             box-shadow: 0 0 8px rgba(78, 205, 196, 0.6);
         }
 
+        .map-status-dot.offline {
+            background: #8e9196;
+            box-shadow: 0 0 8px rgba(142, 145, 150, 0.6);
+        }
+
+        .map-status-dot.unknown {
+            background: #4b5563;
+            box-shadow: 0 0 8px rgba(75, 85, 99, 0.6);
+        }
+
         .map-legend-name {
             color: #d8d9da;
             font-weight: 600;
@@ -515,6 +525,7 @@
         <button class="nav-tab" onclick="switchTab('security', event)">Security &amp; Compliance</button>
         <button class="nav-tab" onclick="switchTab('infrastructure', event)">Infrastructure</button>
         <button class="nav-tab" onclick="switchTab('network', event)">Network Devices</button>
+        <button class="nav-tab" onclick="switchTab('network-map', event)">Network Map</button>
         <button class="nav-tab" onclick="switchTab('agents', event)">Agent Status</button>
     </div>
 
@@ -599,7 +610,7 @@
                     <div class="chart bar-chart" id="vendorChart"></div>
                 </div>
                 <div class="chart-container">
-                    <div class="chart-title">Firmware Status</div>
+                    <div class="chart-title">Device Health Status</div>
                     <div class="chart bar-chart" id="firmwareChart"></div>
                 </div>
             </div>
@@ -607,6 +618,22 @@
                 <div class="chart-title">Network Device Inventory</div>
                 <div class="table-container">
                     <table id="networkTable"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Map Tab -->
+        <div id="network-map" class="tab-content">
+            <div class="stats-grid" id="networkMapStats"></div>
+            <div class="chart-container">
+                <div class="chart-title">Global Network Device Status</div>
+                <div id="networkMapView" class="world-map"></div>
+                <div class="map-legend" id="networkMapLegend"></div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Active Network Alarms</div>
+                <div class="table-container">
+                    <table id="networkAlarmTable"></table>
                 </div>
             </div>
         </div>
@@ -642,28 +669,161 @@
         }
 
         Promise.all([
-            fetchJson('ansibledb2_sample_hosts.json'),
-            fetchJson('ansibledb2_sample_network_devices.json'),
-            fetchJson('ansibledb2_facts_50_hosts.json')
+            fetchJson('ansibledb2_facts_50_hosts.json'),
+            fetchJson('ansibledb2_network_devices_30_with_locations.json')
         ])
-            .then(([hosts, devices, factHosts]) => {
-                initDashboard(hosts, devices, factHosts);
+            .then(([hostFacts, networkDevices]) => {
+                initDashboard(hostFacts, networkDevices);
             })
             .catch(error => {
                 console.error('Unable to load dashboard data, rendering empty state.', error);
-                initDashboard([], [], []);
+                initDashboard([], []);
             });
 
-        function initDashboard(hosts, devices, factHosts) {
+        function initDashboard(hostFacts, networkDevices) {
             window.dashboardInitialized = true;
+            const hosts = Array.isArray(hostFacts) ? hostFacts.map(normalizeHostRecord) : [];
+            const devices = Array.isArray(networkDevices) ? networkDevices.map(normalizeNetworkDevice) : [];
+
             updateLastUpdated(hosts);
 
             // Render all tabs
-            renderOverviewTab(hosts, devices, factHosts);
+            renderOverviewTab(hosts, devices);
             renderSecurityTab(hosts);
             renderInfrastructureTab(hosts);
             renderNetworkTab(devices);
+            renderNetworkMapTab(devices);
             renderAgentsTab(hosts);
+        }
+
+        function normalizeHostRecord(raw) {
+            const hostId = raw.host_id || raw.identity?.host_id || raw.identity?.fqdn || raw.identity?.hostname || 'unknown-host';
+            const lastSeen = raw.last_seen || raw.collection_timestamp || raw.run_metadata?.collected_at || null;
+
+            const hardware = { ...(raw.hardware || {}) };
+            if (hardware.memory_gb === undefined) {
+                const memoryMb = Number(hardware.memory_mb);
+                if (Number.isFinite(memoryMb)) {
+                    hardware.memory_gb = Math.round((memoryMb / 1024) * 10) / 10;
+                }
+            }
+            if (!hardware.virtualization && raw.identity?.platform) {
+                hardware.virtualization = raw.identity.platform;
+            }
+
+            const cloud = raw.cloud_metadata || raw.cloud || null;
+            const datacenter = raw.datacenter || null;
+            const provider = cloud?.provider || (datacenter ? 'OnPrem' : 'Unknown');
+            const region = cloud?.region || cloud?.availability_zone || null;
+            const instanceId = cloud?.instance_id || cloud?.resource_id || null;
+
+            const inventory = raw.inventory_vars || raw.inventory || {};
+            const environmentValue = (inventory.environment || inventory.env || 'unknown').toLowerCase();
+            const normalizedEnvironment = environmentValue || 'unknown';
+            const tags = {
+                Environment: normalizedEnvironment.toUpperCase(),
+                Application: inventory.app || inventory.application || 'N/A',
+                Owner: inventory.owner || inventory.contact || 'N/A',
+                Role: inventory.role || 'N/A',
+                Tier: inventory.tier || 'N/A'
+            };
+
+            const compliance = raw.compliance || {};
+            const patchStatus = compliance.patch_status || {};
+            const cisScore = Number(compliance.cis_score);
+
+            const securityAgentKeys = ['crowdstrike', 'qualys', 'splunk_universal_forwarder', 'osquery', 'custom_compliance_agent'];
+            const normalizedAgents = securityAgentKeys.reduce((acc, key) => {
+                const agent = raw.security_agents?.[key] || {};
+                acc[key] = {
+                    status: agent.status || 'unknown',
+                    version: agent.version || agent.installed_version || 'n/a'
+                };
+                return acc;
+            }, {});
+
+            return {
+                host_id: hostId,
+                collection_timestamp: raw.collection_timestamp || lastSeen || raw.run_metadata?.collected_at || new Date().toISOString(),
+                last_seen: lastSeen || raw.run_metadata?.collected_at || new Date().toISOString(),
+                os: raw.os || {},
+                hardware,
+                cloud_metadata: {
+                    provider,
+                    region,
+                    instance_id: instanceId,
+                    tags
+                },
+                compliance: {
+                    patch_status: {
+                        critical: patchStatus.critical || 'compliant',
+                        high: patchStatus.high || 'compliant',
+                        medium: patchStatus.medium || 'compliant',
+                        low: patchStatus.low || 'compliant'
+                    },
+                    cis_benchmark: {
+                        level_1: deriveCisStatus(cisScore, 1),
+                        level_2: deriveCisStatus(cisScore, 2)
+                    },
+                    cis_profile: compliance.cis_profile || 'CIS',
+                    cis_score: Number.isFinite(cisScore) ? cisScore : null
+                },
+                vulnerabilities: raw.vulnerabilities || {},
+                derived: raw.derived || {},
+                services: Array.isArray(raw.services) ? raw.services : [],
+                security_agents: normalizedAgents,
+                inventory_vars: {
+                    ...inventory,
+                    environment: normalizedEnvironment
+                },
+                location: raw.location || (datacenter ? {
+                    city: datacenter.city || 'Unknown',
+                    country: datacenter.country || 'Unknown',
+                    latitude: datacenter.latitude,
+                    longitude: datacenter.longitude
+                } : null),
+                datacenter,
+                run_metadata: raw.run_metadata || {}
+            };
+        }
+
+        function deriveCisStatus(score, level) {
+            if (!Number.isFinite(score)) {
+                return 'unknown';
+            }
+            const passThreshold = level === 1 ? 90 : 85;
+            const warnThreshold = level === 1 ? 75 : 70;
+
+            if (score >= passThreshold) return 'pass';
+            if (score >= warnThreshold) return 'partial';
+            return 'fail';
+        }
+
+        function normalizeNetworkDevice(raw) {
+            const alarms = Array.isArray(raw.alarms) ? raw.alarms : [];
+            const protocols = raw.routing?.protocols || raw.routing_protocols || [];
+            const location = raw.location || {};
+
+            return {
+                device_id: raw.device_id || raw.hostname || 'unknown-device',
+                hostname: raw.hostname || raw.device_id || 'unknown-device',
+                vendor: raw.vendor || 'Unknown',
+                os: raw.os || 'Unknown',
+                os_version: raw.os_version || raw.version || 'Unknown',
+                model: raw.model || 'Unknown',
+                status: raw.status || 'unknown',
+                health: raw.health || 'unknown',
+                compliance: raw.compliance || {},
+                system: raw.system || {},
+                management: raw.management || {},
+                interfaces: Array.isArray(raw.interfaces) ? raw.interfaces : [],
+                routing_protocols: protocols,
+                vlans: raw.vlans || [],
+                location,
+                alarms,
+                collection_timestamp: raw.collection_timestamp || raw.last_seen || new Date().toISOString(),
+                last_seen: raw.last_seen || raw.collection_timestamp || new Date().toISOString()
+            };
         }
 
         function switchTab(tabName, evt) {
@@ -677,9 +837,12 @@
             if (tabName === 'overview' && window.globalMapInstance) {
                 setTimeout(() => window.globalMapInstance.invalidateSize(), 200);
             }
+            if (tabName === 'network-map' && window.networkMapInstance) {
+                setTimeout(() => window.networkMapInstance.invalidateSize(), 200);
+            }
         }
 
-        function renderOverviewTab(hosts, devices, factHosts = []) {
+        function renderOverviewTab(hosts, devices) {
             // Calculate stats
             const totalHosts = hosts.length;
             const totalDevices = devices.length;
@@ -743,7 +906,7 @@
             })));
 
             // Recent hosts table
-            const recentHosts = hosts.sort((a, b) =>
+            const recentHosts = hosts.slice().sort((a, b) =>
                 new Date(b.last_seen) - new Date(a.last_seen)
             ).slice(0, 10);
 
@@ -770,7 +933,7 @@
                 </tbody>
             `;
 
-            renderWorldMap(factHosts);
+            renderWorldMap(hosts);
         }
 
         function renderWorldMap(hostFacts = []) {
@@ -1032,6 +1195,9 @@
             if (window.globalMapInstance) {
                 window.globalMapInstance.invalidateSize();
             }
+            if (window.networkMapInstance) {
+                window.networkMapInstance.invalidateSize();
+            }
         });
 
         function renderSecurityTab(hosts) {
@@ -1182,7 +1348,7 @@
                             <td>${h.cloud_metadata.provider}</td>
                             <td>${h.hardware.virtualization}</td>
                             <td>${h.hardware.cpu_cores}</td>
-                            <td>${h.hardware.memory_gb} GB</td>
+                            <td>${Number.isFinite(Number(h.hardware.memory_gb)) ? `${Number(h.hardware.memory_gb)} GB` : '—'}</td>
                         </tr>
                     `).join('')}
                 </tbody>
@@ -1195,13 +1361,23 @@
                 vendors[d.vendor] = (vendors[d.vendor] || 0) + 1;
             });
 
-            const firmware = {};
+            const healthCounts = {};
             devices.forEach(d => {
-                firmware[d.firmware_status] = (firmware[d.firmware_status] || 0) + 1;
+                const health = (d.health || 'unknown').toLowerCase();
+                healthCounts[health] = (healthCounts[health] || 0) + 1;
             });
 
-            const outdated = devices.filter(d => d.firmware_status !== 'up_to_date').length;
-            const unsupported = devices.filter(d => d.firmware_status === 'unsupported').length;
+            const online = devices.filter(d => d.status === 'online').length;
+            const offline = devices.filter(d => d.status !== 'online').length;
+            const critical = devices.filter(d => d.health === 'critical').length;
+            const degraded = devices.filter(d => d.health === 'degraded').length;
+
+            const auditScores = devices
+                .map(d => Number(d.compliance?.audit_score))
+                .filter(score => Number.isFinite(score));
+            const averageAudit = auditScores.length
+                ? (auditScores.reduce((sum, score) => sum + score, 0) / auditScores.length).toFixed(1)
+                : 'N/A';
 
             document.getElementById('networkStats').innerHTML = `
                 <div class="stat-card">
@@ -1209,24 +1385,27 @@
                     <div class="stat-value">${devices.length}</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Outdated Firmware</div>
-                    <div class="stat-value warning">${outdated}</div>
+                    <div class="stat-label">Online</div>
+                    <div class="stat-value success">${online}</div>
+                    <div class="stat-subtext">${((online / Math.max(devices.length, 1)) * 100).toFixed(1)}% availability</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Unsupported</div>
-                    <div class="stat-value danger">${unsupported}</div>
+                    <div class="stat-label">Degraded / Critical</div>
+                    <div class="stat-value warning">${degraded + critical}</div>
+                    <div class="stat-subtext">${critical} critical, ${degraded} degraded</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Up to Date</div>
-                    <div class="stat-value success">${devices.length - outdated}</div>
+                    <div class="stat-label">Avg. Compliance Score</div>
+                    <div class="stat-value">${averageAudit}</div>
+                    <div class="stat-subtext">Based on latest network audits</div>
                 </div>
             `;
 
             renderBarChart('vendorChart', Object.entries(vendors).map(([label, value]) => ({ label, value })));
-            renderBarChart('firmwareChart', Object.entries(firmware).map(([label, value]) => ({
-                label,
+            renderBarChart('firmwareChart', Object.entries(healthCounts).map(([label, value]) => ({
+                label: label.toUpperCase(),
                 value,
-                class: label === 'up_to_date' ? 'success' : label === 'unsupported' ? 'danger' : 'warning'
+                class: label === 'critical' ? 'danger' : label === 'degraded' ? 'warning' : label === 'ok' ? 'success' : 'info'
             })));
 
             document.getElementById('networkTable').innerHTML = `
@@ -1237,22 +1416,283 @@
                         <th>OS</th>
                         <th>Version</th>
                         <th>Model</th>
-                        <th>Firmware Status</th>
+                        <th>Status</th>
+                        <th>Health</th>
+                        <th>Audit Score</th>
+                        <th>Active Alarms</th>
                     </tr>
                 </thead>
                 <tbody>
-                    ${devices.map(d => `
-                        <tr>
-                            <td>${d.hostname}</td>
-                            <td>${d.vendor}</td>
-                            <td>${d.os}</td>
-                            <td>${d.os_version}</td>
-                            <td>${d.model}</td>
-                            <td><span class="badge badge-${d.firmware_status === 'up_to_date' ? 'success' : d.firmware_status === 'unsupported' ? 'danger' : 'warning'}">${d.firmware_status}</span></td>
-                        </tr>
-                    `).join('')}
+                    ${devices.map(d => {
+                        const statusClass = d.status === 'online' ? 'success' : d.status === 'offline' ? 'danger' : 'warning';
+                        const healthClass = d.health === 'critical' ? 'danger' : d.health === 'degraded' ? 'warning' : d.health === 'ok' ? 'success' : 'info';
+                        const alarmCount = d.alarms ? d.alarms.length : 0;
+                        const auditScore = Number.isFinite(Number(d.compliance?.audit_score)) ? Number(d.compliance.audit_score) : '—';
+                        return `
+                            <tr>
+                                <td>${d.hostname}</td>
+                                <td>${d.vendor}</td>
+                                <td>${d.os}</td>
+                                <td>${d.os_version}</td>
+                                <td>${d.model}</td>
+                                <td><span class="badge badge-${statusClass}">${d.status}</span></td>
+                                <td><span class="badge badge-${healthClass}">${d.health}</span></td>
+                                <td>${auditScore === '—' ? '—' : auditScore}</td>
+                                <td>${alarmCount}</td>
+                            </tr>
+                        `;
+                    }).join('')}
                 </tbody>
             `;
+        }
+
+        function renderNetworkMapTab(devices) {
+            const statsContainer = document.getElementById('networkMapStats');
+            const mapContainer = document.getElementById('networkMapView');
+            const legendContainer = document.getElementById('networkMapLegend');
+            if (!statsContainer || !mapContainer || !legendContainer) {
+                return;
+            }
+
+            const total = devices.length;
+            const online = devices.filter(d => d.status === 'online').length;
+            const offline = total - online;
+            const critical = devices.filter(d => d.health === 'critical').length;
+            const alarms = devices.reduce((sum, d) => sum + (Array.isArray(d.alarms) ? d.alarms.length : 0), 0);
+
+            statsContainer.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-label">Total Network Devices</div>
+                    <div class="stat-value">${total}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Online</div>
+                    <div class="stat-value success">${online}</div>
+                    <div class="stat-subtext">${((online / Math.max(total, 1)) * 100).toFixed(1)}% availability</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Offline</div>
+                    <div class="stat-value danger">${offline}</div>
+                    <div class="stat-subtext">${critical} critical health events</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Active Alarms</div>
+                    <div class="stat-value warning">${alarms}</div>
+                    <div class="stat-subtext">Across all monitored devices</div>
+                </div>
+            `;
+
+            const locatedDevices = devices.filter(d => {
+                const lat = Number(d.location?.latitude);
+                const lng = Number(d.location?.longitude);
+                return Number.isFinite(lat) && Number.isFinite(lng);
+            });
+
+            if (!locatedDevices.length) {
+                if (window.networkMapInstance) {
+                    window.networkMapInstance.remove();
+                    window.networkMapInstance = null;
+                }
+                mapContainer.innerHTML = '<div class="map-empty-state">No network location data available.</div>';
+                legendContainer.innerHTML = '<div class="map-legend-empty">No location data available.</div>';
+                renderNetworkAlarmTable(devices);
+                return;
+            }
+
+            if (typeof L === 'undefined') {
+                mapContainer.innerHTML = '<div class="map-empty-state">Map library failed to load.</div>';
+                legendContainer.innerHTML = '<div class="map-legend-empty">Map library failed to load.</div>';
+                renderNetworkAlarmTable(devices);
+                return;
+            }
+
+            if (window.networkMapInstance) {
+                window.networkMapInstance.remove();
+                window.networkMapInstance = null;
+            }
+
+            mapContainer.innerHTML = '';
+            legendContainer.innerHTML = '';
+
+            const map = L.map('networkMapView', {
+                worldCopyJump: true,
+                zoomControl: true,
+                attributionControl: false,
+                minZoom: 2
+            });
+            window.networkMapInstance = map;
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                subdomains: 'abcd',
+                maxZoom: 19
+            }).addTo(map);
+
+            const statusColors = {
+                critical: '#ff4d4f',
+                degraded: '#ff9830',
+                ok: '#4ecdc4',
+                offline: '#8e9196',
+                unknown: '#4b5563'
+            };
+
+            const statusClass = {
+                critical: 'fault',
+                degraded: 'warning',
+                ok: 'healthy',
+                offline: 'offline',
+                unknown: 'unknown'
+            };
+
+            const bounds = [];
+            const statusSummary = { critical: 0, degraded: 0, ok: 0, offline: 0, unknown: 0 };
+
+            locatedDevices.forEach(device => {
+                const healthKey = getNetworkHealthKey(device);
+                statusSummary[healthKey] = (statusSummary[healthKey] || 0) + 1;
+                const color = statusColors[healthKey] || statusColors.unknown;
+                const marker = L.circleMarker([device.location.latitude, device.location.longitude], {
+                    radius: 9,
+                    color,
+                    weight: 2,
+                    fillColor: color,
+                    fillOpacity: 0.8
+                }).addTo(map);
+
+                marker.bindTooltip(`${device.hostname} • ${device.vendor}`, { direction: 'top' });
+                marker.bindPopup(createNetworkMapPopup(device));
+
+                bounds.push([device.location.latitude, device.location.longitude]);
+            });
+
+            if (bounds.length > 1) {
+                map.fitBounds(bounds, { padding: [40, 40], maxZoom: 5 });
+            } else if (bounds.length === 1) {
+                map.setView(bounds[0], 5);
+            } else {
+                map.setView([20, 0], 2);
+            }
+
+            const legendEntries = [
+                { key: 'critical', label: 'Critical Health', className: statusClass.critical },
+                { key: 'degraded', label: 'Degraded', className: statusClass.degraded },
+                { key: 'ok', label: 'Healthy', className: statusClass.ok },
+                { key: 'offline', label: 'Offline', className: statusClass.offline },
+                { key: 'unknown', label: 'Unknown', className: statusClass.unknown }
+            ];
+
+            legendContainer.innerHTML = `
+                <div class="map-legend-header">Network Device Status</div>
+                ${legendEntries.map(entry => `
+                    <div class="map-legend-item">
+                        <span class="map-status-dot ${entry.className}"></span>
+                        <div>
+                            <div class="map-legend-name">${entry.label}</div>
+                            <div class="map-legend-meta">${statusSummary[entry.key] || 0} devices</div>
+                        </div>
+                    </div>
+                `).join('')}
+            `;
+
+            renderNetworkAlarmTable(devices);
+        }
+
+        function getNetworkHealthKey(device) {
+            if (device.status === 'offline') {
+                return 'offline';
+            }
+            const health = (device.health || '').toLowerCase();
+            if (health === 'critical') return 'critical';
+            if (health === 'degraded') return 'degraded';
+            if (health === 'ok' || health === 'healthy') return 'ok';
+            return 'unknown';
+        }
+
+        function createNetworkMapPopup(device) {
+            const location = device.location || {};
+            const protocols = Array.isArray(device.routing_protocols) && device.routing_protocols.length
+                ? device.routing_protocols.join(', ')
+                : '—';
+            const alarmCount = Array.isArray(device.alarms) ? device.alarms.length : 0;
+            const alarmPreview = alarmCount ? device.alarms.slice(0, 2).map(alarm => {
+                const severity = (alarm.severity || 'info').toUpperCase();
+                return `<span>${severity}: ${alarm.message}</span>`;
+            }).join('') : '';
+
+            return `
+                <div class="map-popup">
+                    <div class="map-popup-title">${device.hostname}</div>
+                    <div class="map-popup-location">${location.city || 'Unknown'}, ${location.country || 'Unknown'}</div>
+                    <div class="map-popup-line"><span>Vendor</span><span>${device.vendor}</span></div>
+                    <div class="map-popup-line"><span>Status</span><span>${device.status} • ${device.health}</span></div>
+                    <div class="map-popup-line"><span>Protocols</span><span>${protocols}</span></div>
+                    <div class="map-popup-line"><span>Alarms</span><span>${alarmCount}</span></div>
+                    ${alarmPreview ? `<div class="map-popup-env">${alarmPreview}</div>` : ''}
+                </div>
+            `;
+        }
+
+        function renderNetworkAlarmTable(devices) {
+            const table = document.getElementById('networkAlarmTable');
+            if (!table) {
+                return;
+            }
+
+            const alarms = [];
+            devices.forEach(device => {
+                (device.alarms || []).forEach(alarm => {
+                    alarms.push({
+                        device: device.hostname,
+                        vendor: device.vendor,
+                        severity: (alarm.severity || 'info').toLowerCase(),
+                        code: alarm.code || '—',
+                        message: alarm.message || '—',
+                        status: device.status
+                    });
+                });
+            });
+
+            if (!alarms.length) {
+                table.innerHTML = '<tbody><tr><td colspan="5">No active alarms</td></tr></tbody>';
+                return;
+            }
+
+            const severityOrder = { critical: 0, major: 1, minor: 2, warning: 3, info: 4, notice: 5 };
+            alarms.sort((a, b) => (severityOrder[a.severity] ?? 99) - (severityOrder[b.severity] ?? 99));
+
+            table.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Device</th>
+                        <th>Severity</th>
+                        <th>Code</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${alarms.map(alarm => {
+                        const badgeClass = getAlarmBadgeClass(alarm.severity);
+                        const statusClass = alarm.status === 'online' ? 'success' : alarm.status === 'offline' ? 'danger' : 'warning';
+                        return `
+                            <tr>
+                                <td>${alarm.device}</td>
+                                <td><span class="badge badge-${badgeClass}">${alarm.severity.toUpperCase()}</span></td>
+                                <td>${alarm.code}</td>
+                                <td>${alarm.message}</td>
+                                <td><span class="badge badge-${statusClass}">${alarm.status}</span></td>
+                            </tr>
+                        `;
+                    }).join('')}
+                </tbody>
+            `;
+        }
+
+        function getAlarmBadgeClass(severity) {
+            const normalized = (severity || '').toLowerCase();
+            if (normalized === 'critical' || normalized === 'major') return 'danger';
+            if (normalized === 'minor' || normalized === 'warning') return 'warning';
+            if (normalized === 'info' || normalized === 'notice') return 'info';
+            return 'info';
         }
 
         function renderAgentsTab(hosts) {
