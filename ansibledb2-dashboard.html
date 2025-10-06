@@ -289,9 +289,11 @@
 
         .pie-chart-container {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1.5rem;
             height: 100%;
         }
 
@@ -299,13 +301,15 @@
             position: relative;
             width: 200px;
             height: 200px;
+            flex: 0 0 200px;
         }
 
         .legend {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 0.75rem;
-            margin-top: 1.5rem;
+            margin-top: 0;
+            flex: 1;
         }
 
         .legend-item {
@@ -341,8 +345,15 @@
             background: #0b0c0e;
         }
 
-        .map-legend {
+        .map-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+            gap: 1.5rem;
             margin-top: 1.5rem;
+            align-items: stretch;
+        }
+
+        .map-legend {
             background: #121417;
             border: 1px solid #2d3139;
             border-radius: 4px;
@@ -493,6 +504,100 @@
             font-weight: 600;
         }
 
+        .os-overview {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .os-list {
+            background: #121417;
+            border: 1px solid #2d3139;
+            border-radius: 4px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .os-list-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .os-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #1f232b;
+            border: 1px solid #2d3139;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .os-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .os-logo.placeholder {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            color: #d8d9da;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .os-logo.placeholder span {
+            color: inherit;
+        }
+
+        .os-list-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .os-name {
+            color: #f1f2f4;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .os-count {
+            color: #8e9196;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 1024px) {
+            .map-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .pie-chart-container {
+                flex-direction: column;
+            }
+
+            .legend {
+                margin-top: 1.5rem;
+            }
+
+            .os-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .os-list {
+                max-height: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .dashboard-content {
                 padding: 1rem;
@@ -510,6 +615,9 @@
             .map-legend-stats {
                 flex-direction: column;
                 gap: 0.35rem;
+            }
+            .pie-chart-container {
+                align-items: center;
             }
         }
     </style>
@@ -535,13 +643,18 @@
             <div class="stats-grid" id="overviewStats"></div>
             <div class="chart-container">
                 <div class="chart-title">Global Infrastructure &amp; Traffic</div>
-                <div id="globalMap" class="world-map"></div>
-                <div class="map-legend" id="mapLegend"></div>
+                <div class="map-layout">
+                    <div id="globalMap" class="world-map"></div>
+                    <div class="map-legend" id="mapLegend"></div>
+                </div>
             </div>
             <div class="grid-2">
                 <div class="chart-container">
                     <div class="chart-title">Hosts by Operating System</div>
-                    <div class="chart bar-chart" id="osChart"></div>
+                    <div class="os-overview">
+                        <div class="chart bar-chart" id="osChart"></div>
+                        <div class="os-list" id="osList"></div>
+                    </div>
                 </div>
                 <div class="chart-container">
                     <div class="chart-title">Infrastructure Distribution</div>
@@ -627,8 +740,10 @@
             <div class="stats-grid" id="networkMapStats"></div>
             <div class="chart-container">
                 <div class="chart-title">Global Network Device Status</div>
-                <div id="networkMapView" class="world-map"></div>
-                <div class="map-legend" id="networkMapLegend"></div>
+                <div class="map-layout">
+                    <div id="networkMapView" class="world-map"></div>
+                    <div class="map-legend" id="networkMapLegend"></div>
+                </div>
             </div>
             <div class="chart-container">
                 <div class="chart-title">Active Network Alarms</div>
@@ -658,6 +773,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <script>
         window.dashboardInitialized = false;
+
+        const OS_LOGOS = {
+            'Rocky Linux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rockylinux/rockylinux-original.svg',
+            'SUSE Linux Enterprise': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/suse/suse-original.svg',
+            'Red Hat': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg',
+            'Ubuntu': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg',
+            'Windows': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg',
+            'Debian': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/debian/debian-original.svg',
+            'Amazon Linux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
+            'AlmaLinux': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/AlmaLinux_logo.svg/256px-AlmaLinux_logo.svg.png',
+            'Oracle Linux': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/256px-Oracle_logo.svg.png',
+            'Fedora': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fedora/fedora-original.svg'
+        };
 
         function fetchJson(url) {
             return fetch(url).then(response => {
@@ -887,10 +1015,16 @@
                 osCounts[osKey] = (osCounts[osKey] || 0) + 1;
             });
 
-            renderBarChart('osChart', Object.entries(osCounts).map(([name, count]) => ({
-                label: name.replace(' Enterprise Linux', '').replace(' Server', ''),
-                value: count
-            })));
+            const osData = Object.entries(osCounts)
+                .map(([name, count]) => ({
+                    rawName: name,
+                    label: name.replace(' Enterprise Linux', '').replace(' Server', ''),
+                    value: count
+                }))
+                .sort((a, b) => b.value - a.value);
+
+            renderBarChart('osChart', osData);
+            renderOsList('osList', osData);
 
             // Infrastructure pie chart
             const infraCounts = {};
@@ -1790,8 +1924,8 @@
         function renderBarChart(containerId, data) {
             const container = document.getElementById(containerId);
             container.innerHTML = '';
-            
-            const maxValue = Math.max(...data.map(d => d.value));
+
+            const maxValue = Math.max(1, ...data.map(d => d.value));
             
             data.forEach(item => {
                 const wrapper = document.createElement('div');
@@ -1815,6 +1949,31 @@
                 wrapper.appendChild(label);
                 container.appendChild(wrapper);
             });
+        }
+
+        function renderOsList(containerId, data) {
+            const container = document.getElementById(containerId);
+            if (!container) {
+                return;
+            }
+
+            container.innerHTML = data.map(item => {
+                const logo = OS_LOGOS[item.rawName] || null;
+                const countLabel = item.value === 1 ? '1 host' : `${item.value} hosts`;
+                const logoContent = logo
+                    ? `<img src="${logo}" alt="${item.rawName} logo" loading="lazy">`
+                    : `<span>${item.rawName.charAt(0)}</span>`;
+
+                return `
+                    <div class="os-list-item">
+                        <div class="os-logo ${logo ? '' : 'placeholder'}">${logoContent}</div>
+                        <div class="os-list-details">
+                            <span class="os-name">${item.rawName}</span>
+                            <span class="os-count">${countLabel}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
         function renderPieChart(chartId, legendId, data) {
