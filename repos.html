@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnsibleDB2 Repository Portal</title>
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #48bb78;
+            --dark: #1a202c;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at top, rgba(102, 126, 234, 0.18), transparent 55%),
+                        radial-gradient(circle at bottom, rgba(72, 187, 120, 0.15), transparent 45%),
+                        #f8fafc;
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem 4rem;
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 24px 60px rgba(102, 126, 234, 0.25);
+            max-width: 620px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: clamp(2.1rem, 4vw, 3rem);
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-top: 0;
+        }
+
+        .timeline {
+            margin-top: 2.25rem;
+            text-align: left;
+        }
+
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.35rem;
+            top: 0.35rem;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+        }
+
+        .timeline-item strong {
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+
+        .cta {
+            margin-top: 2.5rem;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 0.75rem 2.5rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 16px 35px rgba(118, 75, 162, 0.35);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .card {
+                padding: 2.25rem 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" style="font-size: 1.1rem;">AnsibleDB2</a>
+        <div class="nav-links">
+            <a href="docs.html">Docs</a>
+            <a href="github.html">GitHub</a>
+            <a href="repos.html">Repositories</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card" aria-labelledby="repo-title">
+            <h1 id="repo-title">Repository access coming soon</h1>
+            <p>We are finalising the distribution portals for package repositories, container registries, and Helm charts.
+                Early access customers are helping us validate signing pipelines and geo-replication.</p>
+            <div class="timeline" aria-label="Milestone timeline">
+                <div class="timeline-item">
+                    <strong>Q2 2025 — Private Preview</strong>
+                    <span>Signed Debian/Ubuntu APT repository with global CDN distribution.</span>
+                </div>
+                <div class="timeline-item">
+                    <strong>Q3 2025 — Public Beta</strong>
+                    <span>Helm charts, container images, and Terraform modules published with SBOM artifacts.</span>
+                </div>
+                <div class="timeline-item">
+                    <strong>Q4 2025 — General Availability</strong>
+                    <span>Regionally redundant mirrors, automated license reporting, and SLA-backed download endpoints.</span>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem;">Need access today? Email <a href="mailto:founders@ansibledb2.com">founders@ansibledb2.com</a> and we'll provision a
+                dedicated preview tenant for your organisation.</p>
+            <div class="cta">
+                <a href="index.html">Back to homepage</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 AnsibleDB2. Explore our <a href="docs.html">documentation hub</a> for deployment guidance while we finish
+        the repository experience.
+    </footer>
+</body>
+</html>

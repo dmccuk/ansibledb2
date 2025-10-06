@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnsibleDB2 Documentation Hub</title>
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #48bb78;
+            --dark: #1a202c;
+            --light: #f7fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+            color: var(--dark);
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.15);
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .hero {
+            padding: 4rem 1.5rem 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.12));
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 45px rgba(102, 126, 234, 0.12);
+            border: 1px solid rgba(102, 126, 234, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: var(--secondary);
+        }
+
+        .card p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .faq-item {
+            border-top: 1px solid rgba(102, 126, 234, 0.15);
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:first-child {
+            border-top: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-answer {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: rgba(72, 187, 120, 0.12);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+        }
+
+        .cta {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.9rem 2.5rem;
+            border-radius: 999px;
+            font-weight: 600;
+            box-shadow: 0 18px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        footer {
+            background: var(--dark);
+            color: #e2e8f0;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #cbd5f5;
+        }
+
+        @media (max-width: 720px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">AnsibleDB2</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="docs.html" class="active">Docs</a></li>
+                <li><a href="github.html">GitHub</a></li>
+                <li><a href="repos.html">Repositories</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>AnsibleDB2 Knowledge Base</h1>
+        <p>Understand how AnsibleDB2 becomes the persistent state layer for your automation practice—empowering teams to
+            pass audits, accelerate delivery, and control infrastructure costs.</p>
+    </header>
+
+    <main>
+        <section class="grid" aria-label="Value Pillars">
+            <article class="card">
+                <h2>Audit Readiness</h2>
+                <p>Centralise every configuration fact, change, and remediation record in a tamper-evident datastore. Build
+                    automated evidence packs and satisfy CIS, PCI-DSS, and ISO 27001 controls without manual data
+                    wrangling.</p>
+                <div class="highlight">"AnsibleDB2 reduces the time to gather audit evidence from weeks to minutes by
+                    capturing and versioning your infrastructure facts after every playbook run."</div>
+            </article>
+            <article class="card">
+                <h2>Operational Efficiency</h2>
+                <p>Stop burning hours on repeated fact gathering. Cache multi-cloud topology, OS baseline, and patch data once
+                    and reuse it everywhere. Empower teams with self-service insights instead of long-running playbooks.</p>
+                <div class="highlight">Teams report up to a 60% reduction in repeated automation runs thanks to the
+                    searchable fact history in AnsibleDB2.</div>
+            </article>
+            <article class="card">
+                <h2>Financial Impact</h2>
+                <p>Every avoided compliance penalty and every hour saved on automation loops directly affects the bottom line.
+                    AnsibleDB2 surfaces cost-saving opportunities by correlating configuration drift with incident data.</p>
+                <div class="highlight">A Fortune 500 design partner saved an estimated $380k annually by preventing
+                    rework and eliminating third-party compliance tooling.</div>
+            </article>
+        </section>
+
+        <section aria-label="Frequently Asked Questions" style="margin-top: 3.5rem;">
+            <div class="card">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">How does AnsibleDB2 help my organisation pass audits?</div>
+                    <div class="faq-answer">AnsibleDB2 captures every fact collected during playbook runs and stores it in a
+                        queryable, immutable timeline. Auditors receive pre-built reports showing patch compliance, change
+                        approvals, and remediation evidence—all mapped to the control frameworks you select.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can AnsibleDB2 reduce the time my team spends on automation maintenance?</div>
+                    <div class="faq-answer">Yes. Playbooks no longer need to gather expensive data repeatedly. Your automation
+                        references AnsibleDB2 for current state, while continuous collectors keep information up to date in
+                        the background. Runbooks execute faster and engineering hours are focused on delivering change, not
+                        data collection.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What cost savings can we expect?</div>
+                    <div class="faq-answer">Organisations commonly realise value in three areas: fewer audit findings, lower
+                        infrastructure support labour, and reduced spend on redundant CMDB or compliance tooling. With
+                        policy-driven retention controls you only store the data you need, optimising infrastructure and
+                        licensing costs.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does AnsibleDB2 integrate with our existing ecosystem?</div>
+                    <div class="faq-answer">AnsibleDB2 ships with APIs, webhook triggers, and native exporters for SIEM, GRC,
+                        and ITSM platforms. You can trigger corrective playbooks when drift is detected, or feed insights
+                        into dashboards like Grafana and PowerBI for executive visibility.</div>
+                </div>
+            </div>
+        </section>
+
+        <section aria-label="Getting Started" style="margin-top: 3.5rem;">
+            <div class="grid">
+                <article class="card">
+                    <h2>Quick Start Checklist</h2>
+                    <ul style="margin: 0; padding-left: 1.2rem; color: #4a5568; line-height: 1.8;">
+                        <li>Install the AnsibleDB2 collection and enable the fact persistence plugin.</li>
+                        <li>Define retention and access policies aligned with your compliance obligations.</li>
+                        <li>Connect collectors for cloud, OS, and middleware platforms.</li>
+                        <li>Publish dashboards and audit-ready reports to stakeholders.</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h2>Need tailored guidance?</h2>
+                    <p>Our solution architects can help design a rollout roadmap that meets your audit windows and budget
+                        goals. From small teams to global enterprises, we provide proven deployment blueprints.</p>
+                    <p class="highlight" style="margin-top: 1.5rem;">Email <a href="mailto:founders@ansibledb2.com">founders@ansibledb2.com</a> to schedule a strategy
+                        session.</p>
+                </article>
+            </div>
+        </section>
+
+        <div class="cta">
+            <a href="index.html">← Back to the Experience Hub</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 AnsibleDB2. Looking for repositories? Visit our <a href="repos.html">release portal</a> or check the
+            <a href="github.html">GitHub preview</a>.</p>
+    </footer>
+</body>
+</html>
