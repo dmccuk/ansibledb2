@@ -215,6 +215,17 @@
             background: white;
             color: var(--primary);
         }
+        .dashboard-btn {
+            background: linear-gradient(135deg, var(--accent), #38a169);
+            color: white;
+            border: none;
+            box-shadow: 0 8px 25px rgba(72, 187, 120, 0.3);
+        }
+        
+        .dashboard-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(72, 187, 120, 0.4);
+        }
 
         @keyframes fadeInUp {
             from {
@@ -834,7 +845,9 @@
             </div>
 
             <div class="hero-buttons">
+            <div class="hero-buttons">
                 <a href="#get-started" class="primary-btn">Start Free Trial</a>
+                <a href="ansibledb2-dashboard.html" class="dashboard-btn">View Dashboard</a>
                 <a href="https://github.com/ansibledb2" class="secondary-btn">View on GitHub</a>
             </div>
         </div>
