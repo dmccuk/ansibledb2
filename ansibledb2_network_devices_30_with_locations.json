@@ -1,0 +1,4578 @@
+[
+  {
+    "device_id": "device-001.net.example.com",
+    "hostname": "cisco-001",
+    "vendor": "Cisco",
+    "os": "NX-OS",
+    "os_version": "2.5(4)",
+    "model": "N9K-C93180YC-EX",
+    "serial_number": "CSN1292394",
+    "platform": "network_device",
+    "location": {
+      "city": "London",
+      "country": "UK",
+      "latitude": 51.5074,
+      "longitude": -0.1278
+    },
+    "site": {
+      "site_code": "LON-01",
+      "address_hint": "London DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.1.9",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "ed:4c:2e:5d:3a:07",
+        "ipv4": "10.249.127.17/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "23:2d:17:8a:20:9a",
+        "ipv4": "10.246.181.69/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "e8:09:24:02:aa:49",
+        "ipv4": "10.242.193.43/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "fe:53:26:6e:49:0d",
+        "ipv4": "10.177.56.245/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "9c:e8:14:d5:8d:14",
+        "ipv4": "10.90.139.40/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "ed:15:c5:b2:fd:ae",
+        "ipv4": "10.239.243.12/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "e1:e0:97:8c:3f:5f",
+        "ipv4": "10.213.223.197/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "f8:c0:82:62:b0:37",
+        "ipv4": "10.80.137.249/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "EIGRP",
+        "ISIS"
+      ],
+      "bgp_asn": null
+    },
+    "vlans": [
+      {
+        "id": 30,
+        "name": "VLAN30"
+      },
+      {
+        "id": 111,
+        "name": "VLAN111"
+      },
+      {
+        "id": 64,
+        "name": "VLAN64"
+      },
+      {
+        "id": 22,
+        "name": "VLAN22"
+      },
+      {
+        "id": 83,
+        "name": "VLAN83"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 328721,
+      "cpu_pct": 29,
+      "mem_used_pct": 69,
+      "temperature_c": 30
+    },
+    "licenses": [
+      "advrouting"
+    ],
+    "stack": {
+      "role": "stack_member",
+      "members": 8
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v1",
+      "last_audit": "2025-10-06T20:50:52.287591Z",
+      "audit_score": 88
+    },
+    "alarms": [
+      {
+        "severity": "minor",
+        "code": "INTF_ERRORS",
+        "message": "High CRC errors on Ethernet1"
+      }
+    ],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T20:50:52.287591Z",
+    "last_seen": "2025-10-06T20:50:52.287591Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-002.net.example.com",
+    "hostname": "fortinet-002",
+    "vendor": "Fortinet",
+    "os": "FortiOS",
+    "os_version": "12.7(9)",
+    "model": "FG-100F",
+    "serial_number": "FSN4964919",
+    "platform": "network_device",
+    "location": {
+      "city": "Stockholm",
+      "country": "Sweden",
+      "latitude": 59.3293,
+      "longitude": 18.0686
+    },
+    "site": {
+      "site_code": "STO-01",
+      "address_hint": "Stockholm DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.2.211",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "59:68:9a:1e:b4:4e",
+        "ipv4": "10.255.241.86/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "18:54:4a:23:a6:57",
+        "ipv4": "10.0.31.164/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "6f:14:dd:c8:a6:6a",
+        "ipv4": "10.195.143.138/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "d8:a3:4d:2f:85:8e",
+        "ipv4": "10.210.204.220/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "EIGRP",
+        "OSPF"
+      ],
+      "bgp_asn": 65100
+    },
+    "vlans": [
+      {
+        "id": 80,
+        "name": "VLAN80"
+      },
+      {
+        "id": 64,
+        "name": "VLAN64"
+      },
+      {
+        "id": 86,
+        "name": "VLAN86"
+      },
+      {
+        "id": 193,
+        "name": "VLAN193"
+      },
+      {
+        "id": 160,
+        "name": "VLAN160"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 3351505,
+      "cpu_pct": 7,
+      "mem_used_pct": 49,
+      "temperature_c": 53
+    },
+    "licenses": [
+      "security"
+    ],
+    "stack": {
+      "role": "stack_member",
+      "members": 3
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T20:49:52.287813Z",
+      "audit_score": 79
+    },
+    "alarms": [
+      {
+        "severity": "warning",
+        "code": "TEMP_HIGH",
+        "message": "Chassis temperature above threshold"
+      }
+    ],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T20:49:52.287813Z",
+    "last_seen": "2025-10-06T20:49:52.287813Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-003.net.example.com",
+    "hostname": "f5-003",
+    "vendor": "F5",
+    "os": "TMOS",
+    "os_version": "7.7(3)",
+    "model": "BIG-IP i2600",
+    "serial_number": "FSN5718766",
+    "platform": "network_device",
+    "location": {
+      "city": "Seattle",
+      "country": "USA",
+      "latitude": 47.6062,
+      "longitude": -122.3321
+    },
+    "site": {
+      "site_code": "SEA-01",
+      "address_hint": "Seattle DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.3.153",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "69:56:ea:f2:0e:ef",
+        "ipv4": "10.53.13.94/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "47:a9:b2:94:98:a9",
+        "ipv4": "10.150.99.131/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "25:68:ad:ab:a4:ea",
+        "ipv4": "10.136.43.195/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "7d:83:be:46:0e:ca",
+        "ipv4": "10.19.22.250/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "a0:b5:de:23:9c:85",
+        "ipv4": "10.248.112.90/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "09:a9:75:53:f4:ff",
+        "ipv4": "10.71.34.38/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "54:c9:a7:42:e4:14",
+        "ipv4": "10.190.35.239/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "16:24:a0:74:65:b1",
+        "ipv4": "10.194.252.251/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet8",
+        "mac": "e5:29:96:da:ae:4b",
+        "ipv4": "10.248.123.178/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet9",
+        "mac": "be:d4:59:26:09:6c",
+        "ipv4": "10.100.72.129/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet10",
+        "mac": "19:ef:b9:be:93:cb",
+        "ipv4": "10.208.188.60/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet11",
+        "mac": "a0:88:3d:12:6f:bd",
+        "ipv4": "10.94.164.75/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet12",
+        "mac": "5a:e9:56:01:d1:7a",
+        "ipv4": "10.98.227.70/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet13",
+        "mac": "b5:d1:f8:f6:f5:e3",
+        "ipv4": "10.190.52.183/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet14",
+        "mac": "41:36:f0:f9:31:43",
+        "ipv4": "10.131.122.254/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet15",
+        "mac": "ab:c8:96:b5:cf:60",
+        "ipv4": "10.242.238.82/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "OSPF"
+      ],
+      "bgp_asn": 65100
+    },
+    "vlans": [
+      {
+        "id": 31,
+        "name": "VLAN31"
+      },
+      {
+        "id": 29,
+        "name": "VLAN29"
+      },
+      {
+        "id": 60,
+        "name": "VLAN60"
+      },
+      {
+        "id": 55,
+        "name": "VLAN55"
+      },
+      {
+        "id": 165,
+        "name": "VLAN165"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 2827673,
+      "cpu_pct": 23,
+      "mem_used_pct": 53,
+      "temperature_c": 42
+    },
+    "licenses": [
+      "security"
+    ],
+    "stack": {
+      "role": "stack_member",
+      "members": 1
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v1",
+      "last_audit": "2025-10-06T19:14:52.287923Z",
+      "audit_score": 91
+    },
+    "alarms": [
+      {
+        "severity": "minor",
+        "code": "INTF_ERRORS",
+        "message": "High CRC errors on Ethernet1"
+      }
+    ],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T19:14:52.287923Z",
+    "last_seen": "2025-10-06T19:14:52.287923Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-004.net.example.com",
+    "hostname": "cisco-004",
+    "vendor": "Cisco",
+    "os": "IOS-XE",
+    "os_version": "6.5(5)",
+    "model": "C9300-48P",
+    "serial_number": "CSN8276916",
+    "platform": "network_device",
+    "location": {
+      "city": "Auckland",
+      "country": "New Zealand",
+      "latitude": -36.8485,
+      "longitude": 174.7633
+    },
+    "site": {
+      "site_code": "AUC-01",
+      "address_hint": "Auckland DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.4.184",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "04:94:91:a2:7f:4f",
+        "ipv4": "10.99.231.156/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "ac:89:de:c8:84:fc",
+        "ipv4": "10.161.126.214/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "53:d2:50:11:77:b5",
+        "ipv4": "10.105.220.236/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "cf:23:20:24:7d:c3",
+        "ipv4": "10.248.194.200/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "a7:e7:20:9b:0d:5c",
+        "ipv4": "10.73.75.97/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "46:9a:30:fa:ab:44",
+        "ipv4": "10.136.220.221/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "8e:a1:55:21:e0:75",
+        "ipv4": "10.226.127.194/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "4f:8c:4a:c9:6f:66",
+        "ipv4": "10.74.108.88/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "ISIS"
+      ],
+      "bgp_asn": null
+    },
+    "vlans": [
+      {
+        "id": 142,
+        "name": "VLAN142"
+      },
+      {
+        "id": 98,
+        "name": "VLAN98"
+      },
+      {
+        "id": 58,
+        "name": "VLAN58"
+      },
+      {
+        "id": 174,
+        "name": "VLAN174"
+      },
+      {
+        "id": 67,
+        "name": "VLAN67"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 4651923,
+      "cpu_pct": 3,
+      "mem_used_pct": 7,
+      "temperature_c": 48
+    },
+    "licenses": [
+      "threat"
+    ],
+    "stack": {
+      "role": "standalone",
+      "members": 1
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T19:35:52.288180Z",
+      "audit_score": 83
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:35:52.288180Z",
+    "last_seen": "2025-10-06T19:35:52.288180Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-005.net.example.com",
+    "hostname": "hpe-005",
+    "vendor": "HPE",
+    "os": "Comware",
+    "os_version": "5.7(1)",
+    "model": "5130 EI",
+    "serial_number": "HSN1338727",
+    "platform": "network_device",
+    "location": {
+      "city": "Dubai",
+      "country": "UAE",
+      "latitude": 25.2048,
+      "longitude": 55.2708
+    },
+    "site": {
+      "site_code": "DUB-01",
+      "address_hint": "Dubai DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.5.76",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "ca:d6:6b:15:dc:c8",
+        "ipv4": "10.57.211.46/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "bc:57:75:20:c2:10",
+        "ipv4": "10.65.137.173/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "b0:1e:8c:09:17:d2",
+        "ipv4": "10.246.15.182/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "76:fa:1f:96:7c:e4",
+        "ipv4": "10.234.89.68/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "9f:04:95:a6:69:5e",
+        "ipv4": "10.16.157.162/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "09:d9:53:de:ad:92",
+        "ipv4": "10.48.40.214/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "ab:13:d1:e2:5d:cf",
+        "ipv4": "10.54.169.167/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "33:ca:2d:a2:40:25",
+        "ipv4": "10.169.246.68/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "OSPF",
+        "ISIS"
+      ],
+      "bgp_asn": null
+    },
+    "vlans": [
+      {
+        "id": 100,
+        "name": "VLAN100"
+      },
+      {
+        "id": 19,
+        "name": "VLAN19"
+      },
+      {
+        "id": 161,
+        "name": "VLAN161"
+      },
+      {
+        "id": 166,
+        "name": "VLAN166"
+      },
+      {
+        "id": 65,
+        "name": "VLAN65"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 915272,
+      "cpu_pct": 86,
+      "mem_used_pct": 62,
+      "temperature_c": 69
+    },
+    "licenses": [
+      "security"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 1
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T19:55:52.288364Z",
+      "audit_score": 86
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:55:52.288364Z",
+    "last_seen": "2025-10-06T19:55:52.288364Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-006.net.example.com",
+    "hostname": "fortinet-006",
+    "vendor": "Fortinet",
+    "os": "FortiOS",
+    "os_version": "9.5(4)",
+    "model": "FG-200F",
+    "serial_number": "FSN2474431",
+    "platform": "network_device",
+    "location": {
+      "city": "Ashburn",
+      "country": "USA",
+      "latitude": 39.0438,
+      "longitude": -77.4874
+    },
+    "site": {
+      "site_code": "ASH-01",
+      "address_hint": "Ashburn DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.6.134",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "08:22:2b:0e:98:b0",
+        "ipv4": "10.220.9.101/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "6f:28:b2:ab:b4:c6",
+        "ipv4": "10.181.48.8/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "e6:b7:40:31:1f:88",
+        "ipv4": "10.81.16.159/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "2a:de:b8:09:d7:a1",
+        "ipv4": "10.98.84.160/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 40000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "BGP",
+        "ISIS"
+      ],
+      "bgp_asn": 64512
+    },
+    "vlans": [
+      {
+        "id": 170,
+        "name": "VLAN170"
+      },
+      {
+        "id": 120,
+        "name": "VLAN120"
+      },
+      {
+        "id": 189,
+        "name": "VLAN189"
+      },
+      {
+        "id": 137,
+        "name": "VLAN137"
+      },
+      {
+        "id": 177,
+        "name": "VLAN177"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 1181485,
+      "cpu_pct": 49,
+      "mem_used_pct": 69,
+      "temperature_c": 67
+    },
+    "licenses": [
+      "threat"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 7
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T19:47:52.288585Z",
+      "audit_score": 88
+    },
+    "alarms": [
+      {
+        "severity": "minor",
+        "code": "INTF_ERRORS",
+        "message": "High CRC errors on Ethernet1"
+      }
+    ],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:47:52.288585Z",
+    "last_seen": "2025-10-06T19:47:52.288585Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-007.net.example.com",
+    "hostname": "juniper-007",
+    "vendor": "Juniper",
+    "os": "Junos",
+    "os_version": "4.4(3)",
+    "model": "QFX5120",
+    "serial_number": "JSN3600168",
+    "platform": "network_device",
+    "location": {
+      "city": "Seoul",
+      "country": "South Korea",
+      "latitude": 37.5665,
+      "longitude": 126.978
+    },
+    "site": {
+      "site_code": "SEO-01",
+      "address_hint": "Seoul DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.7.156",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "d6:bc:19:b2:04:13",
+        "ipv4": "10.101.156.49/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "90:a1:c4:d4:8b:e4",
+        "ipv4": "10.28.171.66/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "30:ce:ba:ba:da:97",
+        "ipv4": "10.199.209.173/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "56:e8:b7:66:5d:1f",
+        "ipv4": "10.193.232.150/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "BGP",
+        "STATIC"
+      ],
+      "bgp_asn": 65100
+    },
+    "vlans": [
+      {
+        "id": 87,
+        "name": "VLAN87"
+      },
+      {
+        "id": 105,
+        "name": "VLAN105"
+      },
+      {
+        "id": 115,
+        "name": "VLAN115"
+      },
+      {
+        "id": 165,
+        "name": "VLAN165"
+      },
+      {
+        "id": 75,
+        "name": "VLAN75"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 1883643,
+      "cpu_pct": 42,
+      "mem_used_pct": 76,
+      "temperature_c": 53
+    },
+    "licenses": [
+      "advrouting"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 2
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v3",
+      "last_audit": "2025-10-06T19:37:52.288717Z",
+      "audit_score": 93
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:37:52.288717Z",
+    "last_seen": "2025-10-06T19:37:52.288717Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-008.net.example.com",
+    "hostname": "huawei-008",
+    "vendor": "Huawei",
+    "os": "VRP",
+    "os_version": "5.4(8)",
+    "model": "CE6865",
+    "serial_number": "HSN2524938",
+    "platform": "network_device",
+    "location": {
+      "city": "New York",
+      "country": "USA",
+      "latitude": 40.7128,
+      "longitude": -74.006
+    },
+    "site": {
+      "site_code": "NEW-01",
+      "address_hint": "New York DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.8.44",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "1d:9a:6c:c2:43:d2",
+        "ipv4": "10.36.96.40/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "95:5c:df:f0:1a:7b",
+        "ipv4": "10.244.200.25/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "3a:31:4b:42:3f:f1",
+        "ipv4": "10.189.53.225/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "29:69:45:a0:c1:83",
+        "ipv4": "10.216.150.163/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "75:20:a0:18:68:99",
+        "ipv4": "10.205.191.253/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "9c:83:55:5e:a2:0a",
+        "ipv4": "10.20.175.200/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "b8:e8:3e:df:29:96",
+        "ipv4": "10.213.54.182/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "c9:89:f6:15:c0:03",
+        "ipv4": "10.208.14.161/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "OSPF"
+      ],
+      "bgp_asn": null
+    },
+    "vlans": [
+      {
+        "id": 142,
+        "name": "VLAN142"
+      },
+      {
+        "id": 105,
+        "name": "VLAN105"
+      },
+      {
+        "id": 103,
+        "name": "VLAN103"
+      },
+      {
+        "id": 193,
+        "name": "VLAN193"
+      },
+      {
+        "id": 135,
+        "name": "VLAN135"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 352810,
+      "cpu_pct": 84,
+      "mem_used_pct": 12,
+      "temperature_c": 25
+    },
+    "licenses": [
+      "base"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 4
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v3",
+      "last_audit": "2025-10-06T20:39:52.288862Z",
+      "audit_score": 95
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T20:39:52.288862Z",
+    "last_seen": "2025-10-06T20:39:52.288862Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-009.net.example.com",
+    "hostname": "huawei-009",
+    "vendor": "Huawei",
+    "os": "VRP",
+    "os_version": "5.1(2)",
+    "model": "NE40E-X3",
+    "serial_number": "HSN5884337",
+    "platform": "network_device",
+    "location": {
+      "city": "Johannesburg",
+      "country": "South Africa",
+      "latitude": -26.2041,
+      "longitude": 28.0473
+    },
+    "site": {
+      "site_code": "JOH-01",
+      "address_hint": "Johannesburg DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.9.87",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "13:e9:d5:a6:6c:6a",
+        "ipv4": "10.102.139.4/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "0f:ef:03:8b:dd:07",
+        "ipv4": "10.27.208.109/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "e4:78:13:74:30:86",
+        "ipv4": "10.4.107.164/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "c4:0d:60:49:31:ad",
+        "ipv4": "10.52.41.24/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "10:67:ce:cb:66:a8",
+        "ipv4": "10.172.29.16/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "e3:72:e3:e7:b9:a7",
+        "ipv4": "10.146.249.29/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "fb:b8:ef:a6:35:4a",
+        "ipv4": "10.94.54.71/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "e9:89:8b:2d:17:f4",
+        "ipv4": "10.165.227.136/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "OSPF"
+      ],
+      "bgp_asn": 64512
+    },
+    "vlans": [
+      {
+        "id": 18,
+        "name": "VLAN18"
+      },
+      {
+        "id": 63,
+        "name": "VLAN63"
+      },
+      {
+        "id": 33,
+        "name": "VLAN33"
+      },
+      {
+        "id": 34,
+        "name": "VLAN34"
+      },
+      {
+        "id": 112,
+        "name": "VLAN112"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 3344033,
+      "cpu_pct": 47,
+      "mem_used_pct": 47,
+      "temperature_c": 31
+    },
+    "licenses": [
+      "advrouting"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 4
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v3",
+      "last_audit": "2025-10-06T19:24:52.288976Z",
+      "audit_score": 96
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:24:52.288976Z",
+    "last_seen": "2025-10-06T19:24:52.288976Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-010.net.example.com",
+    "hostname": "juniper-010",
+    "vendor": "Juniper",
+    "os": "Junos",
+    "os_version": "6.4(9)",
+    "model": "EX4300",
+    "serial_number": "JSN9098800",
+    "platform": "network_device",
+    "location": {
+      "city": "Melbourne",
+      "country": "Australia",
+      "latitude": -37.8136,
+      "longitude": 144.9631
+    },
+    "site": {
+      "site_code": "MEL-01",
+      "address_hint": "Melbourne DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.10.12",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "0d:64:38:98:5c:87",
+        "ipv4": "10.219.81.75/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "27:64:af:e9:31:ec",
+        "ipv4": "10.57.250.172/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "90:95:25:d6:72:11",
+        "ipv4": "10.157.77.128/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "a6:7b:7e:e4:34:cc",
+        "ipv4": "10.60.42.234/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "BGP",
+        "OSPF"
+      ],
+      "bgp_asn": 65100
+    },
+    "vlans": [
+      {
+        "id": 87,
+        "name": "VLAN87"
+      },
+      {
+        "id": 72,
+        "name": "VLAN72"
+      },
+      {
+        "id": 111,
+        "name": "VLAN111"
+      },
+      {
+        "id": 57,
+        "name": "VLAN57"
+      },
+      {
+        "id": 195,
+        "name": "VLAN195"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 1602252,
+      "cpu_pct": 25,
+      "mem_used_pct": 22,
+      "temperature_c": 40
+    },
+    "licenses": [
+      "base"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 1
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T19:08:52.289165Z",
+      "audit_score": 78
+    },
+    "alarms": [
+      {
+        "severity": "minor",
+        "code": "INTF_ERRORS",
+        "message": "High CRC errors on Ethernet1"
+      }
+    ],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:08:52.289165Z",
+    "last_seen": "2025-10-06T19:08:52.289165Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-011.net.example.com",
+    "hostname": "dell-011",
+    "vendor": "Dell",
+    "os": "OS10",
+    "os_version": "12.7(4)",
+    "model": "S4148F-ON",
+    "serial_number": "DSN3834026",
+    "platform": "network_device",
+    "location": {
+      "city": "Mumbai",
+      "country": "India",
+      "latitude": 19.076,
+      "longitude": 72.8777
+    },
+    "site": {
+      "site_code": "MUM-01",
+      "address_hint": "Mumbai DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.11.196",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "fc:44:a2:56:46:fc",
+        "ipv4": "10.231.169.89/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "6b:39:84:b8:f6:91",
+        "ipv4": "10.106.200.21/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "cb:c7:73:62:b7:82",
+        "ipv4": "10.84.69.150/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "80:e9:8b:df:7e:c9",
+        "ipv4": "10.200.40.18/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "1b:17:30:0b:22:f7",
+        "ipv4": "10.132.117.66/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "27:38:ae:0f:bb:9b",
+        "ipv4": "10.71.238.115/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "d9:e1:38:f4:54:e4",
+        "ipv4": "10.71.179.134/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "69:78:0c:41:b1:b6",
+        "ipv4": "10.83.0.253/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet8",
+        "mac": "4c:6d:29:9f:ad:c8",
+        "ipv4": "10.184.33.66/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet9",
+        "mac": "c7:43:2a:10:7d:7f",
+        "ipv4": "10.18.77.25/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet10",
+        "mac": "b5:ab:cb:19:df:9a",
+        "ipv4": "10.160.91.21/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet11",
+        "mac": "e5:2f:90:da:e5:7e",
+        "ipv4": "10.60.109.101/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet12",
+        "mac": "87:39:9a:d2:be:32",
+        "ipv4": "10.129.232.96/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet13",
+        "mac": "e3:3a:93:b7:ff:56",
+        "ipv4": "10.96.27.98/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet14",
+        "mac": "ac:14:b4:8c:ec:73",
+        "ipv4": "10.232.10.181/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet15",
+        "mac": "35:a3:3d:6c:84:b0",
+        "ipv4": "10.219.97.9/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "EIGRP"
+      ],
+      "bgp_asn": 65000
+    },
+    "vlans": [
+      {
+        "id": 104,
+        "name": "VLAN104"
+      },
+      {
+        "id": 143,
+        "name": "VLAN143"
+      },
+      {
+        "id": 111,
+        "name": "VLAN111"
+      },
+      {
+        "id": 124,
+        "name": "VLAN124"
+      },
+      {
+        "id": 91,
+        "name": "VLAN91"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 2017894,
+      "cpu_pct": 24,
+      "mem_used_pct": 58,
+      "temperature_c": 75
+    },
+    "licenses": [
+      "base"
+    ],
+    "stack": {
+      "role": "stack_member",
+      "members": 8
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T20:24:52.289301Z",
+      "audit_score": 86
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T20:24:52.289301Z",
+    "last_seen": "2025-10-06T20:24:52.289301Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-012.net.example.com",
+    "hostname": "huawei-012",
+    "vendor": "Huawei",
+    "os": "VRP",
+    "os_version": "9.6(3)",
+    "model": "CE6865",
+    "serial_number": "HSN6035606",
+    "platform": "network_device",
+    "location": {
+      "city": "Melbourne",
+      "country": "Australia",
+      "latitude": -37.8136,
+      "longitude": 144.9631
+    },
+    "site": {
+      "site_code": "MEL-01",
+      "address_hint": "Melbourne DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.12.242",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "46:0d:23:af:a1:0f",
+        "ipv4": "10.53.150.235/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "a9:f4:d9:78:1f:41",
+        "ipv4": "10.210.206.252/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "85:a8:39:d9:5e:09",
+        "ipv4": "10.146.207.199/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "27:8c:56:ff:8e:58",
+        "ipv4": "10.25.195.101/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "17:ae:a3:1b:97:b4",
+        "ipv4": "10.112.59.102/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "d0:65:d8:f9:87:15",
+        "ipv4": "10.234.234.211/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "11:cb:24:e1:4a:25",
+        "ipv4": "10.131.115.167/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "df:a5:0f:6b:42:66",
+        "ipv4": "10.171.151.171/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet8",
+        "mac": "7b:50:83:19:a7:32",
+        "ipv4": "10.140.71.26/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet9",
+        "mac": "b1:73:46:0e:0c:d1",
+        "ipv4": "10.251.168.167/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet10",
+        "mac": "fc:4d:ed:80:b2:b4",
+        "ipv4": "10.254.142.32/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet11",
+        "mac": "08:70:ed:e1:87:1f",
+        "ipv4": "10.156.134.190/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet12",
+        "mac": "f7:c0:8d:9f:17:50",
+        "ipv4": "10.30.45.28/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet13",
+        "mac": "c3:b1:86:ff:83:69",
+        "ipv4": "10.199.31.128/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet14",
+        "mac": "53:d7:a8:47:27:24",
+        "ipv4": "10.48.230.89/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet15",
+        "mac": "67:05:93:84:76:50",
+        "ipv4": "10.70.69.167/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "OSPF",
+        "STATIC"
+      ],
+      "bgp_asn": 65100
+    },
+    "vlans": [
+      {
+        "id": 120,
+        "name": "VLAN120"
+      },
+      {
+        "id": 188,
+        "name": "VLAN188"
+      },
+      {
+        "id": 73,
+        "name": "VLAN73"
+      },
+      {
+        "id": 51,
+        "name": "VLAN51"
+      },
+      {
+        "id": 74,
+        "name": "VLAN74"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 3563586,
+      "cpu_pct": 53,
+      "mem_used_pct": 14,
+      "temperature_c": 58
+    },
+    "licenses": [
+      "security"
+    ],
+    "stack": {
+      "role": "stack_member",
+      "members": 6
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T19:38:52.289531Z",
+      "audit_score": 94
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:38:52.289531Z",
+    "last_seen": "2025-10-06T19:38:52.289531Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-013.net.example.com",
+    "hostname": "cisco-013",
+    "vendor": "Cisco",
+    "os": "IOS-XE",
+    "os_version": "9.0(9)",
+    "model": "C9300-48P",
+    "serial_number": "CSN3462288",
+    "platform": "network_device",
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan",
+      "latitude": 35.6895,
+      "longitude": 139.6917
+    },
+    "site": {
+      "site_code": "TOK-01",
+      "address_hint": "Tokyo DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.13.174",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "c2:48:37:e5:72:fe",
+        "ipv4": "10.62.215.27/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "3d:47:81:c7:ab:64",
+        "ipv4": "10.195.17.24/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "ed:c6:df:8d:d6:88",
+        "ipv4": "10.152.91.42/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "6e:7f:af:34:39:81",
+        "ipv4": "10.236.166.102/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "ISIS",
+        "OSPF"
+      ],
+      "bgp_asn": 65000
+    },
+    "vlans": [
+      {
+        "id": 84,
+        "name": "VLAN84"
+      },
+      {
+        "id": 198,
+        "name": "VLAN198"
+      },
+      {
+        "id": 77,
+        "name": "VLAN77"
+      },
+      {
+        "id": 47,
+        "name": "VLAN47"
+      },
+      {
+        "id": 175,
+        "name": "VLAN175"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 1532022,
+      "cpu_pct": 6,
+      "mem_used_pct": 95,
+      "temperature_c": 65
+    },
+    "licenses": [
+      "base"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 1
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v1",
+      "last_audit": "2025-10-06T19:19:52.289750Z",
+      "audit_score": 78
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T19:19:52.289750Z",
+    "last_seen": "2025-10-06T19:19:52.289750Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-014.net.example.com",
+    "hostname": "palo alto-014",
+    "vendor": "Palo Alto",
+    "os": "PAN-OS",
+    "os_version": "1.9(8)",
+    "model": "PA-5220",
+    "serial_number": "PSN6394007",
+    "platform": "network_device",
+    "location": {
+      "city": "Dallas",
+      "country": "USA",
+      "latitude": 32.7767,
+      "longitude": -96.797
+    },
+    "site": {
+      "site_code": "DAL-01",
+      "address_hint": "Dallas DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.14.77",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "08:44:46:dd:8d:00",
+        "ipv4": "10.106.55.168/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "7c:d3:eb:f0:18:20",
+        "ipv4": "10.55.57.86/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "8c:eb:26:99:22:86",
+        "ipv4": "10.76.182.129/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "be:21:16:0a:ed:9a",
+        "ipv4": "10.6.22.32/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "6b:5e:a0:4c:15:1e",
+        "ipv4": "10.245.48.139/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "8e:94:56:91:09:09",
+        "ipv4": "10.233.36.33/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "f9:0c:fa:ed:d0:aa",
+        "ipv4": "10.102.87.51/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "2b:4d:9a:b6:f2:d5",
+        "ipv4": "10.153.148.246/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet8",
+        "mac": "4d:98:91:d2:61:7f",
+        "ipv4": "10.213.108.70/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet9",
+        "mac": "bd:79:4c:ac:8c:64",
+        "ipv4": "10.103.145.147/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet10",
+        "mac": "09:25:7e:db:08:a2",
+        "ipv4": "10.178.70.228/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet11",
+        "mac": "95:2b:bb:1b:4d:9f",
+        "ipv4": "10.165.64.56/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet12",
+        "mac": "be:ea:a2:bf:ce:72",
+        "ipv4": "10.25.200.232/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet13",
+        "mac": "3e:e0:4c:09:e1:53",
+        "ipv4": "10.140.228.71/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet14",
+        "mac": "04:62:bb:bf:35:c8",
+        "ipv4": "10.194.26.63/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet15",
+        "mac": "06:67:c5:77:d6:38",
+        "ipv4": "10.41.30.245/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "OSPF",
+        "EIGRP"
+      ],
+      "bgp_asn": null
+    },
+    "vlans": [
+      {
+        "id": 58,
+        "name": "VLAN58"
+      },
+      {
+        "id": 145,
+        "name": "VLAN145"
+      },
+      {
+        "id": 128,
+        "name": "VLAN128"
+      },
+      {
+        "id": 148,
+        "name": "VLAN148"
+      },
+      {
+        "id": 162,
+        "name": "VLAN162"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 3495506,
+      "cpu_pct": 90,
+      "mem_used_pct": 27,
+      "temperature_c": 33
+    },
+    "licenses": [
+      "base"
+    ],
+    "stack": {
+      "role": "stack_member",
+      "members": 4
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T19:18:52.289821Z",
+      "audit_score": 74
+    },
+    "alarms": [
+      {
+        "severity": "warning",
+        "code": "TEMP_HIGH",
+        "message": "Chassis temperature above threshold"
+      }
+    ],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T19:18:52.289821Z",
+    "last_seen": "2025-10-06T19:18:52.289821Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-015.net.example.com",
+    "hostname": "arista-015",
+    "vendor": "Arista",
+    "os": "EOS",
+    "os_version": "10.0(4)",
+    "model": "7280SR3",
+    "serial_number": "ASN2727189",
+    "platform": "network_device",
+    "location": {
+      "city": "Seoul",
+      "country": "South Korea",
+      "latitude": 37.5665,
+      "longitude": 126.978
+    },
+    "site": {
+      "site_code": "SEO-01",
+      "address_hint": "Seoul DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.15.58",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "unreachable"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "e8:9d:97:77:89:a2",
+        "ipv4": "10.2.43.108/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "dd:91:26:85:ff:54",
+        "ipv4": "10.231.67.134/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "a8:94:a5:49:64:97",
+        "ipv4": "10.104.225.177/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "00:f8:c3:b9:cd:f3",
+        "ipv4": "10.161.93.118/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "cf:65:05:4f:b3:ee",
+        "ipv4": "10.40.211.238/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "c5:2d:54:64:d7:5d",
+        "ipv4": "10.25.163.178/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "df:9d:55:f7:7d:2e",
+        "ipv4": "10.73.191.59/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "42:a0:34:f8:6a:9e",
+        "ipv4": "10.178.89.152/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "OSPF"
+      ],
+      "bgp_asn": null
+    },
+    "vlans": [
+      {
+        "id": 41,
+        "name": "VLAN41"
+      },
+      {
+        "id": 55,
+        "name": "VLAN55"
+      },
+      {
+        "id": 104,
+        "name": "VLAN104"
+      },
+      {
+        "id": 66,
+        "name": "VLAN66"
+      },
+      {
+        "id": 176,
+        "name": "VLAN176"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 0,
+      "cpu_pct": null,
+      "mem_used_pct": null,
+      "temperature_c": null
+    },
+    "licenses": [
+      "advrouting"
+    ],
+    "stack": {
+      "role": "standalone",
+      "members": 6
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v1",
+      "last_audit": "2025-10-06T19:37:52.289986Z",
+      "audit_score": null
+    },
+    "alarms": [
+      {
+        "severity": "critical",
+        "code": "MGMT_DOWN",
+        "message": "Device unreachable over SNMP and SSH"
+      },
+      {
+        "severity": "warning",
+        "code": "BGP_FLAP",
+        "message": "Peer not established"
+      }
+    ],
+    "status": "offline",
+    "health": "critical",
+    "collection_timestamp": "2025-10-06T19:37:52.289986Z",
+    "last_seen": null,
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-016.net.example.com",
+    "hostname": "huawei-016",
+    "vendor": "Huawei",
+    "os": "VRP",
+    "os_version": "12.8(5)",
+    "model": "CE6865",
+    "serial_number": "HSN1807400",
+    "platform": "network_device",
+    "location": {
+      "city": "Johannesburg",
+      "country": "South Africa",
+      "latitude": -26.2041,
+      "longitude": 28.0473
+    },
+    "site": {
+      "site_code": "JOH-01",
+      "address_hint": "Johannesburg DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.16.120",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "85:d0:17:8b:9a:41",
+        "ipv4": "10.241.69.5/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "87:7c:d4:8b:33:6b",
+        "ipv4": "10.10.67.8/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "9e:14:68:d4:4e:27",
+        "ipv4": "10.47.69.10/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "db:db:7f:d3:e2:43",
+        "ipv4": "10.74.107.205/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "30:0f:15:18:4e:ca",
+        "ipv4": "10.135.32.69/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "83:6a:04:30:70:29",
+        "ipv4": "10.30.228.99/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "15:a9:26:55:a9:3c",
+        "ipv4": "10.201.89.51/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "09:35:d0:65:aa:14",
+        "ipv4": "10.6.87.205/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "BGP",
+        "ISIS"
+      ],
+      "bgp_asn": 65100
+    },
+    "vlans": [
+      {
+        "id": 182,
+        "name": "VLAN182"
+      },
+      {
+        "id": 106,
+        "name": "VLAN106"
+      },
+      {
+        "id": 23,
+        "name": "VLAN23"
+      },
+      {
+        "id": 71,
+        "name": "VLAN71"
+      },
+      {
+        "id": 139,
+        "name": "VLAN139"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 3109767,
+      "cpu_pct": 47,
+      "mem_used_pct": 37,
+      "temperature_c": 32
+    },
+    "licenses": [
+      "threat"
+    ],
+    "stack": {
+      "role": "stack_member",
+      "members": 2
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T20:44:52.290080Z",
+      "audit_score": 77
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T20:44:52.290080Z",
+    "last_seen": "2025-10-06T20:44:52.290080Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-017.net.example.com",
+    "hostname": "huawei-017",
+    "vendor": "Huawei",
+    "os": "VRP",
+    "os_version": "2.6(6)",
+    "model": "CE6865",
+    "serial_number": "HSN6495202",
+    "platform": "network_device",
+    "location": {
+      "city": "Tel Aviv",
+      "country": "Israel",
+      "latitude": 32.0853,
+      "longitude": 34.7818
+    },
+    "site": {
+      "site_code": "TEL-01",
+      "address_hint": "Tel Aviv DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.17.133",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "c9:92:14:a8:55:8e",
+        "ipv4": "10.136.114.206/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "e7:79:12:e0:06:e4",
+        "ipv4": "10.24.56.117/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "7b:18:5c:4d:fb:33",
+        "ipv4": "10.153.134.213/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "b5:8d:f3:e2:c0:44",
+        "ipv4": "10.223.224.19/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "11:a2:4f:3b:56:9c",
+        "ipv4": "10.214.238.81/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "d6:c7:82:a2:e7:1f",
+        "ipv4": "10.122.177.174/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "a5:50:18:4b:40:5b",
+        "ipv4": "10.113.30.167/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "f1:e5:07:36:17:4d",
+        "ipv4": "10.182.92.143/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 1000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "OSPF",
+        "ISIS"
+      ],
+      "bgp_asn": 65000
+    },
+    "vlans": [
+      {
+        "id": 120,
+        "name": "VLAN120"
+      },
+      {
+        "id": 53,
+        "name": "VLAN53"
+      },
+      {
+        "id": 37,
+        "name": "VLAN37"
+      },
+      {
+        "id": 118,
+        "name": "VLAN118"
+      },
+      {
+        "id": 157,
+        "name": "VLAN157"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 1825845,
+      "cpu_pct": 14,
+      "mem_used_pct": 32,
+      "temperature_c": 27
+    },
+    "licenses": [
+      "advrouting"
+    ],
+    "stack": {
+      "role": "stack_member",
+      "members": 3
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T20:01:52.290177Z",
+      "audit_score": 81
+    },
+    "alarms": [
+      {
+        "severity": "minor",
+        "code": "INTF_ERRORS",
+        "message": "High CRC errors on Ethernet1"
+      }
+    ],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T20:01:52.290177Z",
+    "last_seen": "2025-10-06T20:01:52.290177Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-018.net.example.com",
+    "hostname": "f5-018",
+    "vendor": "F5",
+    "os": "TMOS",
+    "os_version": "10.6(6)",
+    "model": "BIG-IP i5800",
+    "serial_number": "FSN3142803",
+    "platform": "network_device",
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "latitude": 1.3521,
+      "longitude": 103.8198
+    },
+    "site": {
+      "site_code": "SIN-01",
+      "address_hint": "Singapore DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.18.197",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "55:74:a6:e9:0e:b6",
+        "ipv4": "10.121.227.158/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "85:f3:5a:d3:60:44",
+        "ipv4": "10.235.62.156/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "b7:27:d2:09:5e:9c",
+        "ipv4": "10.25.232.107/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "66:15:d9:4d:05:e2",
+        "ipv4": "10.254.246.25/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "a6:e7:98:b4:fe:0c",
+        "ipv4": "10.246.19.21/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "3a:28:c1:cd:de:a8",
+        "ipv4": "10.183.205.132/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "ed:c2:52:e3:2b:32",
+        "ipv4": "10.60.21.254/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "af:5b:f4:94:8f:52",
+        "ipv4": "10.190.126.192/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet8",
+        "mac": "2f:9a:4f:7d:c4:92",
+        "ipv4": "10.45.144.138/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet9",
+        "mac": "7e:fc:c2:1d:74:11",
+        "ipv4": "10.57.78.34/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet10",
+        "mac": "ec:c2:af:34:8f:84",
+        "ipv4": "10.182.143.82/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet11",
+        "mac": "89:e9:c9:94:d3:44",
+        "ipv4": "10.218.152.236/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet12",
+        "mac": "c2:47:f2:64:da:68",
+        "ipv4": "10.107.160.3/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet13",
+        "mac": "f2:87:90:bd:eb:fb",
+        "ipv4": "10.125.55.44/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet14",
+        "mac": "4a:46:0f:ce:8d:dd",
+        "ipv4": "10.141.46.143/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet15",
+        "mac": "31:0f:63:6f:30:43",
+        "ipv4": "10.216.212.55/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "EIGRP"
+      ],
+      "bgp_asn": 65100
+    },
+    "vlans": [
+      {
+        "id": 180,
+        "name": "VLAN180"
+      },
+      {
+        "id": 124,
+        "name": "VLAN124"
+      },
+      {
+        "id": 158,
+        "name": "VLAN158"
+      },
+      {
+        "id": 22,
+        "name": "VLAN22"
+      },
+      {
+        "id": 176,
+        "name": "VLAN176"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 3605517,
+      "cpu_pct": 1,
+      "mem_used_pct": 26,
+      "temperature_c": 47
+    },
+    "licenses": [
+      "advrouting"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 1
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v1",
+      "last_audit": "2025-10-06T20:34:52.290277Z",
+      "audit_score": 80
+    },
+    "alarms": [
+      {
+        "severity": "minor",
+        "code": "INTF_ERRORS",
+        "message": "High CRC errors on Ethernet1"
+      }
+    ],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T20:34:52.290277Z",
+    "last_seen": "2025-10-06T20:34:52.290277Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-019.net.example.com",
+    "hostname": "juniper-019",
+    "vendor": "Juniper",
+    "os": "Junos",
+    "os_version": "12.9(5)",
+    "model": "MX480",
+    "serial_number": "JSN6740398",
+    "platform": "network_device",
+    "location": {
+      "city": "Santiago",
+      "country": "Chile",
+      "latitude": -33.4489,
+      "longitude": -70.6693
+    },
+    "site": {
+      "site_code": "SAN-01",
+      "address_hint": "Santiago DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.19.21",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "42:53:4f:d4:38:24",
+        "ipv4": "10.76.140.24/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "fe:f0:e7:45:ac:22",
+        "ipv4": "10.2.153.217/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "bf:9b:db:7f:25:7f",
+        "ipv4": "10.37.10.217/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "77:77:81:2f:4d:67",
+        "ipv4": "10.249.150.50/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "OSPF"
+      ],
+      "bgp_asn": null
+    },
+    "vlans": [
+      {
+        "id": 179,
+        "name": "VLAN179"
+      },
+      {
+        "id": 93,
+        "name": "VLAN93"
+      },
+      {
+        "id": 165,
+        "name": "VLAN165"
+      },
+      {
+        "id": 150,
+        "name": "VLAN150"
+      },
+      {
+        "id": 107,
+        "name": "VLAN107"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 4757654,
+      "cpu_pct": 6,
+      "mem_used_pct": 80,
+      "temperature_c": 73
+    },
+    "licenses": [
+      "security"
+    ],
+    "stack": {
+      "role": "stack_member",
+      "members": 2
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T20:59:52.290442Z",
+      "audit_score": 75
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T20:59:52.290442Z",
+    "last_seen": "2025-10-06T20:59:52.290442Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-020.net.example.com",
+    "hostname": "ubiquiti-020",
+    "vendor": "Ubiquiti",
+    "os": "EdgeOS",
+    "os_version": "6.4(6)",
+    "model": "EdgeRouter 4",
+    "serial_number": "USN9298720",
+    "platform": "network_device",
+    "location": {
+      "city": "Toronto",
+      "country": "Canada",
+      "latitude": 43.6532,
+      "longitude": -79.3832
+    },
+    "site": {
+      "site_code": "TOR-01",
+      "address_hint": "Toronto DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.20.91",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "34:68:ef:60:f2:42",
+        "ipv4": "10.44.182.247/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "9a:61:b7:63:14:fc",
+        "ipv4": "10.69.202.180/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "77:fc:c8:f9:0d:cd",
+        "ipv4": "10.214.55.137/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "50:31:d6:a6:aa:dd",
+        "ipv4": "10.5.241.165/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "15:d0:4d:ae:8e:7d",
+        "ipv4": "10.155.223.6/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "f7:05:5a:ea:61:17",
+        "ipv4": "10.105.183.118/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "9e:72:dc:18:7f:4d",
+        "ipv4": "10.194.175.64/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "a4:c3:cb:5c:43:a2",
+        "ipv4": "10.43.235.139/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet8",
+        "mac": "84:85:26:e5:74:0b",
+        "ipv4": "10.160.146.122/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet9",
+        "mac": "2b:c2:0a:19:49:bc",
+        "ipv4": "10.207.42.86/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet10",
+        "mac": "d5:3c:74:1b:f7:4f",
+        "ipv4": "10.181.203.108/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet11",
+        "mac": "36:a4:ba:66:c0:ca",
+        "ipv4": "10.157.244.124/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet12",
+        "mac": "1a:6c:98:c4:2c:70",
+        "ipv4": "10.250.59.17/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet13",
+        "mac": "d5:16:e5:fd:99:92",
+        "ipv4": "10.57.17.28/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet14",
+        "mac": "af:63:fc:70:4f:dd",
+        "ipv4": "10.241.169.193/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet15",
+        "mac": "40:41:0d:60:f4:b1",
+        "ipv4": "10.3.110.180/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "EIGRP"
+      ],
+      "bgp_asn": null
+    },
+    "vlans": [
+      {
+        "id": 118,
+        "name": "VLAN118"
+      },
+      {
+        "id": 73,
+        "name": "VLAN73"
+      },
+      {
+        "id": 89,
+        "name": "VLAN89"
+      },
+      {
+        "id": 129,
+        "name": "VLAN129"
+      },
+      {
+        "id": 105,
+        "name": "VLAN105"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 3019876,
+      "cpu_pct": 60,
+      "mem_used_pct": 50,
+      "temperature_c": 29
+    },
+    "licenses": [
+      "threat"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 7
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T19:22:52.290508Z",
+      "audit_score": 87
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:22:52.290508Z",
+    "last_seen": "2025-10-06T19:22:52.290508Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-021.net.example.com",
+    "hostname": "check point-021",
+    "vendor": "Check Point",
+    "os": "Gaia",
+    "os_version": "2.7(3)",
+    "model": "7000",
+    "serial_number": "CSN9360300",
+    "platform": "network_device",
+    "location": {
+      "city": "Warsaw",
+      "country": "Poland",
+      "latitude": 52.2297,
+      "longitude": 21.0122
+    },
+    "site": {
+      "site_code": "WAR-01",
+      "address_hint": "Warsaw DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.21.170",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "ca:45:9d:41:74:11",
+        "ipv4": "10.84.74.251/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "cb:5e:da:f2:56:13",
+        "ipv4": "10.45.174.239/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "57:fc:26:e7:01:6d",
+        "ipv4": "10.45.219.133/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "06:59:29:99:27:16",
+        "ipv4": "10.18.207.106/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "ISIS"
+      ],
+      "bgp_asn": 65000
+    },
+    "vlans": [
+      {
+        "id": 112,
+        "name": "VLAN112"
+      },
+      {
+        "id": 51,
+        "name": "VLAN51"
+      },
+      {
+        "id": 110,
+        "name": "VLAN110"
+      },
+      {
+        "id": 85,
+        "name": "VLAN85"
+      },
+      {
+        "id": 158,
+        "name": "VLAN158"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 3380329,
+      "cpu_pct": 52,
+      "mem_used_pct": 66,
+      "temperature_c": 72
+    },
+    "licenses": [
+      "threat"
+    ],
+    "stack": {
+      "role": "standalone",
+      "members": 5
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T19:15:52.290719Z",
+      "audit_score": 83
+    },
+    "alarms": [
+      {
+        "severity": "warning",
+        "code": "TEMP_HIGH",
+        "message": "Chassis temperature above threshold"
+      }
+    ],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:15:52.290719Z",
+    "last_seen": "2025-10-06T19:15:52.290719Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-022.net.example.com",
+    "hostname": "dell-022",
+    "vendor": "Dell",
+    "os": "OS10",
+    "os_version": "3.4(9)",
+    "model": "S5248F-ON",
+    "serial_number": "DSN9834132",
+    "platform": "network_device",
+    "location": {
+      "city": "Mumbai",
+      "country": "India",
+      "latitude": 19.076,
+      "longitude": 72.8777
+    },
+    "site": {
+      "site_code": "MUM-01",
+      "address_hint": "Mumbai DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.22.151",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "78:5b:cd:01:1a:44",
+        "ipv4": "10.246.45.81/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "71:b2:d4:0f:a2:79",
+        "ipv4": "10.185.2.117/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "dd:89:ea:59:8b:fe",
+        "ipv4": "10.10.205.82/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "3b:51:b5:87:9f:28",
+        "ipv4": "10.251.181.238/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "BGP",
+        "EIGRP"
+      ],
+      "bgp_asn": 64512
+    },
+    "vlans": [
+      {
+        "id": 197,
+        "name": "VLAN197"
+      },
+      {
+        "id": 190,
+        "name": "VLAN190"
+      },
+      {
+        "id": 105,
+        "name": "VLAN105"
+      },
+      {
+        "id": 116,
+        "name": "VLAN116"
+      },
+      {
+        "id": 93,
+        "name": "VLAN93"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 1459215,
+      "cpu_pct": 2,
+      "mem_used_pct": 14,
+      "temperature_c": 28
+    },
+    "licenses": [
+      "base"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 2
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v3",
+      "last_audit": "2025-10-06T20:19:52.290811Z",
+      "audit_score": 83
+    },
+    "alarms": [
+      {
+        "severity": "minor",
+        "code": "INTF_ERRORS",
+        "message": "High CRC errors on Ethernet1"
+      }
+    ],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T20:19:52.290811Z",
+    "last_seen": "2025-10-06T20:19:52.290811Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-023.net.example.com",
+    "hostname": "arista-023",
+    "vendor": "Arista",
+    "os": "EOS",
+    "os_version": "9.2(8)",
+    "model": "7050SX3-48YC8",
+    "serial_number": "ASN3514517",
+    "platform": "network_device",
+    "location": {
+      "city": "Tel Aviv",
+      "country": "Israel",
+      "latitude": 32.0853,
+      "longitude": 34.7818
+    },
+    "site": {
+      "site_code": "TEL-01",
+      "address_hint": "Tel Aviv DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.23.146",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "0b:63:5f:a2:b7:4f",
+        "ipv4": "10.244.3.191/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "a0:ba:66:3b:95:46",
+        "ipv4": "10.252.156.238/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "e6:3e:d1:80:01:82",
+        "ipv4": "10.251.158.68/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "dd:0f:2a:61:d6:66",
+        "ipv4": "10.177.157.28/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "1d:e1:4d:66:5f:91",
+        "ipv4": "10.154.15.170/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "1a:63:62:42:bb:a1",
+        "ipv4": "10.188.206.217/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "9b:30:34:2e:99:02",
+        "ipv4": "10.1.163.181/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "3c:ee:2a:15:d4:be",
+        "ipv4": "10.191.240.41/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "OSPF",
+        "ISIS"
+      ],
+      "bgp_asn": null
+    },
+    "vlans": [
+      {
+        "id": 170,
+        "name": "VLAN170"
+      },
+      {
+        "id": 28,
+        "name": "VLAN28"
+      },
+      {
+        "id": 39,
+        "name": "VLAN39"
+      },
+      {
+        "id": 102,
+        "name": "VLAN102"
+      },
+      {
+        "id": 198,
+        "name": "VLAN198"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 3826430,
+      "cpu_pct": 73,
+      "mem_used_pct": 42,
+      "temperature_c": 34
+    },
+    "licenses": [
+      "security"
+    ],
+    "stack": {
+      "role": "standalone",
+      "members": 4
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T19:40:52.290905Z",
+      "audit_score": 78
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T19:40:52.290905Z",
+    "last_seen": "2025-10-06T19:40:52.290905Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-024.net.example.com",
+    "hostname": "huawei-024",
+    "vendor": "Huawei",
+    "os": "VRP",
+    "os_version": "4.3(8)",
+    "model": "CE6865",
+    "serial_number": "HSN6781759",
+    "platform": "network_device",
+    "location": {
+      "city": "Dubai",
+      "country": "UAE",
+      "latitude": 25.2048,
+      "longitude": 55.2708
+    },
+    "site": {
+      "site_code": "DUB-01",
+      "address_hint": "Dubai DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.24.233",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "50:f0:51:37:3e:a6",
+        "ipv4": "10.153.88.218/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "5f:7b:ea:55:a8:9e",
+        "ipv4": "10.197.166.153/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "bc:9d:c6:a6:47:b4",
+        "ipv4": "10.240.229.156/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "8e:5e:1d:de:3e:15",
+        "ipv4": "10.252.236.97/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "e9:f4:d2:80:ef:75",
+        "ipv4": "10.10.160.201/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "0c:2e:35:9e:48:4d",
+        "ipv4": "10.58.21.40/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "0a:c5:58:52:a3:2a",
+        "ipv4": "10.101.136.213/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "35:b2:86:cf:19:f6",
+        "ipv4": "10.83.30.24/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet8",
+        "mac": "a9:ff:1d:45:63:8c",
+        "ipv4": "10.95.22.156/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet9",
+        "mac": "e1:eb:47:2e:64:25",
+        "ipv4": "10.168.171.31/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet10",
+        "mac": "fe:ff:60:78:37:f4",
+        "ipv4": "10.131.160.225/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet11",
+        "mac": "10:54:cd:e8:00:1a",
+        "ipv4": "10.141.236.27/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet12",
+        "mac": "ee:7d:ba:eb:5f:64",
+        "ipv4": "10.32.171.212/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet13",
+        "mac": "51:9c:29:dc:9e:29",
+        "ipv4": "10.206.35.59/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet14",
+        "mac": "56:bc:cc:1e:68:10",
+        "ipv4": "10.18.207.48/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet15",
+        "mac": "e4:c8:eb:22:e9:ed",
+        "ipv4": "10.126.191.105/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "EIGRP",
+        "OSPF"
+      ],
+      "bgp_asn": 64512
+    },
+    "vlans": [
+      {
+        "id": 188,
+        "name": "VLAN188"
+      },
+      {
+        "id": 96,
+        "name": "VLAN96"
+      },
+      {
+        "id": 40,
+        "name": "VLAN40"
+      },
+      {
+        "id": 58,
+        "name": "VLAN58"
+      },
+      {
+        "id": 187,
+        "name": "VLAN187"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 236242,
+      "cpu_pct": 24,
+      "mem_used_pct": 28,
+      "temperature_c": 75
+    },
+    "licenses": [
+      "threat"
+    ],
+    "stack": {
+      "role": "stack_member",
+      "members": 6
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v3",
+      "last_audit": "2025-10-06T19:03:52.291004Z",
+      "audit_score": 70
+    },
+    "alarms": [
+      {
+        "severity": "warning",
+        "code": "TEMP_HIGH",
+        "message": "Chassis temperature above threshold"
+      }
+    ],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:03:52.291004Z",
+    "last_seen": "2025-10-06T19:03:52.291004Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-025.net.example.com",
+    "hostname": "check point-025",
+    "vendor": "Check Point",
+    "os": "Gaia",
+    "os_version": "1.2(3)",
+    "model": "5600",
+    "serial_number": "CSN8773151",
+    "platform": "network_device",
+    "location": {
+      "city": "Melbourne",
+      "country": "Australia",
+      "latitude": -37.8136,
+      "longitude": 144.9631
+    },
+    "site": {
+      "site_code": "MEL-01",
+      "address_hint": "Melbourne DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.25.128",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "unreachable"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "67:35:73:5f:c1:e9",
+        "ipv4": "10.137.57.186/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "2c:47:49:47:47:9a",
+        "ipv4": "10.149.98.61/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 40000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "92:1a:a0:4a:33:33",
+        "ipv4": "10.61.108.89/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "e7:cd:47:12:d0:f1",
+        "ipv4": "10.8.13.249/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "31:d2:2d:a9:1d:31",
+        "ipv4": "10.0.238.105/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "01:71:48:1e:1a:b2",
+        "ipv4": "10.25.93.239/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "bd:e0:ba:88:3b:e7",
+        "ipv4": "10.40.187.91/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "47:4d:b2:5f:b4:b4",
+        "ipv4": "10.101.220.37/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "OSPF",
+        "STATIC"
+      ],
+      "bgp_asn": 64512
+    },
+    "vlans": [
+      {
+        "id": 106,
+        "name": "VLAN106"
+      },
+      {
+        "id": 56,
+        "name": "VLAN56"
+      },
+      {
+        "id": 14,
+        "name": "VLAN14"
+      },
+      {
+        "id": 175,
+        "name": "VLAN175"
+      },
+      {
+        "id": 34,
+        "name": "VLAN34"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 0,
+      "cpu_pct": null,
+      "mem_used_pct": null,
+      "temperature_c": null
+    },
+    "licenses": [
+      "base"
+    ],
+    "stack": {
+      "role": "standalone",
+      "members": 3
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v3",
+      "last_audit": "2025-10-06T20:04:52.291188Z",
+      "audit_score": null
+    },
+    "alarms": [
+      {
+        "severity": "critical",
+        "code": "MGMT_DOWN",
+        "message": "Device unreachable over SNMP and SSH"
+      },
+      {
+        "severity": "warning",
+        "code": "BGP_FLAP",
+        "message": "Peer not established"
+      }
+    ],
+    "status": "offline",
+    "health": "critical",
+    "collection_timestamp": "2025-10-06T20:04:52.291188Z",
+    "last_seen": null,
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-026.net.example.com",
+    "hostname": "dell-026",
+    "vendor": "Dell",
+    "os": "OS10",
+    "os_version": "4.0(2)",
+    "model": "S4148F-ON",
+    "serial_number": "DSN3270528",
+    "platform": "network_device",
+    "location": {
+      "city": "Warsaw",
+      "country": "Poland",
+      "latitude": 52.2297,
+      "longitude": 21.0122
+    },
+    "site": {
+      "site_code": "WAR-01",
+      "address_hint": "Warsaw DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.26.220",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "89:1d:88:8f:00:d3",
+        "ipv4": "10.118.119.233/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "9b:98:d1:a5:0b:a1",
+        "ipv4": "10.72.41.187/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "19:dd:67:bf:d4:85",
+        "ipv4": "10.128.186.53/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "f2:d5:ef:e0:25:64",
+        "ipv4": "10.245.166.40/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "EIGRP",
+        "STATIC"
+      ],
+      "bgp_asn": 65000
+    },
+    "vlans": [
+      {
+        "id": 107,
+        "name": "VLAN107"
+      },
+      {
+        "id": 134,
+        "name": "VLAN134"
+      },
+      {
+        "id": 102,
+        "name": "VLAN102"
+      },
+      {
+        "id": 47,
+        "name": "VLAN47"
+      },
+      {
+        "id": 14,
+        "name": "VLAN14"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 2112530,
+      "cpu_pct": 39,
+      "mem_used_pct": 69,
+      "temperature_c": 50
+    },
+    "licenses": [
+      "base"
+    ],
+    "stack": {
+      "role": "standalone",
+      "members": 3
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T20:32:52.291382Z",
+      "audit_score": 89
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T20:32:52.291382Z",
+    "last_seen": "2025-10-06T20:32:52.291382Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-027.net.example.com",
+    "hostname": "juniper-027",
+    "vendor": "Juniper",
+    "os": "Junos",
+    "os_version": "12.4(4)",
+    "model": "EX4300",
+    "serial_number": "JSN9783780",
+    "platform": "network_device",
+    "location": {
+      "city": "Dallas",
+      "country": "USA",
+      "latitude": 32.7767,
+      "longitude": -96.797
+    },
+    "site": {
+      "site_code": "DAL-01",
+      "address_hint": "Dallas DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.27.233",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "cd:8d:e6:65:06:c3",
+        "ipv4": "10.151.249.73/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "83:ee:75:2a:2a:cb",
+        "ipv4": "10.155.3.174/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "37:22:45:84:85:a9",
+        "ipv4": "10.180.107.23/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "5e:7d:bc:9e:f6:85",
+        "ipv4": "10.105.173.234/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "74:45:7b:94:d9:2e",
+        "ipv4": "10.15.59.194/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "24:41:e9:37:ba:a5",
+        "ipv4": "10.235.15.27/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "73:f8:56:37:41:ed",
+        "ipv4": "10.56.89.250/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "de:52:ad:8d:83:43",
+        "ipv4": "10.46.37.61/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "EIGRP",
+        "OSPF"
+      ],
+      "bgp_asn": null
+    },
+    "vlans": [
+      {
+        "id": 17,
+        "name": "VLAN17"
+      },
+      {
+        "id": 34,
+        "name": "VLAN34"
+      },
+      {
+        "id": 175,
+        "name": "VLAN175"
+      },
+      {
+        "id": 73,
+        "name": "VLAN73"
+      },
+      {
+        "id": 127,
+        "name": "VLAN127"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 1623007,
+      "cpu_pct": 5,
+      "mem_used_pct": 90,
+      "temperature_c": 71
+    },
+    "licenses": [
+      "base"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 4
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v1",
+      "last_audit": "2025-10-06T20:52:52.291503Z",
+      "audit_score": 73
+    },
+    "alarms": [
+      {
+        "severity": "minor",
+        "code": "INTF_ERRORS",
+        "message": "High CRC errors on Ethernet1"
+      }
+    ],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T20:52:52.291503Z",
+    "last_seen": "2025-10-06T20:52:52.291503Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-028.net.example.com",
+    "hostname": "cisco-028",
+    "vendor": "Cisco",
+    "os": "NX-OS",
+    "os_version": "6.8(2)",
+    "model": "N9K-C93180YC-EX",
+    "serial_number": "CSN4270553",
+    "platform": "network_device",
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "latitude": 1.3521,
+      "longitude": 103.8198
+    },
+    "site": {
+      "site_code": "SIN-01",
+      "address_hint": "Singapore DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.28.149",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "6a:2b:3e:3c:fe:72",
+        "ipv4": "10.218.30.160/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "e1:47:e9:e7:59:28",
+        "ipv4": "10.144.68.147/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "05:74:11:fa:89:32",
+        "ipv4": "10.175.221.12/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 1000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "1d:d8:e5:d1:18:ba",
+        "ipv4": "10.106.255.185/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 10000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "ISIS"
+      ],
+      "bgp_asn": 64512
+    },
+    "vlans": [
+      {
+        "id": 116,
+        "name": "VLAN116"
+      },
+      {
+        "id": 183,
+        "name": "VLAN183"
+      },
+      {
+        "id": 199,
+        "name": "VLAN199"
+      },
+      {
+        "id": 35,
+        "name": "VLAN35"
+      },
+      {
+        "id": 171,
+        "name": "VLAN171"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 4662518,
+      "cpu_pct": 29,
+      "mem_used_pct": 13,
+      "temperature_c": 48
+    },
+    "licenses": [
+      "base"
+    ],
+    "stack": {
+      "role": "standalone",
+      "members": 6
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v1",
+      "last_audit": "2025-10-06T19:30:52.291603Z",
+      "audit_score": 75
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:30:52.291603Z",
+    "last_seen": "2025-10-06T19:30:52.291603Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-029.net.example.com",
+    "hostname": "hpe-029",
+    "vendor": "HPE",
+    "os": "Comware",
+    "os_version": "4.8(7)",
+    "model": "5940",
+    "serial_number": "HSN5767747",
+    "platform": "network_device",
+    "location": {
+      "city": "Sao Paulo",
+      "country": "Brazil",
+      "latitude": -23.5505,
+      "longitude": -46.6333
+    },
+    "site": {
+      "site_code": "SAO-01",
+      "address_hint": "Sao Paulo DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.29.21",
+      "snmp": {
+        "version": "v3",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "65:e3:25:81:a1:8b",
+        "ipv4": "10.162.120.210/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "52:16:36:08:e0:9a",
+        "ipv4": "10.32.221.250/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 25000
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "6b:cf:d6:34:fd:22",
+        "ipv4": "10.204.117.149/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "08:52:2e:54:02:e8",
+        "ipv4": "10.19.227.102/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet4",
+        "mac": "02:8d:3a:eb:d3:fe",
+        "ipv4": "10.138.19.157/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet5",
+        "mac": "eb:7e:95:5c:ac:79",
+        "ipv4": "10.56.121.142/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet6",
+        "mac": "a7:77:03:de:11:8e",
+        "ipv4": "10.233.68.215/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      },
+      {
+        "name": "Ethernet7",
+        "mac": "77:2a:ad:0d:69:90",
+        "ipv4": "10.134.158.253/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 100000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "STATIC",
+        "BGP"
+      ],
+      "bgp_asn": 65000
+    },
+    "vlans": [
+      {
+        "id": 69,
+        "name": "VLAN69"
+      },
+      {
+        "id": 22,
+        "name": "VLAN22"
+      },
+      {
+        "id": 197,
+        "name": "VLAN197"
+      },
+      {
+        "id": 95,
+        "name": "VLAN95"
+      },
+      {
+        "id": 84,
+        "name": "VLAN84"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 399416,
+      "cpu_pct": 43,
+      "mem_used_pct": 24,
+      "temperature_c": 45
+    },
+    "licenses": [
+      "threat"
+    ],
+    "stack": {
+      "role": "chassis",
+      "members": 1
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v2",
+      "last_audit": "2025-10-06T19:21:52.291670Z",
+      "audit_score": 76
+    },
+    "alarms": [],
+    "status": "online",
+    "health": "degraded",
+    "collection_timestamp": "2025-10-06T19:21:52.291670Z",
+    "last_seen": "2025-10-06T19:21:52.291670Z",
+    "schema_version": "1.0.0"
+  },
+  {
+    "device_id": "device-030.net.example.com",
+    "hostname": "f5-030",
+    "vendor": "F5",
+    "os": "TMOS",
+    "os_version": "6.6(5)",
+    "model": "BIG-IP i5800",
+    "serial_number": "FSN6162180",
+    "platform": "network_device",
+    "location": {
+      "city": "Santiago",
+      "country": "Chile",
+      "latitude": -33.4489,
+      "longitude": -70.6693
+    },
+    "site": {
+      "site_code": "SAN-01",
+      "address_hint": "Santiago DC 1"
+    },
+    "management": {
+      "mgmt_ip": "172.16.30.216",
+      "snmp": {
+        "version": "v2c",
+        "reachability": "ok"
+      }
+    },
+    "interfaces": [
+      {
+        "name": "Ethernet0",
+        "mac": "66:ee:02:6d:44:0c",
+        "ipv4": "10.241.124.156/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet1",
+        "mac": "24:67:27:ef:9f:86",
+        "ipv4": "10.245.119.56/24",
+        "admin_status": "down",
+        "oper_status": "down",
+        "speed_mbps": 100
+      },
+      {
+        "name": "Ethernet2",
+        "mac": "08:98:db:36:81:20",
+        "ipv4": "10.16.242.19/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      },
+      {
+        "name": "Ethernet3",
+        "mac": "3d:17:d7:65:04:68",
+        "ipv4": "10.193.123.180/24",
+        "admin_status": "up",
+        "oper_status": "up",
+        "speed_mbps": 10000
+      }
+    ],
+    "routing": {
+      "protocols": [
+        "ISIS",
+        "EIGRP"
+      ],
+      "bgp_asn": 65100
+    },
+    "vlans": [
+      {
+        "id": 141,
+        "name": "VLAN141"
+      },
+      {
+        "id": 90,
+        "name": "VLAN90"
+      },
+      {
+        "id": 20,
+        "name": "VLAN20"
+      },
+      {
+        "id": 67,
+        "name": "VLAN67"
+      },
+      {
+        "id": 165,
+        "name": "VLAN165"
+      }
+    ],
+    "system": {
+      "uptime_seconds": 255172,
+      "cpu_pct": 87,
+      "mem_used_pct": 64,
+      "temperature_c": 55
+    },
+    "licenses": [
+      "base"
+    ],
+    "stack": {
+      "role": "standalone",
+      "members": 2
+    },
+    "compliance": {
+      "hardening_profile": "Network Baseline v3",
+      "last_audit": "2025-10-06T20:50:52.291781Z",
+      "audit_score": 93
+    },
+    "alarms": [
+      {
+        "severity": "warning",
+        "code": "TEMP_HIGH",
+        "message": "Chassis temperature above threshold"
+      }
+    ],
+    "status": "online",
+    "health": "ok",
+    "collection_timestamp": "2025-10-06T20:50:52.291781Z",
+    "last_seen": "2025-10-06T20:50:52.291781Z",
+    "schema_version": "1.0.0"
+  }
+]
