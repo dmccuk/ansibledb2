@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnsibleDB2 - Live Demo Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <style>
         * {
             margin: 0;
@@ -325,6 +326,163 @@
             color: #8e9196;
         }
 
+        .world-map {
+            height: 420px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        #globalMap {
+            height: 100%;
+            width: 100%;
+        }
+
+        .leaflet-container {
+            background: #0b0c0e;
+        }
+
+        .map-legend {
+            margin-top: 1.5rem;
+            background: #121417;
+            border: 1px solid #2d3139;
+            border-radius: 4px;
+            padding: 1rem;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .map-legend-header {
+            font-weight: 600;
+            color: #d8d9da;
+            font-size: 0.95rem;
+        }
+
+        .map-legend-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.75rem;
+            align-items: start;
+            padding: 0.5rem 0.25rem;
+            border-bottom: 1px solid #1f2229;
+        }
+
+        .map-legend-item:last-child {
+            border-bottom: none;
+        }
+
+        .map-status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-top: 0.25rem;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+        }
+
+        .map-status-dot.fault {
+            background: #ff4d4f;
+            box-shadow: 0 0 8px rgba(255, 77, 79, 0.6);
+        }
+
+        .map-status-dot.warning {
+            background: #ff9830;
+            box-shadow: 0 0 8px rgba(255, 152, 48, 0.6);
+        }
+
+        .map-status-dot.healthy {
+            background: #4ecdc4;
+            box-shadow: 0 0 8px rgba(78, 205, 196, 0.6);
+        }
+
+        .map-legend-name {
+            color: #d8d9da;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .map-legend-meta {
+            color: #8e9196;
+            font-size: 0.8rem;
+        }
+
+        .map-legend-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            color: #8e9196;
+            margin-top: 0.35rem;
+        }
+
+        .map-legend-stats .issues {
+            color: #ff4d4f;
+            font-weight: 600;
+        }
+
+        .map-legend-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #1f2229;
+            font-size: 0.75rem;
+            color: #8e9196;
+        }
+
+        .map-legend-empty {
+            color: #8e9196;
+            font-size: 0.85rem;
+        }
+
+        .map-empty-state {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #8e9196;
+            font-size: 0.9rem;
+        }
+
+        .map-popup {
+            color: #1a1d23;
+        }
+
+        .map-popup-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .map-popup-location {
+            font-size: 0.85rem;
+            color: #4b5563;
+            margin-bottom: 0.75rem;
+        }
+
+        .map-popup-line {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .map-popup-line span:first-child {
+            color: #4b5563;
+        }
+
+        .map-popup-env {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: #4b5563;
+        }
+
+        .map-popup-env span {
+            display: inline-block;
+            margin-right: 0.5rem;
+            color: #1a1d23;
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
             .dashboard-content {
                 padding: 1rem;
@@ -334,6 +492,14 @@
             }
             .stats-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .map-legend {
+                max-height: 260px;
+                overflow-y: auto;
+            }
+            .map-legend-stats {
+                flex-direction: column;
+                gap: 0.35rem;
             }
         }
     </style>
@@ -345,17 +511,22 @@
     </div>
 
     <div class="nav-tabs">
-        <button class="nav-tab active" onclick="switchTab('overview')">Overview</button>
-        <button class="nav-tab" onclick="switchTab('security')">Security & Compliance</button>
-        <button class="nav-tab" onclick="switchTab('infrastructure')">Infrastructure</button>
-        <button class="nav-tab" onclick="switchTab('network')">Network Devices</button>
-        <button class="nav-tab" onclick="switchTab('agents')">Agent Status</button>
+        <button class="nav-tab active" onclick="switchTab('overview', event)">Overview</button>
+        <button class="nav-tab" onclick="switchTab('security', event)">Security &amp; Compliance</button>
+        <button class="nav-tab" onclick="switchTab('infrastructure', event)">Infrastructure</button>
+        <button class="nav-tab" onclick="switchTab('network', event)">Network Devices</button>
+        <button class="nav-tab" onclick="switchTab('agents', event)">Agent Status</button>
     </div>
 
     <div class="dashboard-content">
         <!-- Overview Tab -->
         <div id="overview" class="tab-content active">
             <div class="stats-grid" id="overviewStats"></div>
+            <div class="chart-container">
+                <div class="chart-title">Global Infrastructure &amp; Traffic</div>
+                <div id="globalMap" class="world-map"></div>
+                <div class="map-legend" id="mapLegend"></div>
+            </div>
             <div class="grid-2">
                 <div class="chart-container">
                     <div class="chart-title">Hosts by Operating System</div>
@@ -456,6 +627,7 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <script>
         window.dashboardInitialized = false;
@@ -471,43 +643,50 @@
 
         Promise.all([
             fetchJson('ansibledb2_sample_hosts.json'),
-            fetchJson('ansibledb2_sample_network_devices.json')
+            fetchJson('ansibledb2_sample_network_devices.json'),
+            fetchJson('ansibledb2_facts_50_hosts.json')
         ])
-            .then(([hosts, devices]) => {
-                initDashboard(hosts, devices);
+            .then(([hosts, devices, factHosts]) => {
+                initDashboard(hosts, devices, factHosts);
             })
             .catch(error => {
                 console.error('Unable to load dashboard data, rendering empty state.', error);
-                initDashboard([], []);
+                initDashboard([], [], []);
             });
 
-        function initDashboard(hosts, devices) {
+        function initDashboard(hosts, devices, factHosts) {
             window.dashboardInitialized = true;
             updateLastUpdated(hosts);
 
             // Render all tabs
-            renderOverviewTab(hosts, devices);
+            renderOverviewTab(hosts, devices, factHosts);
             renderSecurityTab(hosts);
             renderInfrastructureTab(hosts);
             renderNetworkTab(devices);
             renderAgentsTab(hosts);
         }
 
-        function switchTab(tabName) {
+        function switchTab(tabName, evt) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
             document.getElementById(tabName).classList.add('active');
-            event.target.classList.add('active');
+            const target = evt && evt.currentTarget ? evt.currentTarget : (typeof event !== 'undefined' ? event.currentTarget : null);
+            if (target) {
+                target.classList.add('active');
+            }
+            if (tabName === 'overview' && window.globalMapInstance) {
+                setTimeout(() => window.globalMapInstance.invalidateSize(), 200);
+            }
         }
 
-        function renderOverviewTab(hosts, devices) {
+        function renderOverviewTab(hosts, devices, factHosts = []) {
             // Calculate stats
             const totalHosts = hosts.length;
             const totalDevices = devices.length;
-            
+
             const criticalPatches = hosts.filter(h => h.compliance.patch_status.critical === 'outdated').length;
-            const cisNonCompliant = hosts.filter(h => 
-                h.compliance.cis_benchmark.level_1 === 'fail' || 
+            const cisNonCompliant = hosts.filter(h =>
+                h.compliance.cis_benchmark.level_1 === 'fail' ||
                 h.compliance.cis_benchmark.level_2 === 'fail'
             ).length;
 
@@ -564,7 +743,7 @@
             })));
 
             // Recent hosts table
-            const recentHosts = hosts.sort((a, b) => 
+            const recentHosts = hosts.sort((a, b) =>
                 new Date(b.last_seen) - new Date(a.last_seen)
             ).slice(0, 10);
 
@@ -590,7 +769,270 @@
                     `).join('')}
                 </tbody>
             `;
+
+            renderWorldMap(factHosts);
         }
+
+        function renderWorldMap(hostFacts = []) {
+            const mapContainer = document.getElementById('globalMap');
+            const legendContainer = document.getElementById('mapLegend');
+            if (!mapContainer || !legendContainer) {
+                return;
+            }
+
+            const aggregated = aggregateLocationData(hostFacts);
+
+            if (!aggregated.length) {
+                if (window.globalMapInstance) {
+                    window.globalMapInstance.remove();
+                    window.globalMapInstance = null;
+                }
+                mapContainer.innerHTML = '<div class="map-empty-state">No location data available.</div>';
+                legendContainer.innerHTML = '<div class="map-legend-empty">No location data available.</div>';
+                return;
+            }
+
+            if (typeof L === 'undefined') {
+                mapContainer.innerHTML = '<div class="map-empty-state">Map library failed to load.</div>';
+                legendContainer.innerHTML = '<div class="map-legend-empty">Map library failed to load.</div>';
+                return;
+            }
+
+            if (window.globalMapInstance) {
+                window.globalMapInstance.remove();
+                window.globalMapInstance = null;
+            }
+
+            mapContainer.innerHTML = '';
+            legendContainer.innerHTML = '';
+
+            const severityOrder = { fault: 0, warning: 1, healthy: 2 };
+            aggregated.sort((a, b) => {
+                const severityDiff = severityOrder[a.status] - severityOrder[b.status];
+                if (severityDiff !== 0) return severityDiff;
+                return b.hostCount - a.hostCount;
+            });
+
+            const map = L.map('globalMap', {
+                worldCopyJump: true,
+                zoomControl: true,
+                attributionControl: false,
+                minZoom: 2
+            });
+            window.globalMapInstance = map;
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                subdomains: 'abcd',
+                maxZoom: 19
+            }).addTo(map);
+
+            const statusColors = {
+                fault: '#ff4d4f',
+                warning: '#ff9830',
+                healthy: '#4ecdc4'
+            };
+
+            const bounds = [];
+
+            aggregated.forEach(group => {
+                const color = statusColors[group.status] || statusColors.healthy;
+                const radius = Math.min(22, 8 + Math.sqrt(group.hostCount) * 2);
+                const marker = L.circleMarker([group.latitude, group.longitude], {
+                    radius,
+                    color,
+                    weight: 2,
+                    fillColor: color,
+                    fillOpacity: 0.75
+                }).addTo(map);
+
+                marker.bindTooltip(`${group.name} • ${group.hostCount} hosts`, { direction: 'top' });
+                marker.bindPopup(createMapPopup(group));
+
+                bounds.push([group.latitude, group.longitude]);
+            });
+
+            if (bounds.length > 1) {
+                map.fitBounds(bounds, { padding: [40, 40], maxZoom: 5 });
+            } else if (bounds.length === 1) {
+                map.setView(bounds[0], 4);
+            } else {
+                map.setView([20, 0], 2);
+            }
+
+            const statusDescriptions = {
+                fault: 'Fault detected',
+                warning: 'Needs attention',
+                healthy: 'Healthy'
+            };
+
+            legendContainer.innerHTML = `
+                <div class="map-legend-header">Data Centers &amp; Cloud Regions</div>
+                ${aggregated.map(group => {
+                    const envSummary = formatEnvironmentSummary(group.environments);
+                    const traffic = Math.round(group.traffic).toLocaleString();
+                    const issuesLabel = group.issues ? `${group.issues} issue${group.issues > 1 ? 's' : ''}` : statusDescriptions[group.status];
+                    return `
+                        <div class="map-legend-item">
+                            <span class="map-status-dot ${group.status}"></span>
+                            <div>
+                                <div class="map-legend-name">${group.name}</div>
+                                <div class="map-legend-meta">${group.provider}${group.provider && (group.city || group.country) ? ' • ' : ''}${group.city}, ${group.country}</div>
+                                <div class="map-legend-stats">
+                                    <span>${group.hostCount} hosts</span>
+                                    <span>${traffic} Mbps</span>
+                                    <span class="${group.issues ? 'issues' : ''}">${issuesLabel}</span>
+                                </div>
+                                ${envSummary ? `<div class="map-legend-meta">${envSummary}</div>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('')}
+                <div class="map-legend-footer">
+                    ${Object.entries(statusDescriptions).map(([status, label]) => `<span><span class="map-status-dot ${status}"></span>${label}</span>`).join('')}
+                </div>
+            `;
+
+            setTimeout(() => map.invalidateSize(), 200);
+        }
+
+        function aggregateLocationData(hostFacts) {
+            if (!Array.isArray(hostFacts)) {
+                return [];
+            }
+
+            const groups = {};
+
+            hostFacts.forEach(host => {
+                if (!host || !host.location) {
+                    return;
+                }
+                const { latitude, longitude, city, country } = host.location;
+                const lat = Number(latitude);
+                const lng = Number(longitude);
+                if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+                    return;
+                }
+
+                const datacenterName = host.datacenter && host.datacenter.datacenter ? host.datacenter.datacenter : null;
+                const provider = host.cloud && host.cloud.provider ? host.cloud.provider : (datacenterName ? 'On-Prem' : 'Unknown');
+                const region = host.cloud && host.cloud.region ? host.cloud.region : '';
+                const name = datacenterName || (provider && provider !== 'On-Prem' && region ? `${provider} ${region}` : `${city || 'Unknown'}, ${country || 'Unknown'}`);
+                const key = `${name}:${lat}:${lng}`;
+
+                if (!groups[key]) {
+                    groups[key] = {
+                        name,
+                        provider,
+                        city: city || 'Unknown',
+                        country: country || 'Unknown',
+                        latitude: lat,
+                        longitude: lng,
+                        hostCount: 0,
+                        issues: 0,
+                        warnings: 0,
+                        traffic: 0,
+                        riskTotal: 0,
+                        environments: {}
+                    };
+                }
+
+                const group = groups[key];
+                group.hostCount += 1;
+                group.traffic += estimateTraffic(host);
+                const riskScore = Number(host.derived && host.derived.risk_score) || 0;
+                group.riskTotal += riskScore;
+
+                const environment = (host.inventory_vars && host.inventory_vars.environment ? host.inventory_vars.environment : 'unknown').toLowerCase();
+                group.environments[environment] = (group.environments[environment] || 0) + 1;
+
+                const health = evaluateHostHealth(host);
+                if (health === 'fault') {
+                    group.issues += 1;
+                } else if (health === 'warning') {
+                    group.warnings += 1;
+                }
+            });
+
+            return Object.values(groups).map(group => {
+                const avgRisk = group.hostCount ? group.riskTotal / group.hostCount : 0;
+                let status = 'healthy';
+                if (group.issues > 0) {
+                    status = 'fault';
+                } else if (group.warnings > 0 || avgRisk >= 65) {
+                    status = 'warning';
+                }
+                return {
+                    ...group,
+                    status,
+                    averageRisk: avgRisk
+                };
+            });
+        }
+
+        function evaluateHostHealth(host) {
+            const patchStatus = host.compliance && host.compliance.patch_status ? host.compliance.patch_status : {};
+            const criticalIssue = ['outdated', 'failed'].includes(patchStatus.critical);
+            const highIssue = ['outdated', 'failed'].includes(patchStatus.high);
+
+            const agentStatuses = host.security_agents ? Object.values(host.security_agents) : [];
+            const agentFault = agentStatuses.some(agent => ['stopped', 'failed', 'error', 'drift_detected'].includes(agent.status));
+            const agentWarning = agentStatuses.some(agent => ['degraded', 'starting'].includes(agent.status));
+
+            const serviceIssues = Array.isArray(host.services) ? host.services.some(service => service.enabled && service.state !== 'running') : false;
+
+            const riskScore = Number(host.derived && host.derived.risk_score) || 0;
+
+            if (criticalIssue || agentFault || riskScore >= 80) {
+                return 'fault';
+            }
+
+            if (highIssue || agentWarning || serviceIssues || riskScore >= 65) {
+                return 'warning';
+            }
+
+            return 'healthy';
+        }
+
+        function estimateTraffic(host) {
+            const runningServices = Array.isArray(host.services) ? host.services.filter(service => service.state === 'running').length : 0;
+            const cores = Number(host.hardware && host.hardware.cpu_cores) || 0;
+            const internetBoost = host.derived && host.derived.internet_facing ? 80 : 40;
+            return internetBoost + runningServices * 6 + cores * 1.5;
+        }
+
+        function formatEnvironmentSummary(environments) {
+            const entries = Object.entries(environments || {});
+            if (!entries.length) {
+                return '';
+            }
+            return entries
+                .map(([env, count]) => `${env.toUpperCase()} (${count})`)
+                .join(' · ');
+        }
+
+        function createMapPopup(group) {
+            const traffic = Math.round(group.traffic).toLocaleString();
+            const envSummary = Object.entries(group.environments || {})
+                .map(([env, count]) => `<span>${env.toUpperCase()} (${count})</span>`)
+                .join('');
+            return `
+                <div class="map-popup">
+                    <div class="map-popup-title">${group.name}</div>
+                    <div class="map-popup-location">${group.city}, ${group.country}</div>
+                    <div class="map-popup-line"><span>Provider</span><span>${group.provider}</span></div>
+                    <div class="map-popup-line"><span>Hosts</span><span>${group.hostCount}</span></div>
+                    <div class="map-popup-line"><span>Estimated Traffic</span><span>${traffic} Mbps</span></div>
+                    <div class="map-popup-line"><span>Open Issues</span><span>${group.issues}</span></div>
+                    ${envSummary ? `<div class="map-popup-env">${envSummary}</div>` : ''}
+                </div>
+            `;
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.globalMapInstance) {
+                window.globalMapInstance.invalidateSize();
+            }
+        });
 
         function renderSecurityTab(hosts) {
             const totalHosts = hosts.length;

@@ -79,6 +79,15 @@
             color: var(--primary);
         }
 
+        .nav-links a.dashboard-link {
+            color: #ff8c42;
+            font-weight: 600;
+        }
+
+        .nav-links a.dashboard-link:hover {
+            color: #ffa75e;
+        }
+
         .cta-button {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -215,20 +224,6 @@
             background: white;
             color: var(--primary);
         }
-        .dashboard-btn {
-            background: rgba(255, 255, 255, 0.12);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.25);
-            backdrop-filter: blur(6px);
-        }
-
-        .dashboard-btn:hover {
-            background: white;
-            color: var(--primary);
-            box-shadow: 0 18px 45px rgba(102, 126, 234, 0.35);
-        }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -820,6 +815,7 @@
                 <li><a href="#architecture">Architecture</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#docs">Docs</a></li>
+                <li><a href="ansibledb2-dashboard.html" class="dashboard-link">View Dashboard</a></li>
             </ul>
             <a href="#get-started" class="cta-button">Get Started</a>
         </div>
@@ -847,9 +843,7 @@
             </div>
 
             <div class="hero-buttons">
-            <div class="hero-buttons">
                 <a href="#get-started" class="primary-btn">Start Free Trial</a>
-                <a href="ansibledb2-dashboard.html" class="dashboard-btn">View Dashboard</a>
                 <a href="https://github.com/ansibledb2" class="secondary-btn">View on GitHub</a>
             </div>
         </div>
