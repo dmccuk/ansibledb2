@@ -146,11 +146,12 @@
         }
 
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
             margin: 3rem 0;
             animation: fadeInUp 1s ease 0.4s backwards;
+            justify-content: center;
         }
 
         .stat-card {
@@ -160,6 +161,8 @@
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
+            flex: 1 1 250px;
+            max-width: 350px;
         }
 
         .stat-card:hover {
@@ -250,6 +253,15 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            justify-content: center;
+        }
+
+        /* Center odd items */
+        .problem-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
         }
 
         .problem-card {
@@ -261,6 +273,8 @@
             transition: transform 0.3s, box-shadow 0.3s;
             opacity: 0;
             transform: translateY(30px);
+            flex: 1 1 280px;
+            max-width: 400px;
         }
 
         .problem-card.visible {
@@ -284,9 +298,10 @@
         }
 
         .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
+            justify-content: center;
         }
 
         .feature-card {
@@ -298,6 +313,8 @@
             border: 2px solid transparent;
             opacity: 0;
             transform: scale(0.9);
+            flex: 1 1 300px;
+            max-width: 380px;
         }
 
         .feature-card.visible {
@@ -392,10 +409,11 @@
         }
 
         .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
             margin-top: 3rem;
+            justify-content: center;
         }
 
         .pricing-card {
@@ -408,6 +426,8 @@
             position: relative;
             opacity: 0;
             transform: translateY(30px);
+            flex: 1 1 300px;
+            max-width: 380px;
         }
 
         .pricing-card.visible {
