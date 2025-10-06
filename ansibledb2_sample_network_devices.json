@@ -1,0 +1,332 @@
+[
+  {
+    "device_id": "device-001.net.example.com",
+    "collection_timestamp": "2025-10-06T18:47:54.252090Z",
+    "vendor": "Cisco",
+    "os": "IOS-XE",
+    "os_version": "17.6.3",
+    "model": "ISR4451-X",
+    "hostname": "cisco-001",
+    "serial_number": "CSN8806364",
+    "interfaces": [
+      {
+        "name": "eth0",
+        "ip": "10.0.1.1/24",
+        "status": "up"
+      },
+      {
+        "name": "eth1",
+        "ip": "10.0.1.2/24",
+        "status": "up"
+      }
+    ],
+    "routing_protocols": [
+      "ISIS",
+      "EIGRP"
+    ],
+    "vlans": [
+      "VLAN198",
+      "VLAN16",
+      "VLAN97"
+    ],
+    "firmware_status": "unsupported",
+    "last_seen": "2025-10-06T18:47:54.252090Z"
+  },
+  {
+    "device_id": "device-002.net.example.com",
+    "collection_timestamp": "2025-10-06T18:40:54.252200Z",
+    "vendor": "Cisco",
+    "os": "NX-OS",
+    "os_version": "9.3(8)",
+    "model": "Nexus 93180YC-EX",
+    "hostname": "cisco-002",
+    "serial_number": "CSN6382721",
+    "interfaces": [
+      {
+        "name": "eth0",
+        "ip": "10.0.2.1/24",
+        "status": "up"
+      },
+      {
+        "name": "eth1",
+        "ip": "10.0.2.2/24",
+        "status": "down"
+      }
+    ],
+    "routing_protocols": [
+      "OSPF",
+      "STATIC"
+    ],
+    "vlans": [
+      "VLAN134",
+      "VLAN197",
+      "VLAN107"
+    ],
+    "firmware_status": "outdated",
+    "last_seen": "2025-10-06T18:40:54.252200Z"
+  },
+  {
+    "device_id": "device-003.net.example.com",
+    "collection_timestamp": "2025-10-06T18:52:54.252245Z",
+    "vendor": "Juniper",
+    "os": "Junos",
+    "os_version": "21.4R3-S2",
+    "model": "MX480",
+    "hostname": "juniper-003",
+    "serial_number": "JSN7974733",
+    "interfaces": [
+      {
+        "name": "eth0",
+        "ip": "10.0.3.1/24",
+        "status": "up"
+      },
+      {
+        "name": "eth1",
+        "ip": "10.0.3.2/24",
+        "status": "down"
+      }
+    ],
+    "routing_protocols": [
+      "ISIS",
+      "STATIC"
+    ],
+    "vlans": [
+      "VLAN138",
+      "VLAN162",
+      "VLAN41"
+    ],
+    "firmware_status": "unsupported",
+    "last_seen": "2025-10-06T18:52:54.252245Z"
+  },
+  {
+    "device_id": "device-004.net.example.com",
+    "collection_timestamp": "2025-10-06T18:28:54.252266Z",
+    "vendor": "Arista",
+    "os": "EOS",
+    "os_version": "4.27.2F",
+    "model": "7050SX3-48YC8",
+    "hostname": "arista-004",
+    "serial_number": "ASN2656193",
+    "interfaces": [
+      {
+        "name": "eth0",
+        "ip": "10.0.4.1/24",
+        "status": "up"
+      },
+      {
+        "name": "eth1",
+        "ip": "10.0.4.2/24",
+        "status": "down"
+      }
+    ],
+    "routing_protocols": [
+      "EIGRP",
+      "OSPF"
+    ],
+    "vlans": [
+      "VLAN60",
+      "VLAN185",
+      "VLAN132"
+    ],
+    "firmware_status": "outdated",
+    "last_seen": "2025-10-06T18:28:54.252266Z"
+  },
+  {
+    "device_id": "device-005.net.example.com",
+    "collection_timestamp": "2025-10-06T18:39:54.252285Z",
+    "vendor": "F5",
+    "os": "TMOS",
+    "os_version": "16.1.4",
+    "model": "BIG-IP i5800",
+    "hostname": "f5-005",
+    "serial_number": "FSN8959080",
+    "interfaces": [
+      {
+        "name": "eth0",
+        "ip": "10.0.5.1/24",
+        "status": "up"
+      },
+      {
+        "name": "eth1",
+        "ip": "10.0.5.2/24",
+        "status": "down"
+      }
+    ],
+    "routing_protocols": [
+      "ISIS",
+      "BGP"
+    ],
+    "vlans": [
+      "VLAN171",
+      "VLAN48",
+      "VLAN114"
+    ],
+    "firmware_status": "up_to_date",
+    "last_seen": "2025-10-06T18:39:54.252285Z"
+  },
+  {
+    "device_id": "device-006.net.example.com",
+    "collection_timestamp": "2025-10-06T18:43:54.252304Z",
+    "vendor": "Palo Alto",
+    "os": "PAN-OS",
+    "os_version": "10.2.4",
+    "model": "PA-5220",
+    "hostname": "palo alto-006",
+    "serial_number": "PSN6861281",
+    "interfaces": [
+      {
+        "name": "eth0",
+        "ip": "10.0.6.1/24",
+        "status": "up"
+      },
+      {
+        "name": "eth1",
+        "ip": "10.0.6.2/24",
+        "status": "up"
+      }
+    ],
+    "routing_protocols": [
+      "STATIC",
+      "OSPF"
+    ],
+    "vlans": [
+      "VLAN39",
+      "VLAN171",
+      "VLAN64"
+    ],
+    "firmware_status": "unsupported",
+    "last_seen": "2025-10-06T18:43:54.252304Z"
+  },
+  {
+    "device_id": "device-007.net.example.com",
+    "collection_timestamp": "2025-10-06T18:57:54.252324Z",
+    "vendor": "Fortinet",
+    "os": "FortiOS",
+    "os_version": "7.0.12",
+    "model": "FortiGate 200F",
+    "hostname": "fortinet-007",
+    "serial_number": "FSN8636560",
+    "interfaces": [
+      {
+        "name": "eth0",
+        "ip": "10.0.7.1/24",
+        "status": "up"
+      },
+      {
+        "name": "eth1",
+        "ip": "10.0.7.2/24",
+        "status": "up"
+      }
+    ],
+    "routing_protocols": [
+      "BGP",
+      "OSPF"
+    ],
+    "vlans": [
+      "VLAN93",
+      "VLAN45",
+      "VLAN15"
+    ],
+    "firmware_status": "unsupported",
+    "last_seen": "2025-10-06T18:57:54.252324Z"
+  },
+  {
+    "device_id": "device-008.net.example.com",
+    "collection_timestamp": "2025-10-06T19:00:54.252355Z",
+    "vendor": "Checkpoint",
+    "os": "GAiA",
+    "os_version": "R81.20",
+    "model": "5600 Appliance",
+    "hostname": "checkpoint-008",
+    "serial_number": "CSN4290786",
+    "interfaces": [
+      {
+        "name": "eth0",
+        "ip": "10.0.8.1/24",
+        "status": "up"
+      },
+      {
+        "name": "eth1",
+        "ip": "10.0.8.2/24",
+        "status": "down"
+      }
+    ],
+    "routing_protocols": [
+      "OSPF",
+      "STATIC"
+    ],
+    "vlans": [
+      "VLAN157",
+      "VLAN88",
+      "VLAN74"
+    ],
+    "firmware_status": "up_to_date",
+    "last_seen": "2025-10-06T19:00:54.252355Z"
+  },
+  {
+    "device_id": "device-009.net.example.com",
+    "collection_timestamp": "2025-10-06T18:34:54.252384Z",
+    "vendor": "Huawei",
+    "os": "VRP",
+    "os_version": "8.180",
+    "model": "NE40E-X3",
+    "hostname": "huawei-009",
+    "serial_number": "HSN3272562",
+    "interfaces": [
+      {
+        "name": "eth0",
+        "ip": "10.0.9.1/24",
+        "status": "up"
+      },
+      {
+        "name": "eth1",
+        "ip": "10.0.9.2/24",
+        "status": "up"
+      }
+    ],
+    "routing_protocols": [
+      "STATIC",
+      "EIGRP"
+    ],
+    "vlans": [
+      "VLAN173",
+      "VLAN66",
+      "VLAN20"
+    ],
+    "firmware_status": "outdated",
+    "last_seen": "2025-10-06T18:34:54.252384Z"
+  },
+  {
+    "device_id": "device-010.net.example.com",
+    "collection_timestamp": "2025-10-06T19:00:54.252402Z",
+    "vendor": "Dell",
+    "os": "OS10",
+    "os_version": "10.5.3.3",
+    "model": "S5248F-ON",
+    "hostname": "dell-010",
+    "serial_number": "DSN3885219",
+    "interfaces": [
+      {
+        "name": "eth0",
+        "ip": "10.0.10.1/24",
+        "status": "up"
+      },
+      {
+        "name": "eth1",
+        "ip": "10.0.10.2/24",
+        "status": "up"
+      }
+    ],
+    "routing_protocols": [
+      "BGP",
+      "EIGRP"
+    ],
+    "vlans": [
+      "VLAN21",
+      "VLAN154",
+      "VLAN159"
+    ],
+    "firmware_status": "unsupported",
+    "last_seen": "2025-10-06T19:00:54.252402Z"
+  }
+]

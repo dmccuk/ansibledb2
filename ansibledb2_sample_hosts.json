@@ -1,0 +1,1222 @@
+[
+  {
+    "host_id": "host-001.example.com",
+    "collection_timestamp": "2025-10-06T19:13:41.845631Z",
+    "os": {
+      "name": "Red Hat Enterprise Linux",
+      "version": "8.9",
+      "kernel": "4.18.0-513.el8.x86_64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 2,
+      "memory_gb": 32,
+      "disk_total_gb": 1000,
+      "disk_used_gb": 570,
+      "virtualization": "vmware"
+    },
+    "cloud_metadata": {
+      "provider": "OnPrem",
+      "instance_id": null,
+      "region": null,
+      "tags": {
+        "Environment": "Test",
+        "Application": "Ecommerce",
+        "Owner": "Team-Security"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "4.20.793",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "4.13.360",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "2.18.413",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "6.4.87",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "9.9.100",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "fail",
+        "level_2": "partial"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "last_seen": "2025-10-06T19:13:41.845631Z"
+  },
+  {
+    "host_id": "host-002.example.com",
+    "collection_timestamp": "2025-10-06T18:30:41.845721Z",
+    "os": {
+      "name": "Red Hat Enterprise Linux",
+      "version": "9.3",
+      "kernel": "5.14.0-362.el9.x86_64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 2,
+      "memory_gb": 16,
+      "disk_total_gb": 500,
+      "disk_used_gb": 405,
+      "virtualization": "baremetal"
+    },
+    "cloud_metadata": {
+      "provider": "OnPrem",
+      "instance_id": null,
+      "region": null,
+      "tags": {
+        "Environment": "Test",
+        "Application": "Ecommerce",
+        "Owner": "Team-DB"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "5.19.407",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "4.6.564",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "6.4.218",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "7.19.320",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "7.0.445",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "pass",
+        "level_2": "fail"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "last_seen": "2025-10-06T18:30:41.845721Z"
+  },
+  {
+    "host_id": "host-003.example.com",
+    "collection_timestamp": "2025-10-06T19:15:41.845773Z",
+    "os": {
+      "name": "Oracle Linux",
+      "version": "8.8",
+      "kernel": "4.18.0-477.el8.x86_64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 16,
+      "memory_gb": 32,
+      "disk_total_gb": 500,
+      "disk_used_gb": 193,
+      "virtualization": "baremetal"
+    },
+    "cloud_metadata": {
+      "provider": "OnPrem",
+      "instance_id": null,
+      "region": null,
+      "tags": {
+        "Environment": "QA",
+        "Application": "Analytics",
+        "Owner": "Team-DB"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.1.758",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "9.12.228",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "6.14.51",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "4.13.636",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "5.8.832",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "partial",
+        "level_2": "pass"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "last_seen": "2025-10-06T19:15:41.845773Z"
+  },
+  {
+    "host_id": "host-004.example.com",
+    "collection_timestamp": "2025-10-06T18:35:41.845822Z",
+    "os": {
+      "name": "Ubuntu",
+      "version": "20.04",
+      "kernel": "5.15.0-88-generic",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 8,
+      "memory_gb": 16,
+      "disk_total_gb": 1000,
+      "disk_used_gb": 293,
+      "virtualization": "kvm"
+    },
+    "cloud_metadata": {
+      "provider": "Azure",
+      "instance_id": "i-607372",
+      "region": "us-west-2",
+      "tags": {
+        "Environment": "Dev",
+        "Application": "HR",
+        "Owner": "Team-Web"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "7.3.911",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "9.16.520",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "9.3.279",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "8.3.190",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "5.10.708",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "fail",
+        "level_2": "pass"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "last_seen": "2025-10-06T18:35:41.845822Z"
+  },
+  {
+    "host_id": "host-005.example.com",
+    "collection_timestamp": "2025-10-06T19:05:41.845863Z",
+    "os": {
+      "name": "Ubuntu",
+      "version": "22.04",
+      "kernel": "6.2.0-39-generic",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 16,
+      "memory_gb": 32,
+      "disk_total_gb": 1000,
+      "disk_used_gb": 550,
+      "virtualization": "hyperv"
+    },
+    "cloud_metadata": {
+      "provider": "OnPrem",
+      "instance_id": null,
+      "region": null,
+      "tags": {
+        "Environment": "Dev",
+        "Application": "Ecommerce",
+        "Owner": "Team-DB"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "3.12.354",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "5.2.435",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "6.4.318",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "7.18.281",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "4.1.773",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "partial",
+        "level_2": "pass"
+      },
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "last_seen": "2025-10-06T19:05:41.845863Z"
+  },
+  {
+    "host_id": "host-006.example.com",
+    "collection_timestamp": "2025-10-06T18:24:41.845904Z",
+    "os": {
+      "name": "Debian",
+      "version": "12 (Bookworm)",
+      "kernel": "6.1.0-12-amd64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 16,
+      "memory_gb": 8,
+      "disk_total_gb": 500,
+      "disk_used_gb": 573,
+      "virtualization": "hyperv"
+    },
+    "cloud_metadata": {
+      "provider": "AWS",
+      "instance_id": "i-124346",
+      "region": "us-east-1",
+      "tags": {
+        "Environment": "QA",
+        "Application": "Payments",
+        "Owner": "Team-Web"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.3.977",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "6.7.991",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "4.15.842",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "5.17.279",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "4.1.130",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "fail",
+        "level_2": "fail"
+      },
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "last_seen": "2025-10-06T18:24:41.845904Z"
+  },
+  {
+    "host_id": "host-007.example.com",
+    "collection_timestamp": "2025-10-06T18:26:41.845946Z",
+    "os": {
+      "name": "Debian",
+      "version": "11 (Bullseye)",
+      "kernel": "5.10.0-25-amd64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 16,
+      "memory_gb": 8,
+      "disk_total_gb": 100,
+      "disk_used_gb": 686,
+      "virtualization": "vmware"
+    },
+    "cloud_metadata": {
+      "provider": "GCP",
+      "instance_id": "i-206355",
+      "region": "us-east-1",
+      "tags": {
+        "Environment": "QA",
+        "Application": "Payments",
+        "Owner": "Team-DB"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "6.15.492",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "2.8.164",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "5.10.440",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "5.3.34",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "7.6.563",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "fail",
+        "level_2": "fail"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "last_seen": "2025-10-06T18:26:41.845946Z"
+  },
+  {
+    "host_id": "host-008.example.com",
+    "collection_timestamp": "2025-10-06T19:06:41.845991Z",
+    "os": {
+      "name": "SUSE Linux Enterprise",
+      "version": "15 SP5",
+      "kernel": "5.14.21-150500.53-default",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 2,
+      "memory_gb": 8,
+      "disk_total_gb": 250,
+      "disk_used_gb": 403,
+      "virtualization": "vmware"
+    },
+    "cloud_metadata": {
+      "provider": "GCP",
+      "instance_id": "i-344488",
+      "region": "us-west-2",
+      "tags": {
+        "Environment": "Prod",
+        "Application": "Analytics",
+        "Owner": "Team-Web"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "8.8.944",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "9.0.282",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "4.1.409",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "2.10.75",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "6.18.367",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "pass",
+        "level_2": "partial"
+      },
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "last_seen": "2025-10-06T19:06:41.845991Z"
+  },
+  {
+    "host_id": "host-009.example.com",
+    "collection_timestamp": "2025-10-06T18:17:41.846036Z",
+    "os": {
+      "name": "Windows Server",
+      "version": "2019",
+      "kernel": "10.0.17763",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 4,
+      "memory_gb": 32,
+      "disk_total_gb": 100,
+      "disk_used_gb": 365,
+      "virtualization": "vmware"
+    },
+    "cloud_metadata": {
+      "provider": "AWS",
+      "instance_id": "i-227588",
+      "region": "us-east-1",
+      "tags": {
+        "Environment": "Prod",
+        "Application": "HR",
+        "Owner": "Team-DB"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.0.901",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "8.7.104",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "3.4.78",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "7.11.56",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "9.5.475",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "partial",
+        "level_2": "partial"
+      },
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "last_seen": "2025-10-06T18:17:41.846036Z"
+  },
+  {
+    "host_id": "host-010.example.com",
+    "collection_timestamp": "2025-10-06T18:41:41.846075Z",
+    "os": {
+      "name": "Windows Server",
+      "version": "2022",
+      "kernel": "10.0.20348",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 16,
+      "memory_gb": 64,
+      "disk_total_gb": 1000,
+      "disk_used_gb": 664,
+      "virtualization": "baremetal"
+    },
+    "cloud_metadata": {
+      "provider": "Azure",
+      "instance_id": "i-622759",
+      "region": "us-west-2",
+      "tags": {
+        "Environment": "Prod",
+        "Application": "Analytics",
+        "Owner": "Team-Web"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "3.0.293",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "6.9.520",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "5.18.136",
+        "status": "drift_detected"
+      },
+      "osquery": {
+        "version": "6.12.368",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "3.2.533",
+        "status": "drift_detected"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "partial",
+        "level_2": "fail"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "last_seen": "2025-10-06T18:41:41.846075Z"
+  },
+  {
+    "host_id": "host-011.example.com",
+    "collection_timestamp": "2025-10-06T19:08:41.846115Z",
+    "os": {
+      "name": "Amazon Linux",
+      "version": "2",
+      "kernel": "4.14.311-233.529.amzn2.x86_64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 8,
+      "memory_gb": 32,
+      "disk_total_gb": 250,
+      "disk_used_gb": 181,
+      "virtualization": "vmware"
+    },
+    "cloud_metadata": {
+      "provider": "Azure",
+      "instance_id": "i-555364",
+      "region": "us-west-2",
+      "tags": {
+        "Environment": "Dev",
+        "Application": "Analytics",
+        "Owner": "Team-DB"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "2.10.767",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "4.5.744",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "6.12.262",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "7.9.152",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "9.10.418",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "partial",
+        "level_2": "pass"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "last_seen": "2025-10-06T19:08:41.846115Z"
+  },
+  {
+    "host_id": "host-012.example.com",
+    "collection_timestamp": "2025-10-06T18:44:41.846165Z",
+    "os": {
+      "name": "Amazon Linux",
+      "version": "2023",
+      "kernel": "6.1.42-89.131.amzn2023.x86_64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 4,
+      "memory_gb": 8,
+      "disk_total_gb": 1000,
+      "disk_used_gb": 518,
+      "virtualization": "baremetal"
+    },
+    "cloud_metadata": {
+      "provider": "Azure",
+      "instance_id": "i-618649",
+      "region": "us-west-2",
+      "tags": {
+        "Environment": "Prod",
+        "Application": "Payments",
+        "Owner": "Team-Security"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "5.3.608",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "2.9.901",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "9.2.872",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "4.14.988",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "7.7.224",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "partial",
+        "level_2": "fail"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "last_seen": "2025-10-06T18:44:41.846165Z"
+  },
+  {
+    "host_id": "host-013.example.com",
+    "collection_timestamp": "2025-10-06T19:11:41.846204Z",
+    "os": {
+      "name": "CentOS Stream",
+      "version": "8",
+      "kernel": "4.18.0-408.el8.x86_64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 8,
+      "memory_gb": 64,
+      "disk_total_gb": 250,
+      "disk_used_gb": 597,
+      "virtualization": "vmware"
+    },
+    "cloud_metadata": {
+      "provider": "Azure",
+      "instance_id": "i-505592",
+      "region": "us-west-2",
+      "tags": {
+        "Environment": "Prod",
+        "Application": "Ecommerce",
+        "Owner": "Team-Web"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "3.2.138",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "9.16.569",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "1.11.389",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "4.11.83",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "1.11.539",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "fail",
+        "level_2": "fail"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "last_seen": "2025-10-06T19:11:41.846204Z"
+  },
+  {
+    "host_id": "host-014.example.com",
+    "collection_timestamp": "2025-10-06T19:13:41.846249Z",
+    "os": {
+      "name": "AlmaLinux",
+      "version": "9.2",
+      "kernel": "5.14.0-284.el9.x86_64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 2,
+      "memory_gb": 32,
+      "disk_total_gb": 100,
+      "disk_used_gb": 346,
+      "virtualization": "kvm"
+    },
+    "cloud_metadata": {
+      "provider": "Azure",
+      "instance_id": "i-269673",
+      "region": "westeurope",
+      "tags": {
+        "Environment": "Test",
+        "Application": "Ecommerce",
+        "Owner": "Team-DB"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "8.10.316",
+        "status": "stopped"
+      },
+      "qualys": {
+        "version": "1.3.429",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "6.17.344",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "4.10.437",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "1.20.707",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "fail",
+        "level_2": "fail"
+      },
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "last_seen": "2025-10-06T19:13:41.846249Z"
+  },
+  {
+    "host_id": "host-015.example.com",
+    "collection_timestamp": "2025-10-06T19:05:41.846288Z",
+    "os": {
+      "name": "Rocky Linux",
+      "version": "9.2",
+      "kernel": "5.14.0-284.el9.x86_64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 4,
+      "memory_gb": 16,
+      "disk_total_gb": 500,
+      "disk_used_gb": 666,
+      "virtualization": "vmware"
+    },
+    "cloud_metadata": {
+      "provider": "GCP",
+      "instance_id": "i-986567",
+      "region": "ap-southeast-1",
+      "tags": {
+        "Environment": "Prod",
+        "Application": "Ecommerce",
+        "Owner": "Team-DB"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "4.9.786",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "3.20.268",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "8.3.223",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "5.17.506",
+        "status": "running"
+      },
+      "custom_compliance_agent": {
+        "version": "3.16.641",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "pass",
+        "level_2": "fail"
+      },
+      "patch_status": {
+        "critical": "outdated",
+        "high": "compliant",
+        "medium": "compliant"
+      }
+    },
+    "last_seen": "2025-10-06T19:05:41.846288Z"
+  },
+  {
+    "host_id": "host-016.example.com",
+    "collection_timestamp": "2025-10-06T18:50:41.846327Z",
+    "os": {
+      "name": "Fedora",
+      "version": "38",
+      "kernel": "6.5.11-300.fc38.x86_64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 16,
+      "memory_gb": 16,
+      "disk_total_gb": 500,
+      "disk_used_gb": 677,
+      "virtualization": "baremetal"
+    },
+    "cloud_metadata": {
+      "provider": "OnPrem",
+      "instance_id": null,
+      "region": null,
+      "tags": {
+        "Environment": "Dev",
+        "Application": "Analytics",
+        "Owner": "Team-Web"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "4.5.507",
+        "status": "healthy"
+      },
+      "qualys": {
+        "version": "8.19.797",
+        "status": "healthy"
+      },
+      "splunk_universal_forwarder": {
+        "version": "7.19.331",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "5.12.141",
+        "status": "healthy"
+      },
+      "custom_compliance_agent": {
+        "version": "5.18.810",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "partial",
+        "level_2": "pass"
+      },
+      "patch_status": {
+        "critical": "outdated",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "last_seen": "2025-10-06T18:50:41.846327Z"
+  },
+  {
+    "host_id": "host-017.example.com",
+    "collection_timestamp": "2025-10-06T18:57:41.846365Z",
+    "os": {
+      "name": "Kali Linux",
+      "version": "2023.3",
+      "kernel": "6.3.0-kali1-amd64",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 2,
+      "memory_gb": 16,
+      "disk_total_gb": 250,
+      "disk_used_gb": 485,
+      "virtualization": "baremetal"
+    },
+    "cloud_metadata": {
+      "provider": "AWS",
+      "instance_id": "i-801562",
+      "region": "westeurope",
+      "tags": {
+        "Environment": "Test",
+        "Application": "Payments",
+        "Owner": "Team-Security"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "9.15.262",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "2.6.560",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "2.11.530",
+        "status": "running"
+      },
+      "osquery": {
+        "version": "8.4.616",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "2.13.86",
+        "status": "healthy"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "partial",
+        "level_2": "partial"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "compliant",
+        "medium": "outdated"
+      }
+    },
+    "last_seen": "2025-10-06T18:57:41.846365Z"
+  },
+  {
+    "host_id": "host-018.example.com",
+    "collection_timestamp": "2025-10-06T18:44:41.846404Z",
+    "os": {
+      "name": "Windows Server",
+      "version": "2016",
+      "kernel": "10.0.14393",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 2,
+      "memory_gb": 8,
+      "disk_total_gb": 1000,
+      "disk_used_gb": 145,
+      "virtualization": "hyperv"
+    },
+    "cloud_metadata": {
+      "provider": "AWS",
+      "instance_id": "i-318320",
+      "region": "us-west-2",
+      "tags": {
+        "Environment": "QA",
+        "Application": "Ecommerce",
+        "Owner": "Team-DB"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "3.8.57",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "4.0.558",
+        "status": "stopped"
+      },
+      "splunk_universal_forwarder": {
+        "version": "1.5.35",
+        "status": "healthy"
+      },
+      "osquery": {
+        "version": "4.7.834",
+        "status": "drift_detected"
+      },
+      "custom_compliance_agent": {
+        "version": "2.15.970",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "partial",
+        "level_2": "fail"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "compliant"
+      }
+    },
+    "last_seen": "2025-10-06T18:44:41.846404Z"
+  },
+  {
+    "host_id": "host-019.example.com",
+    "collection_timestamp": "2025-10-06T18:52:41.846443Z",
+    "os": {
+      "name": "Ubuntu",
+      "version": "18.04",
+      "kernel": "5.4.0-166-generic",
+      "arch": "x86_64"
+    },
+    "hardware": {
+      "cpu_cores": 8,
+      "memory_gb": 16,
+      "disk_total_gb": 250,
+      "disk_used_gb": 20,
+      "virtualization": "vmware"
+    },
+    "cloud_metadata": {
+      "provider": "OnPrem",
+      "instance_id": null,
+      "region": null,
+      "tags": {
+        "Environment": "Test",
+        "Application": "Analytics",
+        "Owner": "Team-DB"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "8.2.603",
+        "status": "running"
+      },
+      "qualys": {
+        "version": "6.10.275",
+        "status": "running"
+      },
+      "splunk_universal_forwarder": {
+        "version": "8.19.646",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "2.11.746",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "1.16.229",
+        "status": "stopped"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "fail",
+        "level_2": "pass"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "last_seen": "2025-10-06T18:52:41.846443Z"
+  },
+  {
+    "host_id": "host-020.example.com",
+    "collection_timestamp": "2025-10-06T19:16:41.846481Z",
+    "os": {
+      "name": "FreeBSD",
+      "version": "13.2",
+      "kernel": "13.2-RELEASE",
+      "arch": "amd64"
+    },
+    "hardware": {
+      "cpu_cores": 8,
+      "memory_gb": 32,
+      "disk_total_gb": 100,
+      "disk_used_gb": 626,
+      "virtualization": "kvm"
+    },
+    "cloud_metadata": {
+      "provider": "AWS",
+      "instance_id": "i-942769",
+      "region": "us-east-1",
+      "tags": {
+        "Environment": "Dev",
+        "Application": "Ecommerce",
+        "Owner": "Team-Security"
+      }
+    },
+    "security_agents": {
+      "crowdstrike": {
+        "version": "3.17.229",
+        "status": "drift_detected"
+      },
+      "qualys": {
+        "version": "6.6.127",
+        "status": "drift_detected"
+      },
+      "splunk_universal_forwarder": {
+        "version": "1.13.161",
+        "status": "stopped"
+      },
+      "osquery": {
+        "version": "4.16.489",
+        "status": "stopped"
+      },
+      "custom_compliance_agent": {
+        "version": "9.2.778",
+        "status": "running"
+      }
+    },
+    "compliance": {
+      "cis_benchmark": {
+        "level_1": "partial",
+        "level_2": "pass"
+      },
+      "patch_status": {
+        "critical": "compliant",
+        "high": "outdated",
+        "medium": "outdated"
+      }
+    },
+    "last_seen": "2025-10-06T19:16:41.846481Z"
+  }
+]
