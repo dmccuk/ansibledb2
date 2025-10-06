@@ -806,7 +806,7 @@
                 <li><a href="#support-matrix">Support</a></li>
                 <li><a href="#architecture">Architecture</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="docs.html">Docs</a></li>
+                <li><a href="#docs">Docs</a></li>
             </ul>
             <a href="#get-started" class="cta-button">Get Started</a>
         </div>
@@ -835,7 +835,7 @@
 
             <div class="hero-buttons">
                 <a href="#get-started" class="primary-btn">Start Free Trial</a>
-                <a href="github.html" class="secondary-btn">View on GitHub</a>
+                <a href="https://github.com/ansibledb2" class="secondary-btn">View on GitHub</a>
             </div>
         </div>
         <div class="scroll-indicator"></div>
@@ -922,6 +922,77 @@
         </div>
 
         <div style="margin-top: 3rem;">
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">Where You Can Run AnsibleDB2</h3>
+            
+            <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); margin-bottom: 3rem;">
+                <p style="text-align: center; color: #4a5568; font-size: 1.1rem; margin-bottom: 2rem;">
+                    Built with <strong>Python (FastAPI)</strong> and <strong>PostgreSQL/TimescaleDB</strong> - runs anywhere modern Linux and containers are available
+                </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%); padding: 1.5rem; border-radius: 15px; border-left: 4px solid var(--accent);">
+                        <h4 style="color: var(--accent); margin-bottom: 1rem;">✅ Fully Supported Server OS</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 0.4rem 0;">• Red Hat Enterprise Linux 8, 9</li>
+                            <li style="padding: 0.4rem 0;">• Rocky Linux / AlmaLinux 8, 9</li>
+                            <li style="padding: 0.4rem 0;">• CentOS Stream 8, 9</li>
+                            <li style="padding: 0.4rem 0;">• Ubuntu LTS 20.04, 22.04, 24.04</li>
+                            <li style="padding: 0.4rem 0;">• Debian 11 (Bullseye), 12 (Bookworm)</li>
+                            <li style="padding: 0.4rem 0;">• SUSE Linux Enterprise Server (SLES) 15</li>
+                            <li style="padding: 0.4rem 0;">• OpenSUSE Leap 15.x</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%); padding: 1.5rem; border-radius: 15px; border-left: 4px solid #319795;">
+                        <h4 style="color: #319795; margin-bottom: 1rem;">⚙️ Containerized Environments</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 0.4rem 0;">• <strong>Docker</strong> (recommended for quick start)</li>
+                            <li style="padding: 0.4rem 0;">• <strong>Podman</strong> (RHEL/EL environments)</li>
+                            <li style="padding: 0.4rem 0;">• <strong>Kubernetes</strong> (Helm chart deployment)</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); padding: 1.5rem; border-radius: 15px; border-left: 4px solid var(--primary);">
+                        <h4 style="color: var(--primary); margin-bottom: 1rem;">☁️ Cloud VMs & Managed DB</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 0.4rem 0;">• Runs on cloud VMs: <strong>AWS, Azure, GCP</strong></li>
+                            <li style="padding: 0.4rem 0;">• Self-hosted PostgreSQL</li>
+                            <li style="padding: 0.4rem 0;">• AWS RDS for PostgreSQL</li>
+                            <li style="padding: 0.4rem 0;">• Azure Database for PostgreSQL</li>
+                            <li style="padding: 0.4rem 0;">• Google Cloud SQL</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%); padding: 1.5rem; border-radius: 15px; border-left: 4px solid var(--danger);">
+                        <h4 style="color: var(--danger); margin-bottom: 1rem;">⚠️ Not Recommended</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 0.4rem 0;">• Windows Server (not supported as host platform)</li>
+                            <li style="padding: 0.4rem 0;">• Legacy Linux OS (RHEL6, CentOS6, etc.)</li>
+                            <li style="padding: 0.4rem 0; color: #718096; font-size: 0.9rem;">Note: These lack modern PostgreSQL/Python support</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, #fefcbf 0%, #faf089 100%); padding: 1.5rem; border-radius: 15px; border-left: 4px solid #d69e2e;">
+                        <h4 style="color: #d69e2e; margin-bottom: 1rem;">💻 Hardware Minimums</h4>
+                        <p style="margin-bottom: 0.5rem; font-weight: 600;">Small fleet (< 500 nodes):</p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 0.3rem 0;">• 2 vCPU</li>
+                            <li style="padding: 0.3rem 0;">• 4 GB RAM</li>
+                            <li style="padding: 0.3rem 0;">• 20 GB disk</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #718096; font-size: 0.9rem;">Scales up with PostgreSQL/TimescaleDB for larger fleets</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #667eea15, #764ba215); border-radius: 10px;">
+                    <p style="font-size: 1.1rem; color: var(--text); font-weight: 600;">
+                        If you can run a recent <strong>RHEL, Ubuntu, Debian, or SUSE</strong> server, or deploy a <strong>Docker container</strong>, you can run AnsibleDB2.
+                    </p>
+                </div>
+            </div>
+            
             <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">Quick Start</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 <div>
@@ -954,7 +1025,7 @@ curl http://localhost:8080/health</code></pre>
         <h2>Real-World Use Cases</h2>
         
         <div class="use-case">
-            <h3>🔒 Security & Compliance: Pass Audit in Seconds</h3>
+            <h3>🔒 Security & Compliance: Patch Audit in Seconds</h3>
             <p><strong>Problem today:</strong> Security teams must run ad-hoc Ansible plays (or worse, log into servers manually) to prove patch levels. This burns hours during audits.</p>
             <p><strong>With AnsibleDB2:</strong> One query instantly shows which hosts run a vulnerable package (e.g. OpenSSL < 3.0.14). Historical snapshots provide "point-in-time" evidence for auditors without touching production systems.</p>
             <p><strong>Impact:</strong> Saves days during audits, reduces consultant costs, lowers compliance risk fines.</p>
@@ -1140,7 +1211,7 @@ curl http://localhost:8080/health</code></pre>
                     <li>GitHub issues</li>
                     <li>Basic web UI</li>
                 </ul>
-                <a href="github.html" class="cta-button" style="display: inline-block; margin-top: 1rem;">Download</a>
+                <a href="https://github.com/ansibledb2" class="cta-button" style="display: inline-block; margin-top: 1rem;">Download</a>
             </div>
             <div class="pricing-card featured">
                 <h3>Professional</h3>
@@ -1177,7 +1248,7 @@ curl http://localhost:8080/health</code></pre>
         <h2>Ready to Transform Your Infrastructure?</h2>
         <p>Join thousands of teams using AnsibleDB2 for persistent state management</p>
         <div style="position: relative; z-index: 1; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="docs.html" class="primary-btn">Get Started Free</a>
+            <a href="https://github.com/ansibledb2" class="primary-btn">Get Started Free</a>
             <a href="mailto:founders@ansibledb2.com" class="secondary-btn">Talk to Sales</a>
         </div>
     </section>
@@ -1197,10 +1268,10 @@ curl http://localhost:8080/health</code></pre>
             <div class="footer-section">
                 <h3>Resources</h3>
                 <ul>
-                    <li><a href="docs.html">Documentation</a></li>
-                    <li><a href="github.html">GitHub</a></li>
-                    <li><a href="repos.html">Helm Charts</a></li>
-                    <li><a href="repos.html">Package Repository</a></li>
+                    <li><a href="https://github.com/ansibledb2">Documentation</a></li>
+                    <li><a href="https://github.com/ansibledb2">GitHub</a></li>
+                    <li><a href="https://charts.ansibledb2.com">Helm Charts</a></li>
+                    <li><a href="https://repo.ansibledb2.com">Package Repository</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -1216,7 +1287,7 @@ curl http://localhost:8080/health</code></pre>
                 <h3>Connect</h3>
                 <ul>
                     <li><a href="mailto:founders@ansibledb2.com">founders@ansibledb2.com</a></li>
-                    <li><a href="github.html">GitHub</a></li>
+                    <li><a href="https://github.com/ansibledb2">GitHub</a></li>
                     <li><a href="https://twitter.com/ansibledb2">Twitter</a></li>
                     <li><a href="https://linkedin.com/company/ansibledb2">LinkedIn</a></li>
                 </ul>
@@ -1456,7 +1527,7 @@ curl http://localhost:8080/health</code></pre>
         // Console message for developers
         console.log('%cAnsibleDB2', 'font-size: 50px; font-weight: bold; background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;');
         console.log('%cWelcome, developer! 🚀', 'font-size: 16px; color: #667eea;');
-        console.log('%cInterested in contributing? Check out our GitHub preview: https://ansibledb2.com/github.html', 'font-size: 14px;');
+        console.log('%cInterested in contributing? Check out our GitHub: https://github.com/ansibledb2', 'font-size: 14px;');
         console.log('%cOr reach out to us at founders@ansibledb2.com', 'font-size: 14px;');
 
         // Performance monitoring (optional)
