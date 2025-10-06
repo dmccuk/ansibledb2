@@ -952,25 +952,47 @@ curl http://localhost:8080/health</code></pre>
     <!-- Use Cases Section -->
     <section id="use-cases">
         <h2>Real-World Use Cases</h2>
+        
         <div class="use-case">
-            <h3>🎯 OS-Specific Targeting</h3>
-            <p><strong>Challenge:</strong> Deploy security updates only to RHEL7 and OEL8 hosts without impacting other systems.</p>
-            <p><strong>Result:</strong> Generate dynamic inventory in 2 seconds vs 45 minutes manual inventory creation.</p>
+            <h3>🔒 Security & Compliance: Patch Audit in Seconds</h3>
+            <p><strong>Problem today:</strong> Security teams must run ad-hoc Ansible plays (or worse, log into servers manually) to prove patch levels. This burns hours during audits.</p>
+            <p><strong>With AnsibleDB2:</strong> One query instantly shows which hosts run a vulnerable package (e.g. OpenSSL < 3.0.14). Historical snapshots provide "point-in-time" evidence for auditors without touching production systems.</p>
+            <p><strong>Impact:</strong> Saves days during audits, reduces consultant costs, lowers compliance risk fines.</p>
         </div>
+        
         <div class="use-case">
-            <h3>🔒 Compliance Proof</h3>
-            <p><strong>Challenge:</strong> Prove to auditors that OpenSSL ≥ 3.0.14 is deployed across all internet-facing servers.</p>
-            <p><strong>Result:</strong> Generate compliance report with historical proof in 30 seconds. Pass audit with zero findings.</p>
+            <h3>⚙️ Operations: Faster Targeting for Maintenance</h3>
+            <p><strong>Problem today:</strong> Ops teams waste cycles maintaining static inventories or gathering fresh facts before patching.</p>
+            <p><strong>With AnsibleDB2:</strong> Dynamic inventory lets Ops instantly select "all OEL8 systems in prod with agent < 3.4.5." No need for fleet-wide fact gathering before every patch cycle.</p>
+            <p><strong>Impact:</strong> Cuts patch prep time by 50%+, reduces downtime windows, fewer missed targets.</p>
         </div>
+        
         <div class="use-case">
-            <h3>📊 Historical Analysis</h3>
-            <p><strong>Challenge:</strong> Determine which hosts were running vulnerable Log4j versions during security incident.</p>
-            <p><strong>Result:</strong> Complete forensic analysis in minutes. Identify exposure window for incident report.</p>
+            <h3>🎯 SRE/Platform Engineering: Drift Detection & Incident Response</h3>
+            <p><strong>Problem today:</strong> When a service fails, SREs scramble to see "what changed" across hosts. This means manual diffs, log digging, or new playbook runs.</p>
+            <p><strong>With AnsibleDB2:</strong> Historical snapshots allow quick diffs ("nginx was running last week, now stopped on these 5 nodes"). Alerts on drift (e.g. agent disabled unexpectedly).</p>
+            <p><strong>Impact:</strong> Hours saved in incident response, faster MTTR (mean time to recovery), less downtime cost.</p>
         </div>
+        
         <div class="use-case">
-            <h3>☁️ Cloud Migration Planning</h3>
-            <p><strong>Challenge:</strong> Identify all physical servers ready for cloud migration based on OS version, memory, and dependencies.</p>
-            <p><strong>Result:</strong> Prioritized migration list of 347 servers in 5 seconds. Saved 80 hours of manual inventory work.</p>
+            <h3>💻 Developers: Self-Service Environment Queries</h3>
+            <p><strong>Problem today:</strong> Developers depend on Ops for questions like "which servers are running our app with agent v2.0?" causing delays.</p>
+            <p><strong>With AnsibleDB2:</strong> Developers query the API/UI directly or use inventory plugins in their playbooks. Can roll out app agents to only "hosts with Python ≥ 3.9 and OS = Ubuntu 22.04."</p>
+            <p><strong>Impact:</strong> Faster deployments, reduced dependency on Ops, accelerates feature delivery.</p>
+        </div>
+        
+        <div class="use-case">
+            <h3>📊 Management/Finance: Lifecycle & Cost Visibility</h3>
+            <p><strong>Problem today:</strong> Leadership lacks visibility into how many systems are EOL (e.g. RHEL7), leading to surprise migration costs and risks.</p>
+            <p><strong>With AnsibleDB2:</strong> Dashboards show OS lifecycle status and highlight unsupported hosts. Data supports budgeting for refresh cycles and cloud migration planning.</p>
+            <p><strong>Impact:</strong> Avoids compliance fines, prevents over-spending on extended vendor support, enables proactive migration budgeting.</p>
+        </div>
+        
+        <div class="use-case">
+            <h3>☁️ Cloud/Hybrid IT: Multi-Cloud Visibility & Cost Control</h3>
+            <p><strong>Problem today:</strong> Large companies often have mixed fleets (AWS, Azure, GCP, on-prem). Tags, regions, and metadata are inconsistent, making it hard to track workloads. Finance teams struggle to map spend to actual business units.</p>
+            <p><strong>With AnsibleDB2:</strong> Collects and normalizes cloud metadata (instance IDs, regions, tags, account IDs) alongside OS and agent data. Query across clouds: "Show all Ubuntu hosts in AWS us-east-1 with agent < v2.0" or "List all Azure VMs missing backup agent."</p>
+            <p><strong>Impact:</strong> Improved cost allocation and chargeback accuracy. Unified compliance checks across hybrid infrastructure. Fewer surprises in cloud spend and faster migration readiness.</p>
         </div>
     </section>
 
