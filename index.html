@@ -192,9 +192,10 @@
             justify-content: center;
             margin-top: 2rem;
             animation: fadeInUp 1s ease 0.6s backwards;
+            flex-wrap: wrap;
         }
 
-        .primary-btn, .secondary-btn {
+        .primary-btn, .secondary-btn, .dashboard-btn {
             padding: 1rem 2rem;
             border-radius: 50px;
             font-size: 1.1rem;
@@ -223,6 +224,16 @@
         .secondary-btn:hover {
             background: white;
             color: var(--primary);
+        }
+
+        .dashboard-btn {
+            background: linear-gradient(135deg, #ff8c42, #ffb347);
+            color: white;
+        }
+
+        .dashboard-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 140, 66, 0.35);
         }
         @keyframes fadeInUp {
             from {
@@ -844,6 +855,7 @@
 
             <div class="hero-buttons">
                 <a href="#get-started" class="primary-btn">Start Free Trial</a>
+                <a href="ansibledb2-dashboard.html" class="dashboard-btn">View Dashboard</a>
                 <a href="https://github.com/ansibledb2" class="secondary-btn">View on GitHub</a>
             </div>
         </div>
@@ -1375,7 +1387,8 @@ curl http://localhost:8080/health</code></pre>
             const hero = document.querySelector('.hero-content');
             if (hero) {
                 hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-                hero.style.opacity = 1 - (scrolled * 0.002);
+                const fadeAmount = Math.max(1 - (scrolled * 0.0012), 0.25);
+                hero.style.opacity = fadeAmount;
             }
         });
 
