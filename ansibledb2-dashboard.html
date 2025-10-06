@@ -458,18 +458,33 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <script>
-        // Load JSON data from your provided files
-        fetch('ansibledb2_sample_hosts.json')
-            .then(r => r.json())
-            .then(hosts => {
-                fetch('ansibledb2_sample_network_devices.json')
-                    .then(r => r.json())
-                    .then(devices => {
-                        initDashboard(hosts, devices);
-                    });
+        window.dashboardInitialized = false;
+
+        function fetchJson(url) {
+            return fetch(url).then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${url}: ${response.status} ${response.statusText}`);
+                }
+                return response.json();
+            });
+        }
+
+        Promise.all([
+            fetchJson('ansibledb2_sample_hosts.json'),
+            fetchJson('ansibledb2_sample_network_devices.json')
+        ])
+            .then(([hosts, devices]) => {
+                initDashboard(hosts, devices);
+            })
+            .catch(error => {
+                console.error('Unable to load dashboard data, rendering empty state.', error);
+                initDashboard([], []);
             });
 
         function initDashboard(hosts, devices) {
+            window.dashboardInitialized = true;
+            updateLastUpdated(hosts);
+
             // Render all tabs
             renderOverviewTab(hosts, devices);
             renderSecurityTab(hosts);
@@ -497,6 +512,11 @@
             ).length;
 
             // Render stats
+            const formatPercentage = (part, total) => {
+                if (!total) return '0.0';
+                return ((part / total) * 100).toFixed(1);
+            };
+
             document.getElementById('overviewStats').innerHTML = `
                 <div class="stat-card">
                     <div class="stat-label">Total Hosts</div>
@@ -509,12 +529,12 @@
                 <div class="stat-card">
                     <div class="stat-label">Critical Patch Issues</div>
                     <div class="stat-value danger">${criticalPatches}</div>
-                    <div class="stat-subtext">${((criticalPatches/totalHosts)*100).toFixed(1)}% of fleet</div>
+                    <div class="stat-subtext">${formatPercentage(criticalPatches, totalHosts)}% of fleet</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">CIS Non-Compliant</div>
                     <div class="stat-value warning">${cisNonCompliant}</div>
-                    <div class="stat-subtext">${((cisNonCompliant/totalHosts)*100).toFixed(1)}% of fleet</div>
+                    <div class="stat-subtext">${formatPercentage(cisNonCompliant, totalHosts)}% of fleet</div>
                 </div>
             `;
 
@@ -1005,16 +1025,24 @@
             return `${Math.floor(diff / 1440)} days ago`;
         }
 
-        // If JSON files aren't available, use inline data
-        setTimeout(() => {
-            if (!window.dashboardInitialized) {
-                console.log('Loading inline data...');
-                // Initialize with empty data to show the structure
-                initDashboard([], []);
+        function updateLastUpdated(hosts) {
+            const lastUpdateElement = document.getElementById('lastUpdate');
+            if (!hosts.length) {
+                lastUpdateElement.textContent = 'Awaiting data';
+                return;
             }
-        }, 1000);
-        
-        window.dashboardInitialized = false;
+
+            const latestTimestamp = hosts.reduce((latest, host) => {
+                const timestamp = new Date(host.collection_timestamp);
+                return (!latest || timestamp > latest) ? timestamp : latest;
+            }, null);
+
+            if (latestTimestamp) {
+                lastUpdateElement.textContent = formatTimestamp(latestTimestamp);
+            } else {
+                lastUpdateElement.textContent = 'Just now';
+            }
+        }
     </script>
 </body>
 </html>
