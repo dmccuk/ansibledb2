@@ -1483,10 +1483,26 @@ curl http://localhost:8080/health</code></pre>
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero-content');
-            if (hero) {
+            if (!hero) return;
+
+            if (window.innerWidth > 768) {
                 hero.style.transform = `translateY(${scrolled * 0.5}px)`;
                 const fadeAmount = Math.max(1 - (scrolled * 0.0012), 0.25);
                 hero.style.opacity = fadeAmount;
+            } else {
+                hero.style.transform = 'translateY(0)';
+                hero.style.opacity = 1;
+            }
+        });
+
+        // Ensure hero content resets when resizing to smaller screens
+        window.addEventListener('resize', () => {
+            const hero = document.querySelector('.hero-content');
+            if (!hero) return;
+
+            if (window.innerWidth <= 768) {
+                hero.style.transform = 'translateY(0)';
+                hero.style.opacity = 1;
             }
         });
 
