@@ -644,6 +644,16 @@
             color: #cbd5e0;
         }
 
+        .footer-attribution {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+
+        .footer-attribution strong {
+            color: #fff;
+        }
+
         /* Scroll indicator */
         .scroll-indicator {
             position: absolute;
@@ -667,6 +677,10 @@
 
         /* Mobile responsive */
         @media (max-width: 768px) {
+            .hero {
+                padding-top: 140px;
+                padding-top: calc(140px + env(safe-area-inset-top));
+            }
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -1384,6 +1398,7 @@ curl http://localhost:8080/health</code></pre>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 AnsibleDB2. All rights reserved. | <a href="#privacy" style="color: #cbd5e0;">Privacy Policy</a> | <a href="#terms" style="color: #cbd5e0;">Terms of Service</a></p>
+            <p class="footer-attribution">Brought to you by <strong>London Infrastructure as Code Ltd.</strong></p>
         </div>
     </footer>
 
