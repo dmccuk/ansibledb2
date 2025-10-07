@@ -68,6 +68,41 @@
             list-style: none;
         }
 
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-left: auto;
+        }
+
+        .menu-toggle:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 4px;
+        }
+
+        .menu-toggle .bar {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: var(--text);
+            margin: 5px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
         .nav-links a {
             color: var(--text);
             text-decoration: none;
@@ -86,6 +121,10 @@
 
         .nav-links a.dashboard-link:hover {
             color: #ffa75e;
+        }
+
+        .nav-links.open {
+            display: flex;
         }
 
         .cta-button {
@@ -636,8 +675,32 @@
                 font-size: 1.2rem;
             }
 
+            .nav-container {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
             .nav-links {
                 display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 1rem;
+                background: rgba(255, 255, 255, 0.98);
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
             }
 
             .stats-grid {
@@ -820,7 +883,12 @@
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">AnsibleDB2</div>
-            <ul class="nav-links">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-menu">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#support-matrix">Support</a></li>
                 <li><a href="#architecture">Architecture</a></li>
@@ -1320,6 +1388,36 @@ curl http://localhost:8080/health</code></pre>
     </footer>
 
     <script>
+        // Mobile navigation toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.getElementById('nav-menu');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                menuToggle.classList.toggle('active', isOpen);
+                menuToggle.setAttribute('aria-expanded', isOpen);
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('open')) {
+                        navLinks.classList.remove('open');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+                    navLinks.classList.remove('open');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
