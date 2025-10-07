@@ -124,6 +124,21 @@
             color: #4a5568;
         }
 
+        footer p {
+            margin: 0.35rem 0;
+        }
+
+        footer .footer-attribution {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        footer .footer-attribution strong {
+            color: var(--primary);
+        }
+
         @media (max-width: 640px) {
             .nav-links {
                 display: none;
@@ -173,8 +188,9 @@
     </main>
 
     <footer>
-        © 2025 AnsibleDB2. Explore our <a href="docs.html">documentation hub</a> for deployment guidance while we finish
-        the repository experience.
+        <p>© 2025 AnsibleDB2. Explore our <a href="docs.html">documentation hub</a> for deployment guidance while we finish
+            the repository experience.</p>
+        <p class="footer-attribution">Brought to you by <strong>London Infrastructure as Code Ltd.</strong></p>
     </footer>
 </body>
 </html>
